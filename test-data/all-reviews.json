@@ -1,0 +1,794 @@
+[
+  {
+    "review_id": "fr_001",
+    "text": "Franchement top ce casque ! Le son est hyper clair, les basses sont bien présentes sans être too much. Je l'utilise tous les jours dans le métro et ça isole bien du bruit extérieur. Autonomie au top, easy 25h sans recharger. Je recommande à 200% 🎧👍",
+    "product_category": "headphones",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "short"
+  },
+  {
+    "review_id": "fr_002",
+    "text": "Alors la je suis vraiment déçu... j'ai acheté ce laptop il y a a peine 3 mois et deja des problèmes. La batterie se decharge a une vitesse hallucinante, je dois le recharger 2 fois par jour genre c'est pas normal du tout. En plus l'écran a des tâches bizarres qui sont apparues sans raison, comme si il y avait un probleme de rétroéclairage. J'ai contacté le SAV et ils m'ont dit d'attendre 3 semaines pour un retour, c'est innaceptable pour un produit a ce prix là. Le clavier aussi commence a faire des siennes, certaines touches répondent plus. Bref pour 900 euros je m'attendais a mieux franchement. Je regrette mon achat et je conseille pas cette marque.",
+    "product_category": "laptop",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_003",
+    "text": "Ça fait maintenant 6 mois que j'utilise ce smartphone au quotidien et je peux vous dire que c'est une vraie pépite ! Déjà l'écran est magnifique, les couleurs sont vives et bien définies, parfait pour regarder des vidéos ou jouer. L'appareil photo est bluffant, surtout en mode nuit, les photos sont nettes et bien exposées même dans des conditions difficiles. J'ai été agréablement surpris par la qualité des selfies aussi.\n\nCôté performance, aucun lag même avec plusieurs applications ouvertes en même temps. Le processeur gère tout sans souci, que ce soit pour du gaming ou du multitâche intensif. L'autonomie est également au rendez-vous, je fais facilement une journée complète avec une utilisation modérée à intensive, sans avoir besoin de le recharger en cours de journée.\n\nLe design est élégant, pas trop lourd dans la main, et la prise en main est agréable. Le stockage est généreux, j'ai jamais eu besoin de faire le tri dans mes photos ou applications.\n\nSeul petit bémol, le chargeur n'est pas inclus dans la boîte, il faut l'acheter séparément ce qui est un peu frustrant pour ce prix. Mais à part ça, aucun regret, je recommande vivement ce téléphone à tous ceux qui cherchent un bon rapport qualité-prix ! 📱✨",
+    "product_category": "smartphone",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "long"
+  },
+  {
+    "review_id": "fr_004",
+    "text": "Cette tablette a du bon et du moins bon franchement. Pour le visionnage de vidéos ou la lecture, c'est top, l'écran est net et lumineux. J'aime bien aussi le format, ni trop grand ni trop petit, facile à transporter partout. Par contre niveau performance ça laisse à désirer quand on lance plusieurs applis en même temps, ça rame un peu et parfois ça freeze carrément. L'autonomie est correcte sans être exceptionnelle, environ 6-7h d'utilisation normale. Le stylet vendu séparément fonctionne bien pour prendre des notes mais j'ai remarqué un léger décalage à l'écriture, c'est pas hyper précis. Pour le prix c'est acceptable mais j'aurais aimé plus de fluidité pour du multitâche. Bon compromis dans l'ensemble mais pas parfait non plus.",
+    "product_category": "tablet",
+    "true_sentiment": "mixed",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_005",
+    "text": "Je suis extrêmement déçue par cet appareil photo. Déjà a la réception le boitier avait une petite fissure sur le coté, c'est pas hyper rassurant pour du matos censé être robuste. Ensuite niveau qualité photo je m'attendais a bcp mieux pour le prix payé, les photos en basse lumière sont vraiment granuleuses et pas nettes du tout. L'autofocus rame également, surtout quand on essaie de capturer des sujets en mouvement, on rate plein de moments. Sans parler de la batterie qui tient a peine 2h en utilisation normale, c'est une vraie blague pour un appareil de cette catégorie. J'ai du acheter une batterie supplémentaire pour pouvoir faire des sorties photo sans stresser. Le SAV a été peu réactif quand j'ai signalé le probleme de fissure, aucune solution proposée à part attendre. Vraiment pas satisfaite de cet achat, je m'attendais à un meilleur produit vu la réputation de la marque.",
+    "product_category": "camera",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_006",
+    "text": "Cette montre connectée dépasse toutes mes attentes ! Le suivi d'activité est super précis, ça détecte bien mes séances de sport et le suivi du sommeil est vraiment bien fait. L'écran est réactif au toucher et lumineux même en plein soleil, ce qui est top pour vérifier l'heure ou les notifs rapidement. Niveau autonomie j'ai été bluffée, environ 5-6 jours avec une utilisation normale, notifications activées et suivi GPS lors de mes sorties running. Le bracelet est confortable, je le sens même pas au poignet après plusieurs heures. Les fonctionnalités santé comme le suivi du rythme cardiaque semblent fiables comparées à ma montre précédente. Petit plus, elle est étanche donc pas de souci pour la piscine ou la douche. Vraiment satisfaite de cet achat, elle répond parfaitement à mes besoins au quotidien et pour le sport 🏃‍♀️⌚",
+    "product_category": "smartwatch",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_007",
+    "text": "Bon bah la deception... le son craque au bout de 2 semaines à peine, surtout dans les basses. Le confort est bien mais ça sert a rien si le son est nul. Retour direct, je conseille pas du tout 😤",
+    "product_category": "headphones",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "short"
+  },
+  {
+    "review_id": "fr_008",
+    "text": "Voilà enfin un laptop qui répond vraiment à mes attentes, tant au niveau professionnel que pour les loisirs. Je l'utilise depuis 4 mois maintenant et je peux témoigner de sa fiabilité au quotidien.\n\nCôté design déjà, c'est du très beau boulot, le boitier en aluminium est solide et élégant, léger aussi ce qui facilite le transport. L'écran offre une résolution impressionnante avec des couleurs fidèles, parfait pour le montage photo et vidéo que je fais régulièrement pour mon travail.\n\nLes performances sont vraiment au rendez-vous, aucun ralentissement même avec plusieurs logiciels lourds ouverts simultanément (Photoshop, Premiere, navigateur avec 20 onglets...). Le processeur et la RAM gèrent tout ça sans broncher. Le démarrage est ultra rapide grâce au SSD, quelques secondes à peine pour être opérationnel.\n\nL'autonomie est également un gros point fort, je fais facilement 8-9h de travail continu sans avoir besoin de le brancher, ce qui est top pour le travail en déplacement ou dans des espaces de coworking sans prises disponibles partout.\n\nLe clavier est agréable à utiliser, bien rétroéclairé pour travailler dans le noir, et le trackpad est précis. Les hautparleurs intégrés sont surprenants de qualité pour un ordinateur portable, pas besoin d'enceintes externes pour regarder des vidéos.\n\nSeul petit point négatif, il chauffe un peu après plusieurs heures d'utilisation intensive, rien de dramatique mais bon à savoir. À part ça, je recommande vivement cet ordinateur à toute personne cherchant un outil performant et fiable pour un usage pro comme perso. Excellent rapport qualité-prix ! 💻",
+    "product_category": "laptop",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "long"
+  },
+  {
+    "review_id": "fr_009",
+    "text": "Ce smartphone a des qualités indéniables mais aussi des défauts qui m'agacent un peu. Commençons par le positif : l'écran est superbe, les couleurs sont vives et la luminosité s'adapte bien selon l'environnement. L'appareil photo fait de bonnes photos en journée, net et bien coloré. Par contre niveau autonomie c'est clairement pas le point fort, je dois recharger vers 16h alors que j'utilise le tel de façon modérée. Ça devient vite contraignant surtout en déplacement quand on a pas toujours accès à une prise. J'ai aussi remarqué que le téléphone chauffe assez vite quand on l'utilise pour des jeux un peu gourmands, c'est pas hyper agréable en main. Le design reste sympa et la prise en main est bonne mais bon, pour le prix payé je m'attendais à une meilleure gestion de la batterie honnêtement. Un téléphone correct mais qui pourrait être bien meilleur avec quelques ajustements.",
+    "product_category": "smartphone",
+    "true_sentiment": "mixed",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_010",
+    "text": "Tablette correcte dans l'ensemble, rien de particulièrement exceptionnel mais rien de choquant non plus. L'écran est standard, fait le boulot pour lire ou regarder des vidéos sans plus. Les performances sont dans la moyenne, suffisantes pour un usage basique comme la navigation internet ou les réseaux sociaux, mais on sent des limites dès qu'on essaie de faire plusieurs choses en même temps. L'autonomie tient environ une journée avec une utilisation normale, ni exceptionnelle ni mauvaise. Le design est basique, sans fioriture particulière, format standard facile à prendre en main. Le stockage de base est un peu juste si on installe beaucoup d'applications, faut prévoir une carte SD en complément. Globalement c'est un produit qui fait le travail sans plus, ni vraiment satisfaisant ni décevant, juste dans la norme pour ce type d'appareil à ce prix.",
+    "product_category": "tablet",
+    "true_sentiment": "neutral",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_011",
+    "text": "Alors franchement je suis super contente de mon achat ! Ces écouteurs sont top niveau qualité sonore, les basses sont bien présentes sans être too much. Je les utilise tous les jours dans le métro et le bruit extérieur est bien atténué. L'autonomie est vraiment bonne, environ 6h en continu et avec le boitier ça fait facilement 24h. Par contre je trouve qu'ils tiennent pas hyper bien dans l'oreille quand on court, ça bouge un peu. Sinon le prix est correct pour la qualité proposée, je recommande à 100% si vous cherchez un bon rapport qualité prix 👍",
+    "product_category": "headphones",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_012",
+    "text": "Je suis vraiment dégoûté par cet achat... J'ai acheté ce laptop il y a 3 mois et déjà plein de problèmes. Déjà l'autonomie de la batterie est catastrophique, à peine 2h30 en utilisation normale alors qu'ils promettaient 8h sur la fiche produit, c'est du grand n'importe quoi. Ensuite l'écran a commencé à avoir des pixels morts après seulement 6 semaines d'utilisation, j'ai contacté le SAV et ils m'ont dit que c'était pas couvert par la garantie car c'était de l'usure normale... sérieux ?! Un pixel mort c'est pas de l'usure normale hein.\n\nEn plus de ça la ventilation est super bruyante, dès qu'on lance un truc un peu gourmand ça fait un bruit d'avion au décollage, c'est insupportable pour travailler dans le calme. Le clavier aussi laisse à désirer, certaines touches sont moins réactives que d'autres, notamment le espace qui parfois ne répond pas du premier coup.\n\nLe pire c'est que le service client est injoignable, j'ai attendu 45 minutes au téléphone pour finalement être raccroché sans explication. J'ai envoyé des mails, toujours pas de réponse après 2 semaines.\n\nPour le prix payé (plus de 800€), je m'attendais à beaucoup mieux en termes de qualité et de fiabilité. Je ne recommande absolument pas cette marque, plus jamais je n'achète chez eux. Quelle perte de temps et d'argent, vraiment déçu.",
+    "product_category": "laptops",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "long"
+  },
+  {
+    "review_id": "fr_013",
+    "text": "Nickel ce smartphone ! Rapide, écran magnifique, appareil photo au top pour le prix. Aucun bug depuis 2 mois d'utilisation intensive. Je recommande à fond 😍",
+    "product_category": "smartphones",
+    "true_sentiment": "positive",
+    "length_category": "short",
+    "language": "fr"
+  },
+  {
+    "review_id": "fr_014",
+    "text": "Bon alors cette tablette c'est un peu en demi teinte pour moi. D'un côté le design est vraiment classe, l'écran est lumineux et les couleurs sont top pour regarder des films ou des séries. La rapidité est aussi au rendez-vous, aucun lag quand on navigue entre les applis.\n\nPar contre, gros bémol sur l'autonomie qui n'est clairement pas à la hauteur de ce qui est annoncé. On me disait 10h d'utilisation, dans les faits je suis plus vers 6-7h max avec un usage normal (internet, vidéos). Sa me pose vraiment problème quand je pars en déplacement sans pouvoir recharger.\n\nAutre point négatif, les hauts parleurs sont assez faibles, le son manque cruellement de basses et ça sature vite quand on monte le volume. Je suis obligé de mettre des écouteurs pour vraiment profiter du contenu.\n\nDonc voilà, produit sympa mais pas parfait, ça reste un bon rapport qualité prix si on accepte ces quelques défauts.",
+    "product_category": "tablets",
+    "true_sentiment": "mixed",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_015",
+    "text": "Très déçu par cet appareil photo. J'avais lu de bons avis avant d'acheter mais dans la réalité c'est pas ça du tout. La qualité des photos en basse lumière est franchement mauvaise, plein de bruit numérique même à ISO pas très élevé. L'autofocus rate souvent sa cible, surtout en mode vidéo où il fait des va-et-vient assez agaçants. En plus l'appareil chauffe rapidement après 15-20min d'utilisation continue, ce qui n'est vraiment pas pratique pour filmer des événements. La construction semble fragile aussi, j'ai eu un petit choc et déjà une fissure sur le boitier plastique. Pour le prix demandé (plus de 500€), je m'attendais clairement à mieux niveau qualité de fabrication et performances. Je ne suis vraiment pas satisfait de cet achat, dommage.",
+    "product_category": "cameras",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_016",
+    "text": "Super montre connectée, je suis totalement fan ! Le suivi d'activité est très précis, que ce soit pour la course ou la natation (elle est étanche donc parfait pour ça). L'écran est net et bien lisible même en plein soleil, ce qui n'était pas le cas de mon ancienne montre. La batterie tient facilement 5-6 jours avec une utilisation normale (notifications, suivi sommeil, sport occasionnel), c'est vraiment top comparé à d'autres modèles que j'ai testés avant.\n\nL'appli associée est intuitive et bien pensée, on retrouve facilement toutes les stats. Les notifications arrivent instantanément sans décalage avec le téléphone.\n\nSeul petit bémol : le bracelet fourni de base n'est pas ultra confortable sur la durée, j'ai dû en acheter un autre en silicone plus doux. Mais ça reste un détail mineur face à toutes les qualités de ce produit. Je recommande vivement !! 💪⌚",
+    "product_category": "smartwatches",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_017",
+    "text": "Bof bof ces écouteurs... Le son est vraiment moyen, ya pas de basses et ça grésille dès qu'on monte un peu le son. En plus après 2 semaines un des deux a arrêté de fonctionner correctement. Grosse déception pour le prix payé, j'aurais mieux fait d'économiser un peu plus pour une meilleure marque.",
+    "product_category": "headphones",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "short"
+  },
+  {
+    "review_id": "fr_018",
+    "text": "Après 6 mois d'utilisation intensive de ce laptop, je peux enfin donner un avis complet et objectif. Globalement je suis très satisfait de cet achat qui répond parfaitement à mes besoins de télétravail et de montage vidéo occasionnel.\n\nCommençons par les points forts : les performances sont excellentes, le processeur gère sans problème le multitâche même avec plusieurs applications lourdes ouvertes simultanément. Le montage vidéo en 1080p se fait sans ralentissement notable, ce qui est un vrai plus pour moi. L'écran est également magnifique, les couleurs sont fidèles et la définition permet un travail précis sur les détails.\n\nL'autonomie mérite aussi d'être mentionnée : contrairement à d'autres modèles que j'ai eu avant, celui-ci tient facilement 7-8h en utilisation bureautique classique, ce qui correspond bien aux annonces du constructeur (enfin un produit honnête sur ce point !).\n\nLe clavier est confortable, avec un bon feedback tactile, et le trackpad est précis et réactif, sans les soucis de fantôme qu'on peut parfois rencontrer sur d'autres marques.\n\nMaintenant les points à améliorer : la ventilation devient bruyante sous forte charge, notamment lors de tâches gourmandes en ressources. Ce n'est pas insupportable mais ça se fait remarquer dans un environnement calme. Le poids est également un peu élevé pour du transport quotidien, on sent le poids dans le sac après plusieurs heures de marche.\n\nMalgré ces petits défauts mineurs, je considère que ce laptop offre un excellent rapport qualité-prix. Je le recommande sans hésiter à toute personne cherchant une machine polyvalente et fiable pour un usage professionnel ou personnel. Un très bon investissement dans l'ensemble.",
+    "product_category": "laptops",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "long"
+  },
+  {
+    "review_id": "fr_019",
+    "text": "Alors ce smartphone, c'est compliqué pour moi. Niveau design c'est vraiment classe, léger, bien fini, ça fait pas cheap du tout. L'écran est superbe aussi, les couleurs sont vives et la fluidité est top pour naviguer ou jouer.\n\nPar contre côté photo je suis mitigé, en journée les clichés sont corrects mais dès qu'on passe en intérieur ou le soir, la qualité chute vraiment beaucoup, ya du bruit et le piqué n'est pas là. Pour un smartphone à ce prix là j'attendais mieux honnêtement.\n\nAutre souci : la batterie descend vite quand on utilise le GPS ou qu'on joue, on perd facilement 20% en une heure. Faut vraiment gérer son utilisation pour tenir la journée.\n\nDonc voilà, ni excellent ni catastrophique, ça reste un smartphone correct mais qui ne se démarque pas vraiment de la concurrence à ce niveau de prix. On verra dans quelques mois si les mises à jour améliorent certains points.",
+    "product_category": "smartphones",
+    "true_sentiment": "mixed",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_020",
+    "text": "Tablette dans la moyenne, rien de particulier à signaler. L'écran est correct, ni exceptionnel ni décevant. La rapidité est suffisante pour de la navigation basique et regarder des vidéos, mais on sent des limites dès qu'on veut faire du multitâche plus poussé. L'autonomie est dans la norme, environ 8h d'utilisation courante. Le design reste assez classique sans grande originalité. Pour le prix, ça fait le job sans plus, sans être un mauvais achat non plus. Un produit fonctionnel mais qui ne sort pas vraiment du lot face à la concurrence actuelle.",
+    "product_category": "tablets",
+    "true_sentiment": "neutral",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_021",
+    "text": "Ces écouteurs sont juste incroyables !! Je les ai achetés il y a 2 mois et j'en suis hyper content. Le son est vraiment top, les basses sont puissantes sans être écrasantes. La batterie tient facile 25h en utilisation normale, ce qui est top pour les longs trajets en train. J'utilise le mode réduction de bruit tous les jours dans le métro et ça marche super bien, on entend plus rien autour. Le confort est aussi au rendez-vous, je peux les porter plusieurs heures sans avoir mal aux oreilles. Seul petit bémol, l'appli pour les configurer est un peu buguée au début mais bon rien de dramatique. Pour le prix (99€), c'est vraiment un super rapport qualité/prix. Je recommande à 100% si vous cherchez un bon casque sans vous ruiner 👌",
+    "product_category": "headphones",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_022",
+    "text": "J'ai acheté cet appareil photo il y a environ 3 mois et honnêtement je regrette mon achat. Déjà, la batterie est une vraie catastrophe, elle tient à peine 2h en utilisation normale, ce qui est ridicule pour un appareil à ce prix-là (450€ quand même). Je pars en voyage et je dois emmener 3 batteries de rechange, c'est complètement absurde.\n\nEnsuite, la qualité photo en basse lumière est franchement décevante, il y a énormément de bruit numérique dès qu'on dépasse 800 ISO. Pour un appareil censé être \"haut de gamme\", je m'attendais à mieux honnêtement. Les photos de jour sont correctes, mais rien d'exceptionnel non plus comparé à mon ancien modèle qui coûtait moins cher.\n\nL'écran arrière s'est mis à avoir des pixels morts après seulement 6 semaines d'utilisation, alors que je fais toujours super attention à mon matériel. J'ai contacté le service client et ils m'ont dit que ce n'était pas couvert par la garantie parce que \"c'est un défaut d'usage\" ce qui est complètement faux, je n'ai jamais fait tomber l'appareil ni rien.\n\nNiveau ergonomie, les boutons sont mal placés et on appuie tout le temps par erreur sur le bouton vidéo au lieu du déclencheur. C'est hyper frustrant quand on essaie de capturer un moment important et qu'on se retrouve à filmer par erreur.\n\nBref, pour le prix demandé, je m'attendais vraiment à beaucoup mieux. Je ne recommande pas cet appareil, il y a clairement de meilleures alternatives sur le marché pour ce budget. Grosse déception pour moi, je pense revendre et prendre autre chose.",
+    "product_category": "camera",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "long"
+  },
+  {
+    "review_id": "fr_023",
+    "text": "Alors ce smartphone, c'est un peu en demi-teinte pour moi. D'un côté, l'écran est magnifique, les couleurs sont vives et la fluidité est top pour naviguer ou jouer. L'appareil photo est également très bon, surtout en mode portrait. Par contre, niveau autonomie c'est clairement pas ça, la batterie descend vite si on utilise beaucoup les réseaux sociaux ou le GPS, je dois recharger en fin d'après-midi alors que je ne l'utilise pas de manière excessive. Aussi, le téléphone chauffe pas mal quand on joue à des jeux un peu gourmands, ce qui n'est pas hyper agréable en main. Le design est sympa mais le dos en verre est un vrai aimant à traces de doigts, faut sans arrêt le nettoyer. Bref, de bonnes choses mais aussi des points qui m'agacent clairement, pour le prix j'attendais un peu mieux niveau autonomie surtout.",
+    "product_category": "smartphones",
+    "true_sentiment": "mixed",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_024",
+    "text": "Super pc portable !! Rapide, léger, parfait pour le boulot et un peu de montage vidéo léger. L'écran est top niveau qualité d'affichage et le clavier est agréable pour taper toute la journée. La batterie tient facilement une journée complète sans avoir à recharger. Petit plus : le design est classe et sobre. Je suis vraiment satisfait de cet achat, rapport qualité prix excellent pour ce budget. Je recommande à fond !",
+    "product_category": "laptops",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "short"
+  },
+  {
+    "review_id": "fr_025",
+    "text": "Grosse déception avec cette montre connectée. Déjà l'autonomie est catastrophique, à peine 1 jour et demi avec les notifications activées, alors que la pub promettait 5 jours minimum. Ensuite, l'écran s'est rayé en à peine une semaine alors que je fais très attention et que je ne la porte jamais en faisant du sport de contact. Le suivi du sommeil est complètement à côté de la plaque, elle m'indique parfois que j'ai dormi alors que j'étais bien réveillé en train de regarder mon téléphone. L'application mobile est aussi assez mal conçue, elle plante régulièrement et il faut la redémarrer plusieurs fois par jour. Pour le prix payé (180€), je m'attendais à un produit beaucoup plus fiable et abouti. Franchement déçu, je ne rachèterai pas cette marque.",
+    "product_category": "smartwatches",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_026",
+    "text": "Cette tablette fait le travail sans plus. L'écran est correct pour regarder des vidéos ou lire, ni exceptionnel ni mauvais. L'autonomie est dans la moyenne, environ une journée d'utilisation modérée. Le processeur est suffisant pour naviguer sur internet et utiliser des applications basiques, mais dès qu'on lance quelque chose de plus lourd, on sent quelques ralentissements. Le design est sobre, sans être particulièrement original. Le stockage de base est un peu juste si on installe beaucoup d'applications, il faut prévoir une carte SD en complément. Dans l'ensemble, c'est une tablette correcte pour un usage basique (lecture, vidéos, navigation), mais rien qui sorte du lot par rapport à la concurrence. Ni un coup de cœur, ni une déception, juste un produit qui répond aux besoins essentiels sans plus.",
+    "product_category": "tablets",
+    "true_sentiment": "neutral",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_027",
+    "text": "Je viens de changer de smartphone après 4 ans avec mon ancien modèle, et honnêtement c'est le jour et la nuit ! Cette nouvelle génération est vraiment impressionnante à tous les niveaux.\n\nDéjà, l'écran est juste magnifique, les couleurs sont éclatantes et la fluidité est parfaite même en jouant à des jeux gourmands. J'ai testé plusieurs applications intensives et aucun ralentissement à signaler, le processeur gère tout sans problème.\n\nL'appareil photo est vraiment le point fort pour moi. Les photos de nuit sont bluffantes, on dirait presque des photos prises en plein jour tellement le capteur gère bien la lumière. Le mode portrait est aussi très réussi, avec un flou d'arrière-plan naturel et pas artificiel comme sur d'autres modèles que j'ai testés avant.\n\nNiveau autonomie, je suis agréablement surpris, la batterie tient facilement une journée et demie avec une utilisation normale (réseaux sociaux, messages, quelques photos, un peu de navigation). Même en utilisation intensive, j'arrive à tenir toute la journée sans stresser sur le pourcentage restant.\n\nLe design est également très élégant, la prise en main est agréable et le poids est bien équilibré. Je n'ai eu aucun souci de surchauffe même après plusieurs heures d'utilisation continue.\n\nUn petit bémol tout de même : le chargeur n'est plus inclus dans la boîte, ce qui est un peu dommage pour ce prix-là, il faut l'acheter séparément si on n'en a pas déjà un compatible.\n\nMais honnêtement, ça reste un détail mineur face à tout ce que propose ce téléphone. Pour le prix, c'est un excellent investissement si vous cherchez un smartphone performant et fiable sur la durée. Je recommande vivement, aucun regret pour cet achat !! 📱✨",
+    "product_category": "smartphones",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "long"
+  },
+  {
+    "review_id": "fr_028",
+    "text": "Très déçu par cet ordinateur portable. Après seulement 4 mois d'utilisation, la batterie a commencé à se décharger de manière anormale, je dois recharger presque toutes les 3 heures alors qu'au début ça tenait facilement 8h. En plus de ça, le ventilateur fait un bruit vraiment agaçant dès qu'on lance quoi que ce soit d'un peu lourd, on dirait un avion qui décolle. J'ai contacté le SAV qui m'a répondu au bout de 2 semaines, ce qui est franchement long pour un problème qui pourrait s'aggraver. L'écran a également un léger scintillement par moment, surtout quand la luminosité est basse. Pour un pc à ce prix (800€), je m'attendais clairement à une meilleure qualité de fabrication et à un service client plus réactif. Je ne suis vraiment pas satisfait de cet achat et j'hésite à en racheter un de la même marque.",
+    "product_category": "laptops",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_029",
+    "text": "Casque sympa mais pas parfait. Le son est bon niveau clarté et les basses sont présentes sans être too much. Par contre l'autonomie déçoit un peu, à peine 15h alors que c'était annoncé 20h sur la fiche produit. Aussi, la réduction de bruit fonctionne bien dans le métro mais moins bien en extérieur avec du vent. Confort correct mais un peu serré au bout de 2h de port continu. Bon produit dans l'ensemble mais pas de quoi être hyper enthousiaste non plus 🤷‍♀️",
+    "product_category": "headphones",
+    "true_sentiment": "mixed",
+    "language": "fr",
+    "length_category": "short"
+  },
+  {
+    "review_id": "fr_030",
+    "text": "Très satisfaite de cette tablette achetée pour mes cours en ligne et un peu de dessin numérique. L'écran est vraiment agréable, les couleurs sont fidèles et la réactivité au stylet est top, aucune latence perceptible même en dessinant vite. L'autonomie est excellente, je peux l'utiliser toute la journée en cours sans avoir à recharger, ce qui est top pour moi qui suis souvent en déplacement entre les salles. Le poids est aussi bien pensé, ni trop lourd ni trop léger, parfait pour tenir longtemps sans se fatiguer le bras. J'apprécie aussi le stockage généreux qui me permet de garder plein de documents et applications sans me soucier de l'espace. Seul petit point négatif, les enceintes intégrées ne sont pas hyper puissantes, mais rien de grave puisque j'utilise surtout des écouteurs. Pour le prix, c'est clairement un très bon rapport qualité/prix, je recommande à tous les étudiants qui cherchent une tablette polyvalente 👍",
+    "product_category": "tablets",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_031",
+    "text": "Alors franchement, je suis super content de cet achat ! Le casque est vraiment confortable, même après plusieurs heures d'utilisation j'ai aucune douleur aux oreilles. La qualité sonore est top, les basses sont bien présentes sans être trop envahissantes. L'autonomie tient largement ses promesses, j'ai fait presque 28h d'écoute avant de devoir recharger, c'est énorme ! En plus le mode réduction de bruit fonctionne vraiment bien, dans le métro j'entends plus rien autour de moi 🎧. Le seul petit bémol c'est que la boîte de rangement est un peu grande pour le sac. Sinon aucun regret, je recommande à 100%, ça vaut clairement le prix payé !",
+    "product_category": "headphones",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_032",
+    "text": "Je suis vraiment déçu par cet ordinateur portable, et je pèse mes mots. Déjà, dès la première semaine j'ai remarqué que la batterie se vidait à une vitesse hallucinante, à peine 2h30 d'autonomie en utilisation normale alors qu'ils annoncent 8h sur la fiche produit, c'est du pur mensonge marketing. Ensuite, le PC chauffe ÉNORMÉMENT, au point que je peux plus le poser sur mes genoux sans avoir peur de me brûler. J'ai contacté le service client à plusieurs reprises, et là c'est le pompon : ils m'ont fait attendre 3 semaines avant de me répondre, et la réponse c'était juste \"redémarrez votre appareil\", sérieux ?? Comme si j'avais pas déjà essayé ça 15 fois. En plus de tout ça, l'écran a commencé à avoir des lignes verticales bizarres après seulement 2 mois d'utilisation, alors que je fais très attention à mon matériel. J'ai envoyé des photos au SAV et toujours aucune réponse concrète, juste des mails automatiques qui disent \"votre demande est en cours de traitement\". Le clavier aussi laisse à désirer, certaines touches restent parfois bloquées et il faut appuyer plusieurs fois pour que ça marche. Pour le prix que j'ai payé (plus de 900€), je m'attendais à une qualité largement supérieure. Franchement je regrette cet achat, je pense sérieusement à demander un remboursement même si ça va être compliqué avec leur politique de retour. Évitez cette marque si vous cherchez un produit fiable sur le long terme, c'est vraiment pas ouf du tout.",
+    "product_category": "laptop",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "long"
+  },
+  {
+    "review_id": "fr_033",
+    "text": "Nickel ce téléphone ! Rapide, écran magnifique, l'appareil photo déchire tout 📸. Je l'utilise depuis 3 semaines et aucun bug pour l'instant. Vraiment satisfait, je recommande sans hésiter à tout le monde qui cherche un bon rapport qualité prix.",
+    "product_category": "smartphone",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "short"
+  },
+  {
+    "review_id": "fr_034",
+    "text": "Bon alors cette tablette c'est un peu en demi-teinte pour moi. D'un côté, l'écran est vraiment agréable, les couleurs sont vives et la définition est top pour regarder des films ou lire des BD. La rapidité générale est aussi au rendez-vous, pas de ralentissement quand on ouvre plusieurs applications. Par contre, gros bémol sur l'autonomie : elle tient à peine une journée si on l'utilise activement, ce qui est franchement pas énorme pour ce type de produit. J'ai aussi remarqué que le stockage se remplit très vite car le système prend déjà beaucoup de place au démarrage. Les enceintes intégrées sont correctes mais sans plus, le son est un peu plat quand on regarde une vidéo sans casque. Globalement c'est pas un mauvais produit, mais je m'attendais à un peu mieux niveau autonomie et son pour le prix demandé. Je dirais que ça reste un achat correct si vous cherchez juste une tablette pour naviguer et lire, mais pas idéal pour du multimédia intensif.",
+    "product_category": "tablet",
+    "true_sentiment": "mixed",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_035",
+    "text": "Très déçu de cet appareil photo... j'avais lu de bonnes critiques mais dans mon cas c'est pas ça du tout. Déjà l'autofocus est lent, genre vraiment lent, j'ai raté plusieurs photos importantes pendant un mariage à cause de ça. La qualité en basse lumière est aussi assez médiocre, y'a beaucoup de bruit numérique sur les photos prises en intérieur ou le soir. Alors qu'on nous vend ça comme un appareil \"idéal pour toutes conditions\", en vrai c'est loin d'être le cas. En plus, après 2 mois d'utilisation, l'écran tactile arrière a commencé à moins bien répondre, je dois appuyer plusieurs fois pour que ça réagisse. Pour le prix (plus de 600€), je m'attendais clairement à mieux. Je vais probablement le revendre et chercher autre chose, dommage car le design est joli mais les performances sont pas au niveau.",
+    "product_category": "camera",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_036",
+    "text": "J'adore ma nouvelle montre connectée ! ⌚ Le suivi d'activité est super précis, j'ai comparé avec d'autres appareils et les résultats sont cohérents. L'autonomie est vraiment bonne aussi, environ 6-7 jours avec une utilisation normale (notifications, suivi du sommeil, un peu de sport). L'écran est lumineux et se voit bien même en plein soleil, ce qui est pas toujours le cas sur ce type de produit. Les notifications arrivent instantanément et l'appli associée est bien pensée, facile à utiliser. Le bracelet est confortable, je l'oublie presque au poignet. Franchement pour le prix, c'est un super rapport qualité/prix, je recommande à tous ceux qui cherchent une montre fitness fiable sans se ruiner. Petit plus : le mode sommeil donne vraiment des infos utiles sur les phases de sommeil.",
+    "product_category": "smartwatch",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_037",
+    "text": "Bon je vais être honnête, ce casque c'est vraiment pas ouf. Le son est correct au début mais après quelques semaines j'ai remarqué une baisse de qualité, comme si les basses avaient disparues d'un coup. En plus l'un des écouteurs a commencé à faire des grésillements bizarres, surtout quand je bouge la tête, ce qui est super gênant. J'ai essayé de contacter le vendeur mais aucune réponse depuis 10 jours, sa commence à m'énerver sérieux. La connexion bluetooth aussi coupe souvent quand je m'éloigne un peu de mon téléphone, même à 2-3 mètres seulement. Pour le prix payé je m'attendais à beaucoup mieux, franchement déçu de cet achat, je vais essayer de me faire remboursé.",
+    "product_category": "headphones",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_038",
+    "text": "Alors je fais ce retour après 4 mois d'utilisation intensive de ce laptop, donc j'ai eu le temps de bien le tester. Pour commencer, les points positifs : le design est vraiment classe, fin et léger, parfait pour le transporter partout. Les performances sont également au rendez-vous pour du travail bureautique et même un peu de montage vidéo léger, ça tourne bien sans trop ramer. L'écran a une bonne résolution et les couleurs sont fidèles, agréable pour regarder des films le soir. Par contre, plusieurs points négatifs sont apparus avec le temps. D'abord, la batterie a nettement perdu en capacité, alors qu'au début j'avais facilement 7-8h d'autonomie, maintenant je descend à peine à 4h, ce qui est assez rapide comme dégradation pour seulement 4 mois. Ensuite, le clavier a des touches qui commencent à s'user visuellement, les lettres s'effacent déjà sur certaines touches très utilisées comme le E et le S. J'ai aussi eu un souci avec le port USB-C qui devient un peu capricieux, parfois il faut brancher/débrancher plusieurs fois pour que la charge démarre correctement. Le service client a été plutôt réactif quand je les ai contactés, ils m'ont proposé un échange de la batterie sous garantie, ce qui est un point positif à noter. Globalement, c'est un bon produit avec un excellent potentiel, mais la durabilité de certains composants laisse à désirer pour du matériel censé être premium. Je reste mitigé, entre satisfaction pour les performances et frustration pour l'usure prématurée de certains éléments.",
+    "product_category": "laptop",
+    "true_sentiment": "mixed",
+    "language": "fr",
+    "length_category": "long"
+  },
+  {
+    "review_id": "fr_039",
+    "text": "Le téléphone fait ce qu'on attend de lui, rien d'exceptionnel mais rien de catastrophique non plus. L'écran est correct, la batterie tient une journée normale. Design classique sans surprise. Pour le prix c'est dans la moyenne, ni un coup de cœur ni une déception.",
+    "product_category": "smartphone",
+    "true_sentiment": "neutral",
+    "language": "fr",
+    "length_category": "short"
+  },
+  {
+    "review_id": "fr_040",
+    "text": "Vraiment très satisfait de cet appareil photo ! 📷 Je l'ai acheté pour mes vacances et il a largement dépassé mes attentes. La qualité d'image est superbe, même en zoom on garde beaucoup de détails, ce qui est top pour les photos de paysages. Le mode automatique fait vraiment bien son boulot pour les débutants comme moi, les couleurs sont naturelles et bien équilibrées. L'autonomie de la batterie est aussi correcte, j'ai pu faire toute une journée de balade sans devoir recharger, ce qui est plutôt rare pour ce genre d'appareil compact. La prise en main est agréable, ni trop lourd ni trop léger, on sent que le design a été bien pensé pour un usage prolongé. En plus le wifi intégré permet de transférer directement les photos sur mon téléphone, super pratique pour partager rapidement sur les réseaux sociaux. Seul petit point à noter, le menu est un peu compliqué au début, il faut prendre le temps de bien explorer toutes les options pour en profiter pleinement. Mais une fois qu'on maîtrise les réglages, c'est vraiment un plaisir à utiliser. Je recommande fortement pour toute personne qui cherche un bon compact avec de belles performances sans se ruiner en objectifs supplémentaires.",
+    "product_category": "camera",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_041",
+    "text": "Franchement top ce casque ! Le son est hyper clair, les basses sont bien présentes sans être too much. Je l'utilise tous les jours dans le métro et l'isolation phonique est top 👌 Autonomie de la batterie nickel, tiens facile 20h. Je recommande à 200% !!",
+    "product_category": "headphones",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "short"
+  },
+  {
+    "review_id": "fr_042",
+    "text": "Alors la j'suis vraiment déçu... j'ai acheté ce laptop y'a a peine 3 mois et déjà des soucis de surchauffe. Le ventilo tourne a fond meme quand je fait juste de la bureautique. En plus l'écran a commencé a avoir des pixels morts sur le coté droit, c'est chiant pour regarder des videos. Le service client m'a dit que c'était pas couvert par la garantie alors que c'est clairement un défaut de fabrication. La batterie tiens a peine 3h alors qu'ils annoncaient 8h sur la fiche produit, du grand foutage de gueule. Je regrette mon achat, pour le prix (800€) je m'attendais a mieux honnetement. A éviter selon moi.",
+    "product_category": "laptop",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_043",
+    "text": "Ce smartphone est une vraie pépite ! L'appareil photo est bluffant, surtout en mode nuit, les photos sont super nettes même avec peu de lumière. Le design est classe, l'écran AMOLED rend super bien les couleurs. J'apprécie aussi la rapidité du processeur, aucun lag même avec plusieurs applis ouvertes en même temps. La batterie tient facilement toute la journée avec une utilisation normale (réseaux sociaux, appels, un peu de jeu). Le seul petit bémol c'est l'absence de prise jack mais bon, c'est devenu la norme maintenant. Pour le prix, c'est vraiment un excellent rapport qualité/prix. Je suis vraiment satisfait de cet achat, je le recommande sans hésiter à mes amis qui cherchent un bon tel sans se ruiner.",
+    "product_category": "smartphone",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_044",
+    "text": "Bon, cette tablette est assez sympa dans l'ensemble mais y'a des trucs qui m'énervent un peu. Le point positif c'est l'écran, super lumineux et agréable pour lire ou regarder des films. La conception est aussi assez premium, ça fait pas cheap du tout. Par contre côté performance c'est pas ouf, ça rame un peu dès qu'on ouvre plusieurs applis en même temps, meme pour du multitâche basique. L'autonomie est correcte sans être exceptionnelle, environ 6-7h d'utilisation intensive. Y'a aussi eu un bug bizarre où l'écran tactile répondait plus pendant quelques secondes, ça arrive pas souvent mais c'est chiant quand ça arrive. Pour le prix c'est correct mais je m'attendais a un peu mieux honnetement. Ni excellent ni catastrophique, entre les deux quoi.",
+    "product_category": "tablet",
+    "true_sentiment": "mixed",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_045",
+    "text": "Je suis vraiment en colère avec cet achat et je pense que c'est important de partager mon expérience pour éviter que d'autres personnes tombent dans le même piège. J'ai acheté cet appareil photo il y a environ 4 mois pour un budget assez conséquent (plus de 600€), pensant investir dans un matériel de qualité pour mes photos de voyage et de famille. Dès les premières semaines, j'ai remarqué que l'autofocus avait tendance a mettre un temps fou pour se stabiliser, surtout en intérieur avec peu de luminosité. C'est déjà assez frustrant en soi mais le pire c'est arrivé après 2 mois : l'objectif a commencé a faire un bruit bizarre de grincement quand je zoomais, comme si un engrenage était mal huilé. J'ai contacté le SAV qui m'a répondu au bout de 2 semaines (délai déjà anormalement long) pour me dire d'envoyer l'appareil en réparation, ce que j'ai fait. Résultat : ils m'ont renvoyé l'appareil en me disant que 'tout fonctionnait normalement' alors que le problème persiste toujours ! En plus de ca, la qualité d'image en basse lumière est vraiment décevante pour un appareil de cette gamme, plein de bruit numérique dès qu'on dépasse les ISO 1600. La batterie aussi se décharge bizarrement vite, meme en mode veille. Honnêtement pour ce prix la je m'attendais a un produit fiable et performant, pas a une source constante de frustration. Je déconseille fortement cet achat, il existe surement de meilleures alternatives sur le marché pour un budget similaire ou même inférieur.",
+    "product_category": "camera",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "long"
+  },
+  {
+    "review_id": "fr_046",
+    "text": "Super montre connectée, je suis vraiment fan ! Le suivi d'activité est très précis, ça détecte bien mes séances de sport et le suivi du sommeil est vraiment intéressant pour comprendre mes habitudes de nuit. L'écran est superbe, bien lumineux même en plein soleil, aucun problème pour lire les notifications. La batterie tient environ 4-5 jours avec une utilisation normale, ce qui est top comparé a d'autres montres du marché qui tiennent a peine 1-2 jours. Le design est élégant, elle passe aussi bien avec une tenue sport qu'avec quelque chose de plus habillé. Les notifications s'affichent bien et on peut répondre rapidement aux messages, très pratique au quotidien. Je recommande vivement ce produit, excellent rapport qualité/prix ⭐⭐⭐⭐⭐",
+    "product_category": "smartwatch",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_047",
+    "text": "Alors la je suis pas content du tout avec ce casque... Déjà au bout de 2 semaines le son a commencé a grésiller dans l'oreille gauche, comme si il y'avait un faux contact quelque part. J'ai essayé plusieurs sources audio différentes (téléphone, laptop, tablette) et le problème persiste, donc c'est clairement un défaut du casque lui même. En plus de ca, le confort laisse vraiment a désirer, après 1h d'utilisation j'ai mal aux oreilles, les coussinets sont trop durs et pas assez rembourrés. La connexion bluetooth se coupe aussi de manière aléatoire, super frustrant quand on écoute de la musique ou qu'on est en appel. Pour le prix payé (120€), je m'attendais a beaucoup mieux en terme de qualité. Le SAV a été plutôt réactif je dois l'admettre mais le remplacement qu'ils m'ont envoyé a exactement le meme problème de grésillement ! Je pense clairement demander un remboursement complet, ce produit ne correspond pas du tout a mes attentes ni au prix payé.",
+    "product_category": "headphones",
+    "true_sentiment": "negative",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "fr_048",
+    "text": "Voila plusieurs mois que j'utilise cet ordinateur portable et je pense avoir un avis assez complet et nuancé a partager. Commençons par les points positifs : les performances sont vraiment excellentes pour ce type d'usage, que ce soit pour le travail (bureautique, montage vidéo léger) ou pour le divertissement (streaming, jeux peu exigeants). Le processeur gère très bien le multitâche et je n'ai jamais rencontré de ralentissement significatif même avec une dizaine d'onglets ouverts en même temps sur le navigateur. L'écran est également très agréable, bonne luminosité et couleurs fidèles, parfait pour retoucher des photos ou regarder des films en soirée. Le clavier est confortable, les touches ont un bon feedback tactile, agréable pour taper de longs textes.\n\nMalheureusement, tout n'est pas parfait non plus. Le point qui m'agace vraiment c'est la batterie qui se dégrade étonnamment vite : au début elle tenait facilement 8h, maintenant après seulement 6 mois d'utilisation elle tombe a peine a 4h en usage normal. C'est clairement pas normal pour un appareil aussi récent. De plus, j'ai remarqué que la coque en plastique du dessous commence a se fissurer légèrement près des charnières, ce qui m'inquiète pour la durabilité a long terme. Le service client a été plutôt correct quand je les ai contactés mais la réparation demandait un délai assez long (2-3 semaines) ce qui est problématique quand on a besoin de son ordi pour le travail au quotidien. Dans l'ensemble c'est un bon produit avec un excellent rapport qualité/prix a l'achat, mais je suis un peu inquiet concernant la durabilité sur le long terme. A voir comment ca évolue dans les prochains mois...",
+    "product_category": "laptop",
+    "true_sentiment": "mixed",
+    "language": "fr",
+    "length_category": "long"
+  },
+  {
+    "review_id": "fr_049",
+    "text": "Bon smartphone dans l'ensemble, sans plus ni moins. Fait le job pour un usage basique (appels, sms, réseaux sociaux, quelques photos). Rien d'exceptionnel mais rien de catastrophique non plus.",
+    "product_category": "smartphone",
+    "true_sentiment": "neutral",
+    "language": "fr",
+    "length_category": "short"
+  },
+  {
+    "review_id": "fr_050",
+    "text": "Cette tablette a dépassé toutes mes attentes ! Je l'utilise principalement pour le dessin numérique et je suis bluffé par la précision du stylet fourni. La réactivité de l'écran est top, aucune latence perceptible entre le mouvement du stylet et le trait qui apparaît. La luminosité est également excellente, même en extérieur je peux bien voir l'écran sans souci. Ce qui m'a vraiment surpris c'est la puissance du processeur, je peux faire tourner des applications de retouche photo assez lourdes sans aucun lag. L'autonomie tient facilement une journée complète d'utilisation intensive, ce qui est parfait pour moi qui travaille souvent en déplacement. Le design est aussi très élégant, fin et léger, facile à transporter dans mon sac. Les enceintes intégrées sont également d'une qualité surprenante pour une tablette, bonnes basses et voix claires. Je recommande vraiment cet appareil pour tous ceux qui cherchent une tablette polyvalente et performante, que ce soit pour le travail créatif ou le divertissement quotidien. Excellent achat, je ne regrette absolument rien 😊👍",
+    "product_category": "tablet",
+    "true_sentiment": "positive",
+    "language": "fr",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_001",
+    "text": "Endlich Kopfhörer die halten was sie versprechen! Der Sound ist echt der Hammer, Bässe kommen richtig gut und die Höhen sind auch klar. Akku hält bei mir locker 25 Stunden, hab sie jetzt seit 2 Wochen täglich im Einsatz. Für den Preis absolut top, kann ich nur empfehlen 👍",
+    "product_category": "headphones",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "short"
+  },
+  {
+    "review_id": "de_002",
+    "text": "Also ich muss echt sagen, bin richtig enttäuscht von dem Laptop. Hab ihn vor 3 Monaten gekauft und schon jetzt fängt das Gehäuse an zu knacken wenn man ihn öffnet. Der Akku is auch ne Katastrophe, hält vielleicht 3 Stunden bei normaler Nutzung, obwohl im Prospekt was von 10 Stunden stand. Das Display flackert manchmal beim Hochfahren, keine Ahnung ob das n Wackelkontakt is oder was. Support hab ich schon 2x kontaktiert, aber die schieben das immer auf und sagen ich soll nochmal ein Update machen. Hat nix gebracht. Für den Preis von über 800€ erwarte ich einfach mehr Qualität. Werde den wohl zurückschicken müssen, echt schade weil das Design an sich schon ganz nice is.",
+    "product_category": "laptops",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_003",
+    "text": "Das Smartphone hat echt seine Höhen und Tiefen. Die Kamera ist top, macht super Fotos auch bei schlechtem Licht, das muss man ihm lassen. Auch das Display ist schön scharf und die Farben knallen richtig. ABER der Akku... oh mein Gott, der ist einfach nur schlecht. Nach nem Tag normaler Nutzung is er bei mir schon auf 15%. Musste mir extra ne Powerbank zulegen. Auch das Gehäuse fühlt sich irgendwie günstig an, nicht so premium wie erwartet für den Preis. Software läuft flüssig, keine Ruckler bisher, das ist positiv zu erwähnen. Insgesamt würd ich sagen: schönes Gerät mit Kompromissen, muss jeder selbst wissen ob einem die Akkulaufzeit wichtiger is als die Kamera.",
+    "product_category": "smartphones",
+    "true_sentiment": "mixed",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_004",
+    "text": "So, nach 3 Monaten intensiver Nutzung will ich mal mein ausführliches Fazit zu dem Tablet abgeben. Vorweg: ich bin echt begeistert! 😍 Hab das Gerät hauptsächlich für Netflix, ein bisschen Zeichnen und Arbeit unterwegs. Das Display ist einfach nur wow, die Farben sind knackig und auch bei direkter Sonneneinstrahlung noch gut ablesbar. Der Stift der dabei war (ok, musste extra kaufen) funktioniert super präzise, kaum Latenz beim Zeichnen.\n\nDer Akku hält bei mir locker 2 Tage bei moderater Nutzung, das find ich schon echt stark. Auch das Gewicht ist angenehm leicht, man kann es super lang in der Hand halten ohne dass der Arm müde wird.\n\nWas mich auch überrascht hat war die Lautsprecherqualität, für ein Tablet echt überdurchschnittlich gut, Filme schauen macht richtig Spaß.\n\nDas einzige kleine Manko: Die Kamera is jetzt nix besonderes, aber ehrlich, wer fotografiert schon mit nem Tablet? Also stört mich das nicht wirklich.\n\nVerarbeitung fühlt sich auch super hochwertig an, kein Wackeln, keine Spaltmaße, alles fühlt sich sehr durchdacht an. Auch nach mehreren Stürzen (ist mir 2x aus der Hand gefallen, oops) keine Kratzer oder Dellen.\n\nKann das Tablet wirklich jedem empfehlen der sowohl für Unterhaltung als auch leichte Arbeit ein zuverlässiges Gerät sucht. Klare Kaufempfehlung von mir, 5 von 5 Sternen! ⭐⭐⭐⭐⭐",
+    "product_category": "tablets",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "long"
+  },
+  {
+    "review_id": "de_005",
+    "text": "Ehrlich gesagt bin ich echt sauer wegen dieser Kamera. Hab sie mir extra für den Urlaub gekauft weil ich schöne Fotos wollte, und was is passiert? Nach nur 5 Tagen ging der Autofokus nicht mehr richtig, alle Bilder waren verwaschen und unscharf. Hab dann gemerkt dass sich auch schon leichte Kratzer auf dem Display gebildet haben, obwohl ich immer super vorsichtig damit umgegangen bin. Der Kundenservice war auch ne Enttäuschung, hab 3 Wochen auf ne Antwort gewartet. Für über 400€ erwarte ich einfach mehr Qualität und Zuverlässigkeit. Finger weg von diesem Modell, gibt bestimmt bessere Alternativen für das Geld.",
+    "product_category": "cameras",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_006",
+    "text": "Die Smartwatch macht das was sie soll, nicht mehr und nicht weniger. Schrittzähler funktioniert, Pulsmessung scheint auch okay zu sein, hab mal verglichen mit nem Brustgurt und die Werte waren ähnlich. Akku hält so 2 Tage, was für ne Smartwatch mit Display wohl normal is. Design ist eher schlicht, nix besonderes aber auch nix schlechtes. Die App dazu ist funktional, übersichtlich, keine großen Beschwerden. War auch nicht super teuer, daher passt das Preis-Leistungs-Verhältnis für mich. Nichts was mich vom Hocker haut, aber auch nichts wo ich mich beschweren würde.",
+    "product_category": "smartwatches",
+    "true_sentiment": "neutral",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_007",
+    "text": "Bin echt happy mit meinem neuen Laptop! Hab ihn hauptsächlich für Homeoffice und ein bisschen Gaming abends. Läuft alles super flüssig, keine Abstürze bisher, auch nach 2 Monaten Nutzung. Das Display hat ne gute Auflösung, macht Spaß damit zu arbeiten. Tastatur tippt sich angenehm, Tasten haben nen schönen Anschlag. Was mich besonders freut: der Lüfter is echt leise, man hört ihn kaum selbst bei anspruchsvolleren Aufgaben. Akku hält ca. 8 Stunden bei normalem Office-Kram, für Gaming natürlich weniger aber das is ja klar. Verarbeitung wirkt auch stabil und hochwertig, keine billigen Plastikteile. Kann den Kauf echt empfehlen, top Preis-Leistung!",
+    "product_category": "laptops",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_008",
+    "text": "Nach 2 Wochen schon kaputt, ne danke. Linker Kopfhörer gibt nur noch leises Krächzen von sich, rechter geht noch. Für den Preis echt ne Frechheit, hab schon bessere für weniger Geld gehabt. Rückgabe läuft grad, mal schauen wie lange das dauert 🙄",
+    "product_category": "headphones",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "short"
+  },
+  {
+    "review_id": "de_009",
+    "text": "Puh, wo soll ich anfangen mit dieser Kamera. Zuerst muss ich sagen, die Bildqualität bei Tageslicht ist wirklich beeindruckend, keine Frage. Die Farben wirken natürlich, der Detailreichtum ist top, besonders für Landschaftsfotos ein Traum. Auch das Handling liegt gut in der Hand, ergonomisch gut durchdacht, alle Knöpfe da wo man sie erwartet.\n\nJETZT kommt aber das große Aber. Bei schlechten Lichtverhältnissen wird's problematisch. Das Rauschen bei höheren ISO-Werten ist einfach zu stark, für ne Kamera in dieser Preisklasse (über 1200€!) hätte ich mir mehr erwartet. Auch der Autofokus tut sich bei wenig Licht schwer, verliert öfter das Motiv oder braucht ewig zum Fokussieren.\n\nDer Akku is auch so ne Sache. An sich hält er ganz okay, so ca. 400-500 Auslösungen, aber das Ladegerät is echt langsam. Dauert gefühlt ewig bis der Akku wieder voll ist, ca. 3 Stunden für eine komplette Ladung. Wer viel unterwegs fotografiert sollte sich definitiv nen Ersatzakku zulegen.\n\nDie Menüführung fand ich anfangs auch etwas verwirrend, musste erst mal ne Weile rumprobieren bis ich alle wichtigen Einstellungen gefunden hab. Nach ner Eingewöhnungszeit gehts aber ganz gut.\n\nVerarbeitung ist top, fühlt sich robust an, würde auch mal nen Sturz überstehen denk ich (zum Glück noch nicht getestet 😅). Das Gehäuse ist auch wettergeschützt, konnte ich schon bei leichtem Regen testen, kein Problem.\n\nInsgesamt: gute Kamera für Tageslichtaufnahmen, aber bei schwierigen Lichtverhältnissen zeigt sie klare Schwächen für den Preis. Muss jeder selbst abwägen ob das für die eigenen Bedürfnisse passt.",
+    "product_category": "cameras",
+    "true_sentiment": "mixed",
+    "language": "de",
+    "length_category": "long"
+  },
+  {
+    "review_id": "de_010",
+    "text": "Diese Smartwatch hat mein Leben echt erleichtert! Benachrichtigungen direkt am Handgelenk, super praktisch wenn man im Meeting sitzt und nicht ständig aufs Handy schauen will. Der Fitness-Tracker ist auch top, motiviert mich wirklich mehr Schritte zu machen 😄 Akku hält bei mir problemlos 5 Tage, was für so ne Smartwatch echt stark ist. Das Design ist auch schick, viele Leute haben mich schon danach gefragt. Wasserdicht ist sie auch, konnte ich beim Schwimmen testen ohne Bedenken. Die App-Verbindung zum Smartphone funktioniert reibungslos, keine Verbindungsabbrüche bisher. Für den Preis absolut top Gerät, kann ich jedem weiterempfehlen der auf der Suche nach ner zuverlässigen Smartwatch ist!",
+    "product_category": "smartwatches",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_011",
+    "text": "Also die Kopfhörer sind echt der Hammer! Klang ist super klar und der Bass haut richtig rein. Trage sie jeden Tag im Bus und die Akkulaufzeit reicht easy für 2 Tage. Kann ich nur empfehlen 👍",
+    "product_category": "headphones",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "short"
+  },
+  {
+    "review_id": "de_012",
+    "text": "Hab mir das Laptop jetzt seit 3 Monaten und bin echt begeistert. Startet super schnell, das Display ist knackig scharf und für Office-Zeugs sowie ein bisschen zocken reicht die Leistung locker aus. Auch die Tastatur tippt sich angenehm, kein Wabbel-Gefühl wie bei meinem alten Gerät. Der Lüfter ist zwar bei Belastung etwas hörbar aber nicht störend. Akku hält bei normaler Nutzung fast den ganzen Tag, das find ich klasse. Einzig der Preis war schon ne Ansage, aber Qualität hat halt ihren Preis würd ich sagen. Für Studenten oder Homeoffice absolut top Gerät, kann ich jedem weiterempfehlen der was Zuverlässiges sucht ohne ständig Probleme zu haben.",
+    "product_category": "laptop",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_013",
+    "text": "Endlich mal ein Handy das hält was es verspricht! Die Kamera macht echt geile Fotos, selbst bei schlechtem Licht kommt noch viel Detail raus. Performance ist mega flüssig, keine Ruckler beim Zocken oder Multitasking. Akku hält bei mir easy 1,5 Tage bei normaler Nutzung. Das Display ist auch top, schön bunt und knackig. Bin echt zufrieden mit dem Kauf, würd ich immer wieder machen. Top Preis-Leistung für das was man bekommt!",
+    "product_category": "smartphone",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_014",
+    "text": "So, nach knapp einem halben Jahr intensiver Nutzung mal mein ausführliches Fazit zu diesem Tablet. Vorweg: ich bin echt positiv überrascht worden, weil ich vorher schon ein günstigeres Modell hatte was ziemlich enttäuschend war. Das Display hier ist einfach top, Farben sind knallig ohne übertrieben zu wirken und beim Lesen von E-Books oder Zeitschriften tut das Auge nicht weh. Die Performance ist ebenfalls klasse, egal ob Netflix, YouTube oder mal ein bisschen zeichnen mit dem Stift - alles läuft butterweich ohne Verzögerung. Was mich besonders überzeugt hat ist die Akkulaufzeit, ich komme locker 2-3 Tage ohne Laden durch bei normaler Nutzung, das ist schon echt stark für so ein Gerät. Auch das Gehäuse fühlt sich hochwertig an, kein billiges Plastikgefühl wie bei anderen Marken. Der mitgelieferte Stift funktioniert super präzise, ideal für Notizen oder kleine Skizzen zwischendurch. Einziger kleiner Kritikpunkt: die Lautsprecher könnten etwas kräftiger sein, aber das ist wirklich Nebensache. Für den Preis bekommt man hier definitiv mehr als erwartet und ich kann es jedem empfehlen der ein zuverlässiges Alltagstablet sucht ohne gleich das teuerste Flaggschiff kaufen zu müssen. Von mir eine klare Kaufempfehlung, 5 von 5 Sternen wirklich verdient! 😍",
+    "product_category": "tablet",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "long"
+  },
+  {
+    "review_id": "de_015",
+    "text": "Kamera ist nach 2 Wochen schon kaputt gegangen, Display bleibt einfach schwarz. Kundenservice meldet sich nicht zurück. Finger weg von dem Schrott!!!",
+    "product_category": "camera",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "short"
+  },
+  {
+    "review_id": "de_016",
+    "text": "Muss echt sagen dass ich enttäuscht bin von der Smartwatch. Erstens hält der Akku max einen Tag, wenn man GPS benutzt sogar noch weniger. Zweitens ist das Armband nach paar Wochen schon ausgefranst, sieht echt billig aus. Die App zum Syncen stürzt auch ständig ab, muss immer neu koppeln was echt nervig ist. Der Bildschirm hat schon nen kleinen Kratzer bekommen obwohl ich vorsichtig war, das Glas scheint nicht sehr robust zu sein. Für den Preis hätt ich mir mehr erwartet ehrlich gesagt. Schrittzähler ist auch ungenau, zeigt mal viel zu viel mal viel zu wenig an. Kann die Watch leider nicht weiterempfehlen, bin echt sauer dass ich so viel Geld dafür ausgegeben hab.",
+    "product_category": "smartwatch",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_017",
+    "text": "Also die Kopfhörer waren echt ne Enttäuschung für mich. Der Klang ist total dumpf, kein Bass, keine Höhen, alles klingt irgendwie matschig. Bluetooth-Verbindung bricht ständig ab wenn ich mein Handy in der Tasche hab, total nervig beim Joggen. Nach 3 Wochen hat auch schon die linke Seite angefangen zu knacken beim Bewegen, vermutlich ein Kabelbruch obwohl die eigentlich kabellos sind lol. Die Polster sind auch schon nach kurzer Zeit ziemlich abgenutzt und fühlen sich klebrig an, keine Ahnung warum. Für den Preis den ich bezahlt hab echt zu wenig Qualität, hab schon günstigere Kopfhörer gehabt die besser waren. Werde die wohl zurückschicken müssen.",
+    "product_category": "headphones",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_018",
+    "text": "Also das Laptop hat gute und schlechte Seiten würd ich sagen. Positiv: das Display ist echt top, sehr scharf und die Farben stimmen. Performance beim Arbeiten ist auch flüssig, keine Beschwerden da. ABER: die Akkulaufzeit ist echt mies, ich komm kaum auf 4 Stunden bei normaler Nutzung, das ist für 2024 einfach zu wenig. Außerdem wird das Gerät beim Zocken oder Videobearbeitung sehr schnell richtig heiß, man kann es kaum noch auf dem Schoß halten. Der Lüfter dreht dann auch ziemlich laut auf, stört schon wenn man leise Musik hören will nebenbei. Tastatur ist okay, nichts besonderes aber auch nicht schlecht. Insgesamt bin ich hin und her gerissen, für Office-Kram top aber für alles was mehr Leistung braucht eher naja.",
+    "product_category": "laptop",
+    "true_sentiment": "mixed",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_019",
+    "text": "Okay, ich versuch mal ein ehrliches und ausgewogenes Fazit zu diesem Smartphone zu geben nach fast 4 Monaten Nutzung. Fangen wir mit dem Guten an: die Kamera ist wirklich top, besonders bei Tageslicht kommen richtig schöne Fotos raus mit viel Detail und guten Farben. Auch das Display find ich klasse, sehr hell und die Farben sind knackig ohne übersättigt zu wirken. Die Verarbeitung fühlt sich hochwertig an, kein Plastikgefühl sondern eher premium. So far so good würde man sagen. Aber jetzt kommen die Punkte die mich echt stören: Die Akkulaufzeit ist eine Katastrophe, ich muss das Ding mittags schon nochmal an die Steckdose hängen weil er sonst abends schon bei 5% ist. Das nervt echt im Alltag, vor allem wenn man unterwegs ist und keine Powerbank dabei hat. Zweitens: bei Videocalls oder wenn man länger telefoniert wird das Gerät ziemlich warm, teilweise unangenehm warm in der Hand. Drittens, und das ist eigentlich das Schlimmste: nach ca. 2 Monaten hat sich ein kleiner Pixel-Fehler im Display gezeigt, ein winziger schwarzer Punkt der einfach nicht mehr weggeht. Klar, stört nicht bei jedem Bild aber bei hellem Hintergrund sieht man ihn schon deutlich und das nervt einfach wenn man weiß dass er da ist. Der Kundenservice meinte ich soll das Gerät einschicken, was natürlich Zeit kostet und ich dann ohne Handy dastehe. Also insgesamt: tolle Kamera und schönes Design, aber die Akkuprobleme und der Pixel-Fehler trüben die Freude schon ziemlich. Bin mir nicht sicher ob ich es nochmal kaufen würde ehrlich gesagt.",
+    "product_category": "smartphone",
+    "true_sentiment": "mixed",
+    "language": "de",
+    "length_category": "long"
+  },
+  {
+    "review_id": "de_020",
+    "text": "Das Tablet erfüllt seinen Zweck, nicht mehr und nicht weniger. Display ist in Ordnung, nichts Besonderes aber auch nichts zum Meckern. Die Performance reicht für normale Aufgaben wie Surfen und Videos schauen völlig aus, für anspruchsvollere Sachen wahrscheinlich weniger geeignet. Akkulaufzeit liegt bei ca einem Tag bei normaler Nutzung, das ist Durchschnitt für diese Preisklasse würd ich sagen. Das Design ist eher schlicht, weder besonders schick noch besonders hässlich. Die Lautsprecher sind okay für gelegentliches Musikhören, für echten Genuss würd ich aber trotzdem Kopfhörer empfehlen. Insgesamt ein solides Mittelklasse-Gerät ohne große Highlights aber auch ohne größere Schwachstellen, macht das was es soll.",
+    "product_category": "tablet",
+    "true_sentiment": "neutral",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_021",
+    "text": "Endlich mal Kopfhörer, die wirklich halten was sie versprechen! Der Sound ist fett, Bässe kommen richtig durch und die Höhen sind klar. Akku hält locker 20 Stunden, hab sie schon 3 mal aufgeladen diese Woche und alles top. Bluetooth-Verbindung is stabil, kein Rauschen oder so. Einziges Minus: das Case is bissl klobig für die Tasche. Aber sonst 5 Sterne von mir, kann ich nur empfehlen! 🎧👍",
+    "product_category": "headphones",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "short"
+  },
+  {
+    "review_id": "de_022",
+    "text": "Ich bin echt enttäuscht von diesem Laptop. Nach nur zwei Monaten hat der Akku schon massiv nachgelassen, hält kaum noch 2 Stunden ohne Ladekabel. Das Display flackert manchmal random, besonders wenn man den Bildschirm neigt - echt nervig beim Arbeiten. Außerdem wird das Gerät unter Last sehr heiß, der Lüfter is laut wie ein Föhn. Hab den Kundenservice kontaktiert, aber die haben nur gesagt ich soll ein Update machen, hat aber nix gebracht. Für den Preis erwarte ich einfach mehr Qualität. Die Verarbeitung fühlt sich auch billig an, das Gehäuse ist aus Plastik und knarzt schon beim Anheben. Kann den Kauf leider nicht weiterempfehlen, echt schade weil das Design an sich ganz nice is. Werde wohl zurückschicken müssen 😞",
+    "product_category": "laptop",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_023",
+    "text": "Also Leute, dieses Smartphone hat mich echt überzeugt! Die Kamera macht Bilder wie ein Profi, selbst bei schlechtem Licht sieht man kaum Rauschen. Das Display is butterweich beim Scrollen, 120Hz merkt man richtig krass im Alltag. Akku hält bei mir easy den ganzen Tag, auch bei viel Nutzung mit Insta und TikTok. Das Gehäuse liegt gut in der Hand, nicht zu schwer und nicht zu leicht. Fingerabdrucksensor is superschnell, entsperrt sofort. Einziger kleiner Kritikpunkt: der Speicher lässt sich nicht erweitern, aber mit 256GB komm ich klar. Für den Preis absolut top Gerät, kann ich nur weiterempfehlen! Bin echt happy mit dem Kauf 😊📱",
+    "product_category": "smartphone",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_024",
+    "text": "Das Tablet hat gute und schlechte Seiten. Positiv: Der Bildschirm is echt schön, Farben knallen und für Netflix schauen top. Auch die Performance beim Zocken von leichten Games passt. ABER: der Akku is echt schwach, nach 4 Stunden Nutzung schon leer, das nervt total wenn man unterwegs is. Außerdem hab ich nach 2 Wochen schon ein Pixelfehler oben links entdeckt, keine Ahnung ob das jetzt Pech war oder generelles Problem. Die Lautsprecher sind auch eher mau, Klang is dünn und blechern bei höherer Lautstärke. Für den Preis würd ich sagen es geht so, kein Totalausfall aber auch nicht der Hammer. Werd mal schauen wie sich das Teil weiter entwickelt bevor ich ne endgültige Meinung abgeb.",
+    "product_category": "tablet",
+    "true_sentiment": "mixed",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_025",
+    "text": "Ich hab mir diese Kamera vor knapp drei Monaten gekauft, in der Hoffnung endlich bessere Fotos für mein Hobby zu machen, aber ich muss sagen, ich bin richtig enttäuscht. Zuerst dachte ich, ok, das wird schon, aber je länger ich sie benutze desto mehr Probleme tauchen auf. Der Akku ist eine Katastrophe - nach vielleicht 150 Aufnahmen is er schon wieder leer, das kann doch nicht sein bei so einem teuren Gerät. Ich muss quasi immer ein Ersatzakku mitnehmen, sonst kann ich gar nicht vernünftig fotografieren gehen. Dann kommt noch dazu, dass der Autofokus bei wenig Licht total versagt, das Bild bleibt einfach unscharf oder er sucht ewig bis er überhaupt fokussiert. Für Nachtaufnahmen also quasi unbrauchbar. Das Display auf der Rückseite hat außerdem schon nach kurzer Zeit einen leichten Kratzer bekommen, obwohl ich echt vorsichtig damit umgehe und immer eine Tasche benutze. Die Verarbeitung wirkt insgesamt nicht so hochwertig wie erwartet, das Gehäuse fühlt sich eher wie Plastik an obwohl Metall angepriesen wurde. Auch ein Knopf, der Auslöser, hat sich schon leicht gelockert, macht komische Geräusche beim Drücken. Der Kundenservice war leider auch keine große Hilfe, ich hab denen Fotos und Videos geschickt aber die meinten nur ich soll das Gerät einschicken, was Wochen dauern würde und ich in der Zeit ohne Kamera bin. Für den Preis den man hier zahlt erwarte ich einfach eine bessere Qualität und Zuverlässigkeit. Ich kann diese Kamera echt niemandem empfehlen, der professionell oder auch nur semi-professionell fotografieren möchte. Schade um das Geld, werde mir wohl eine andere Marke für die Zukunft suchen müssen. 😤📷",
+    "product_category": "camera",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "long"
+  },
+  {
+    "review_id": "de_026",
+    "text": "Meine neue Smartwatch is der Hammer! Ich nutz sie hauptsächlich zum Sport tracken und da liefert sie echt genaue Werte, Herzfrequenz und Schritte stimmen mit meiner alten Pulsuhr überein. Das Display is auch bei Sonnenlicht gut ablesbar, sehr hell und knackig. Akku hält bei mir round about 5 Tage, was für ne Smartwatch echt stark is, muss nicht ständig ans Ladekabel. Die App dazu is übersichtlich und zeigt alle Daten schön auf. Wasserdicht is sie auch, hab beim Schwimmen getestet und alles trocken geblieben. Design is schlicht aber elegant, passt zu jedem Outfit. Einzig das Armband könnte n bisschen hochwertiger sein, fühlt sich leicht billig an nach ein paar Wochen. Aber ansonsten volle Punktzahl von mir, Kauf hat sich echt gelohnt!",
+    "product_category": "smartwatch",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_027",
+    "text": "Diese Kopfhörer waren leider ne Enttäuschung. Der Klang is dumpf, Bässe fehlen komplett und Höhen klingen blechern. Nach ner Woche hat die linke Seite angefangen zu knacksen beim Bewegen, echt nervig. Akku hält auch nur 4 Stunden statt der beworbenen 10. Verarbeitung fühlt sich billig an, das Plastik knarzt schon beim Aufsetzen. Für den Preis absolut nicht empfehlenswert, hab schon Rückgabe beantragt 👎",
+    "product_category": "headphones",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "short"
+  },
+  {
+    "review_id": "de_028",
+    "text": "Nach nun fast einem halben Jahr Nutzung möchte ich mal ein ausführliches Fazit zu meinem Laptop ziehen. Grundsätzlich muss ich sagen, dass das Gerät für Office-Arbeiten, Surfen und leichte Bildbearbeitung völlig ausreichend is. Der Bildschirm hat eine schöne Auflösung und die Farben wirken natürlich, macht Spaß damit zu arbeiten. Auch das Design gefällt mir richtig gut, schlank und leicht, passt easy in jeden Rucksack. Die Tastatur tippt sich angenehm, gutes Feedback beim Anschlag.\n\nAllerdings gibt es auch einige Punkte die mich stören. Zum einen wird das Gerät bei anspruchsvolleren Aufgaben, wie z.B. Videoschnitt oder mehreren offenen Programmen gleichzeitig, ziemlich schnell heiß und der Lüfter dreht dann richtig auf, is schon fast peinlich laut in ruhigen Umgebungen. Zum anderen hab ich das Gefühl der Akku hat mit der Zeit deutlich nachgelassen - am Anfang hatte ich locker 8 Stunden, jetzt bin ich bei vielleicht 4-5 Stunden bei normaler Nutzung. Außerdem hatte ich einmal ein Problem mit dem Trackpad, das für ein paar Tage einfach nicht mehr reagiert hat, nach einem Neustart ging's dann wieder, aber sowas sollte eigentlich nicht passieren bei einem neueren Gerät.\n\nDie Software-Ausstattung is ok, aber es gab schon ein bisschen Bloatware vorinstalliert die ich erst entfernen musste. Der Kundenservice war bei meiner Anfrage bezüglich des Trackpad-Problems relativ freundlich und schnell, das muss ich positiv erwähnen. Insgesamt würde ich sagen, der Laptop is ein solides Mittelklasse-Gerät mit ein paar Schwachstellen. Für den Preis bekommt man definitiv brauchbare Leistung, aber wer viel rechenintensive Aufgaben erledigen möchte, sollte sich vielleicht nach einem anderen Modell umschauen. Ich bin soweit zufrieden, aber nicht komplett überzeugt.",
+    "product_category": "laptop",
+    "true_sentiment": "mixed",
+    "language": "de",
+    "length_category": "long"
+  },
+  {
+    "review_id": "de_029",
+    "text": "Das Smartphone funktioniert soweit wie erwartet. Kamera is ok, nix besonderes aber auch nix schlechtes. Akku hält n normalen Tag ohne Probleme. Display is standard, nix was mich umgehauen hat. Verarbeitung wirkt stabil. Für den Preis kriegt man ein durchschnittliches Gerät ohne große Highlights aber auch ohne große Schwächen. Kann man kaufen, muss man aber nicht unbedingt.",
+    "product_category": "smartphone",
+    "true_sentiment": "neutral",
+    "language": "de",
+    "length_category": "short"
+  },
+  {
+    "review_id": "de_030",
+    "text": "Bin echt begeistert von meinem neuen Tablet! Nutze es hauptsächlich zum Lesen von E-Books und für Notizen in der Uni, und da macht es einen super Job. Der Stift reagiert präzise, kein Lag beim Schreiben, fühlt sich fast wie echtes Papier an. Display is hell und scharf, auch bei direktem Sonnenlicht noch gut ablesbar. Akku hält bei normaler Nutzung easy 2 Tage, muss nicht ständig laden. Das Gewicht is auch top, kann ich stundenlang in der Hand halten ohne dass der Arm müde wird. Speicher is großzügig, alle meine Apps und Dateien passen easy drauf. Einzig der Preis war schon ne Hausnummer, aber die Qualität rechtfertigt es meiner Meinung nach. Klare Kaufempfehlung von mir, macht echt Spaß mit dem Gerät zu arbeiten! ✨📚",
+    "product_category": "tablet",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_031",
+    "text": "Endlich vernünftige Kopfhörer gefunden! Der Klang ist echt der Hammer, Bässe knallen ohne zu dröhnen. Akku hält auch locker 2 Tage im Alltag. Für den Preis unschlagbar, kann ich nur empfehlen 👍",
+    "product_category": "headphones",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "short"
+  },
+  {
+    "review_id": "de_032",
+    "text": "Also Leute, ich muss echt meinem Frust Luft machen. Das Laptop war grad mal 3 Monate alt und dann is der Akku plötzlich am Ende gewesen, hält nur noch ne Stunde ohne Kabel. Hab den Kundenservice kontaktiert, die meinten das wäre normal bei „intensiver Nutzung“... ne, sorry, ich zock nicht mal jeden Tag drauf. Außerdem wird das Ding beim Laden so heiß, dass man sich fast die Finger verbrennt. Das Display flackert auch manchmal beim Hochfahren, keine Ahnung ob das n Softwarefehler ist oder Hardware. Für über 900 Euro erwarte ich einfach mehr Qualität. Die Verarbeitung fühlt sich auch irgendwie billig an, das Gehäuse knarzt wenn man es aufklappt. Bin echt enttäuscht und werde die Marke wohl nicht mehr kaufen.",
+    "product_category": "laptop",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_033",
+    "text": "So, nach 3 Monaten intensiver Nutzung kann ich endlich mal ne richtige Review schreiben. Ich hab mir dieses Smartphone gekauft, weil ich echt genug hatte von meinem alten Handy, das ständig abgestürzt ist. Und boah, was für ein Unterschied! Die Kamera ist wirklich top, vor allem bei Nachtaufnahmen hab ich sowas noch nicht gesehen für den Preis. Man erkennt kaum Rauschen und die Farben wirken natürlich, nicht so übersättigt wie bei manch anderen Herstellern.\n\nAuch die Performance ist der Wahnsinn, ich zocke ab und zu mal ne Runde und da läuft alles butterweich, kein Ruckeln, keine Lags. Der Akku hält bei normaler Nutzung locker den ganzen Tag, sogar mit Netflix schauen und Insta scrollen komm ich meist noch bis abends ohne nachladen zu müssen.\n\nDas Display ist auch echt schick, schön hell, gute Farben, und das Gehäuse fühlt sich hochwertig an, kein billiges Plastikgefühl. Fingerabdrucksensor funktioniert schnell und zuverlässig, Gesichtserkennung genauso.\n\nEinziger kleiner Kritikpunkt: die Lautsprecher könnten n bisschen kräftiger sein, für Musik ohne Kopfhörer ist das schon eher mau. Aber das ist wirklich Kleinkram im Vergleich zu allem anderen. Für den Preis absolut top Gerät, kann ich nur weiterempfehlen! 😊👌",
+    "product_category": "smartphone",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "long"
+  },
+  {
+    "review_id": "de_034",
+    "text": "Also das Tablet is echt zwiespaltig für mich. Auf der einen Seite: super Display, richtig knackige Farben und für Serien gucken einfach top. Auch die Größe passt perfekt für die Tasche. Auf der anderen Seite nervt mich, dass der Akku ziemlich schnell leer is wenn man mal was streamt, kaum 4-5 Stunden dann piept schon die Warnung. Außerdem hab ich das Gefühl das Ding wird beim Laden schon relativ warm, was mich n bisschen beunruhigt. Die Software läuft eigentlich flüssig, aber manchmal hängt sich ne App komplett auf und ich muss neu starten. Für den Preis ist es trotzdem ok, aber ich hätte mir mehr erwartet ehrlich gesagt.",
+    "product_category": "tablet",
+    "true_sentiment": "mixed",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_035",
+    "text": "Bin echt enttäuscht von der Kamera. Hab sie mir extra für den Urlaub gekauft und dachte, das wird der Hammer für Erinnerungsfotos. Leider war das Autofokus-System bei wenig Licht komplett überfordert, viele Fotos sind unscharf geworden. Auch das Menü ist total unübersichtlich, man muss sich erst durch zig Untermenüs klicken um simple Einstellungen zu ändern. Der Akku ist auch ne Katastrophe, nach ca. 200 Fotos war schon Schicht im Schacht. Und dann noch das: nach nur 2 Wochen hat sich das Display leicht gelöst am Rand, sieht aus wie n Verarbeitungsfehler. Für den Preis von fast 600 Euro erwarte ich einfach ne bessere Qualität. Werde die wohl zurückschicken müssen.",
+    "product_category": "camera",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_036",
+    "text": "Meine neue Smartwatch begleitet mich jetzt seit ca. 2 Monaten im Alltag und ich bin echt zufrieden. Die Fitness-Tracking Funktionen sind super präzise, egal ob beim Joggen oder Krafttraining, die Werte stimmen ziemlich genau mit meinem alten Brustgurt überein. Der Akku hält bei mir locker 5 Tage, auch mit Always-on Display eingeschaltet, was ich echt stark finde. Benachrichtigungen kommen zuverlässig und man kann direkt vom Handgelenk antworten, das spart echt Zeit im Alltag. Das Design ist auch schlicht und passt zu jedem Outfit, egal ob Business oder Sport. Einzig die App am Handy könnte n bisschen übersichtlicher gestaltet sein, manche Einstellungen findet man erst nach längerem Suchen. Aber insgesamt bin ich echt happy mit dem Kauf und würds jederzeit wieder kaufen!",
+    "product_category": "smartwatch",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_037",
+    "text": "Nach 2 Wochen schon kaputt gegangen, das linke Ohrstück gibt kein Ton mehr von sich. Verarbeitung fühlt sich billig an, obwohl der Preis alles andere als billig war. Enttäuschend, würd ich nicht wieder kaufen 👎",
+    "product_category": "headphones",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "short"
+  },
+  {
+    "review_id": "de_038",
+    "text": "Ok, jetzt mal ehrlich meine Meinung zu dem Laptop nach 3 Monaten Nutzung. Positiv: Das Display ist wirklich schön scharf und die Tastatur tippt sich angenehm, kein Wabbeln oder so. Performance im Alltag reicht locker aus für Office, Surfen und leichte Bildbearbeitung. Auch das Gewicht ist ok, man kann es gut mitnehmen unterwegs.\n\nNegativ allerdings: Der Lüfter wird bei etwas anspruchsvolleren Aufgaben ziemlich laut, man hört das dann sogar in nem ruhigen Raum deutlich. Außerdem ist mir letzte Woche aufgefallen, dass ein Pixel-Cluster unten rechts komplett ausgefallen ist, sieht aus wie n kleiner schwarzer Fleck. Das nervt schon ziemlich bei dem Preis. Der Akku ist auch eher mittelmäßig, komm bei normaler Nutzung auf ca. 5-6 Stunden, was für unterwegs manchmal knapp wird.\n\nInsgesamt würd ich sagen: für Alltagsaufgaben ok, aber wer mehr Leistung oder längere Akkulaufzeit braucht, sollte sich woanders umschauen. Bin hin und her gerissen ob ichs zurückschicken soll wegen dem Pixelfehler.",
+    "product_category": "laptop",
+    "true_sentiment": "mixed",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_039",
+    "text": "Ich benutze das Smartphone jetzt seit gut 6 Wochen und wollte mal meine Eindrücke schildern, ohne groß zu übertreiben in die eine oder andere Richtung. Das Gerät macht im Grunde alles, was man von einem Smartphone erwartet, nicht mehr und nicht weniger. Die Kamera liefert brauchbare Fotos bei Tageslicht, bei schlechten Lichtverhältnissen wird das Bildrauschen dann schon deutlich sichtbar, aber das kennt man ja von vielen Geräten in dieser Preisklasse.\n\nDer Akku hält bei mir ungefähr einen Tag, je nach Nutzung mal etwas mehr oder weniger. Das Display ist okay, nichts Besonderes, aber auch nichts wofür man sich schämen müsste. Die Performance im Alltag ist ausreichend, für Multitasking oder anspruchsvollere Spiele merkt man aber schon Grenzen, es kommt ab und zu zu kleinen Rucklern.\n\nDas Design ist eher schlicht gehalten, weder besonders schön noch hässlich, einfach durchschnittlich. Die Verarbeitung fühlt sich solide an, nichts wackelt oder knarzt. Software-Updates kommen bisher regelmäßig, was positiv zu erwähnen ist.\n\nInsgesamt ist es für mich ein Gerät, das seinen Zweck erfüllt ohne groß hervorzustechen. Wer ein absolutes High-End Gerät sucht, wird hier nicht fündig, aber für alltägliche Aufgaben wie Nachrichten schreiben, im Internet surfen und gelegentlich fotografieren reicht es völlig aus. Ich würde weder eine klare Empfehlung noch eine Abwertung aussprechen, es ist einfach ein durchschnittliches Smartphone ohne große Highlights oder gravierende Mängel.",
+    "product_category": "smartphone",
+    "true_sentiment": "neutral",
+    "language": "de",
+    "length_category": "long"
+  },
+  {
+    "review_id": "de_040",
+    "text": "Bin echt begeistert von meinem neuen Tablet! Hab es hauptsächlich zum Zeichnen gekauft und die Stift-Unterstützung ist der absolute Wahnsinn, kaum Verzögerung und fühlt sich super natürlich an. Auch für Netflix und YouTube ist der Bildschirm top, schöne Farben und knackige Auflösung. Der Akku hält bei normaler Nutzung locker den ganzen Tag, sogar wenn ich mal länger am Stück zeichne oder Videos gucke. Das Gewicht ist auch angenehm leicht, man kann es problemlos länger in der Hand halten ohne dass die Arme müde werden. Die Verarbeitung wirkt hochwertig, kein billiges Plastikgefühl wie bei manch anderen Tablets in der Preisklasse. Für den Preis wirklich top Leistung, kann ich absolut jedem empfehlen der ein zuverlässiges Tablet für Kreativität und Entertainment sucht 🎨📱",
+    "product_category": "tablet",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_041",
+    "text": "Endlich gute Kopfhörer gefunden! 🎧 Der Klang ist einfach nur genial, der Bass kommt richtig fett und die Höhen sind klar ohne zu kratzen. Akku hält locker 20 Stunden, perfekt für die Arbeit im Homeoffice. Das Bügel-Design ist auch super bequem, sitzt stundenlang ohne zu drücken. Bin echt begeistert und kann die Teile jedem empfehlen, der auf der Suche nach nem guten Preis-Leistungs-Verhältnis ist. Top Kauf!",
+    "product_category": "headphones",
+    "true_sentiment": "positive",
+    "language": "de",
+    "length_category": "short"
+  },
+  {
+    "review_id": "de_042",
+    "text": "Die Uhr sieht zwar schick aus, aber der Akku ist ne reine Katastrophe. Nach nur einem Tag muss ich schon wieder laden, das nervt total im Alltag. Außerdem hat das Display schon nach zwei Wochen nen Kratzer bekommen, obwohl ich echt vorsichtig war und sogar ne Folie drauf hatte. Für den Preis erwarte ich definitiv mehr Qualität. Kann ich leider nicht weiterempfehlen, sry.",
+    "product_category": "smartwatch",
+    "true_sentiment": "negative",
+    "language": "de",
+    "length_category": "short"
+  },
+  {
+    "review_id": "de_043",
+    "text": "Hab mir den Laptop vor 3 Monaten gekauft und bin bisher richtig zufrieden. Das Display ist super scharf und die Farben wirken sehr natürlich, macht Spaß beim Filme schauen. Die Leistung reicht easy für Office-Kram und auch für kleinere Videobearbeitung, läuft alles flüssig ohne Ruckler. Was mich besonders freut: der Akku hält locker 8-9 Stunden, auch bei normaler Nutzung mit mehreren Tabs offen. Das Gehäuse fühlt sich hochwertig an, kein billiges Plastik-Gefühl wie bei anderen Modellen die ich vorher hatte. Einziges kleines Manko ist der Lüfter, der wird bei anspruchsvolleren Aufgaben schon relativ laut, aber das ist bei der Preisklasse zu verzeihen. Ansonsten kann ich das Teil nur empfehlen, gutes Preis-Leistungs-Verhältnis und macht optisch auch ne gute Figur im Büro. 👍",
+    "product_category": "laptop",
+    "true_sentiment": "positive",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_044",
+    "text": "Bin echt enttäuscht von diesem Smartphone. Nach knapp zwei Monaten ist der Akku schon am Ende, hält kaum noch nen halben Tag ohne dass ich das Handy überhaupt viel benutze. Zusätzlich hat das Display links oben nen toten Pixel, der einfach nicht weggeht egal was ich probiere. Der Kundenservice hat sich bisher auch nicht wirklich gemeldet, obwohl ich schon zweimal ne Mail geschickt hab. Das Gerät wird außerdem beim Laden richtig heiß, das macht mir schon ein bisschen Sorgen wegen der Sicherheit. Für den Preis hätte ich definitiv mehr erwartet, echt schade weil die Kamera an sich ganz okay ist. Würde es aktuell nicht mehr kaufen und auch niemandem empfehlen der zuverlässige Technik sucht.",
+    "product_category": "smartphone",
+    "true_sentiment": "negative",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_045",
+    "text": "Das Tablet war eigentlich für die Kinder gedacht zum Lernen, aber es läuft schon nach kurzer Zeit total laggy. Selbst einfache Apps brauchen ewig zum Laden und manchmal friert der ganze Bildschirm für paar Sekunden ein. Der Speicher ist auch viel zu knapp bemessen, nach ein paar installierten Apps war schon fast alles voll. Hab versucht ne SD-Karte einzusetzen, aber das hat auch nicht wirklich geholfen mit der Performance. Der Kundendienst war leider auch keine Hilfe, die haben nur Standard-Antworten geschickt ohne wirklich auf mein Problem einzugehen. Verarbeitung fühlt sich zudem billig an, das Gehäuse hat schon nach 2 Wochen erste Gebrauchsspuren obwohl es kaum benutzt wurde. Kann das Ding echt nicht empfehlen, hab schon von Kollegen gehört die ähnliche Probleme hatten.",
+    "product_category": "tablet",
+    "true_sentiment": "negative",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_046",
+    "text": "Die Kamera macht wirklich tolle Fotos, besonders bei Tageslicht sind die Aufnahmen super scharf und die Farben wirken richtig lebendig. Auch das Bokeh bei Portraits sieht professionell aus, da hat sich der Hersteller echt Mühe gegeben. Leider ist der Akku ne Enttäuschung, nach ca 200 Fotos ist meistens schon Feierabend und man muss wieder ans Ladegerät. Auch das Menü ist am Anfang total verwirrend, ich hab ne Weile gebraucht um alle Funktionen zu finden weil vieles nicht selbsterklärend ist. Bei wenig Licht wird das Rauschen dann auch ziemlich sichtbar, was für ne Kamera in dieser Preisklasse schon etwas schwach ist. Insgesamt würde ich sagen: gute Bildqualität bei Tag, aber sonst noch Luft nach oben bei Akku und Bedienung. Für Hobbyfotografen die hauptsächlich draußen unterwegs sind vielleicht okay, für alle anderen eher schwierig.",
+    "product_category": "camera",
+    "true_sentiment": "mixed",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_047",
+    "text": "Also die Kopfhörer sind jetzt nicht schlecht, aber auch nicht überragend würd ich sagen. Der Klang ist in Ordnung, für den Alltag völlig ausreichend, aber Bass-Fans werden vielleicht enttäuscht sein weil da nicht viel kommt. Die Verarbeitung wirkt solide, nix was gleich auseinanderfällt, aber auch nix besonders Hochwertiges. Bluetooth-Verbindung funktioniert meistens problemlos, hin und wieder gibt's mal ne kurze Unterbrechung wenn man sich weiter vom Handy entfernt. Akkulaufzeit liegt bei ca 15 Stunden was okay ist aber auch nicht überragend im Vergleich zu anderen Modellen. Die Ohrpolster sind angenehm weich, kann man auch länger tragen ohne dass es unangenehm wird. Preis-Leistung ist meiner Meinung nach so mittelmäßig, man bekommt was fürs Geld aber Höhepunkte gibt's auch keine. Kann man kaufen wenn man grad was Günstiges braucht, muss man aber nicht.",
+    "product_category": "headphones",
+    "true_sentiment": "neutral",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_048",
+    "text": "Absolute Katastrophe dieser Laptop. Nach nur 4 Monaten ist das Netzteil kaputt gegangen und der Support wollte mir erstmal nicht helfen weil angeblich meine Garantie schon abgelaufen war, obwohl das definitiv nicht stimmt laut Rechnung. Zusätzlich fängt die Tastatur schon an zu spinnen, manche Tasten reagieren gar nicht mehr richtig besonders das E und das N, echt nervig beim Schreiben. Der Lüfter läuft außerdem ständig auf Hochtouren selbst bei ganz einfachen Aufgaben wie Word oder Browser, dabei wird das Gerät auch richtig warm am Gehäuse. Nach nem Update hat sich sogar das ganze System aufgehängt und ich musste alles neu aufsetzen, dabei sind mir auch Daten verloren gegangen weil ich kein Backup hatte. Für den Preis den ich bezahlt hab ist das echt ne Frechheit, hätte lieber mehr recherchiert bevor ich das Ding gekauft hab. Absolut keine Kaufempfehlung von mir, Finger weg!!",
+    "product_category": "laptop",
+    "true_sentiment": "negative",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_049",
+    "text": "Bin echt hin und weg von diesem Smartphone! Die Kamera macht bombastische Fotos, sogar bei schlechtem Licht kommt noch richtig viel Detail raus. Der Akku hält problemlos den ganzen Tag durch, selbst bei intensiver Nutzung mit viel Social Media und Streaming. Performance ist top, keine Ruckler egal welche App ich öffne, sogar aufwendige Spiele laufen butterweich. Das Design fühlt sich hochwertig an, liegt gut in der Hand und sieht auch optisch echt schick aus. Displayqualität ist ebenfalls top, satte Farben und gute Helligkeit auch bei Sonnenschein draußen. Kann das Handy echt jedem empfehlen der auf der Suche nach nem zuverlässigen Alltagsgerät ist ohne Kompromisse. Bester Kauf seit langem für mich! 📱✨",
+    "product_category": "smartphone",
+    "true_sentiment": "positive",
+    "length_category": "medium"
+  },
+  {
+    "review_id": "de_050",
+    "text": "Nach mehreren Wochen intensiver Nutzung möchte ich hier mal ein ausführliches Fazit zu meiner neuen Kamera geben. Zunächst zur Bildqualität: Die ist wirklich beeindruckend, gerade bei Tageslicht liefert die Kamera gestochen scharfe Aufnahmen mit lebendigen Farben, die man sonst nur von deutlich teureren Modellen kennt. Auch die Videofunktion überzeugt, 4K-Aufnahmen sehen richtig professionell aus und die Stabilisierung funktioniert erstaunlich gut selbst bei Bewegung. Die Verarbeitung ist ebenfalls top, das Gehäuse fühlt sich robust an und liegt gut in der Hand, auch für längere Fotosessions. Jetzt zu den Schattenseiten: Der Akku ist leider eine ziemliche Enttäuschung. Nach etwa 150-200 Fotos oder 30 Minuten Videoaufnahme ist meistens schon Schluss, was für ausgedehnte Fototouren echt unpraktisch ist. Man sollte also definitiv einen Ersatzakku einplanen wenn man länger unterwegs sein möchte. Auch das Menü ist am Anfang etwas gewöhnungsbedürftig, es gibt sehr viele Einstellungsmöglichkeiten, was zwar für Profis toll ist, aber für Einsteiger schnell überfordernd wirken kann. Ich hab locker ne Woche gebraucht um alle wichtigen Funktionen zu verstehen und richtig zu nutzen. Bei schwachem Licht wird außerdem das Bildrauschen sichtbar, was bei diesem Preisniveau etwas schade ist, aber insgesamt noch im akzeptablen Rahmen bleibt. Trotz dieser kleinen Kritikpunkte würde ich die Kamera weiterempfehlen, gerade für ambitionierte Hobbyfotografen die bereit sind sich etwas einzuarbeiten. Die Bildqualität rechtfertigt für mich persönlich die kleinen Schwächen bei Akku und Bedienung, aber man sollte definitiv wissen worauf man sich einlässt bevor man kauft.",
+    "product_category": "camera",
+    "true_sentiment": "mixed",
+    "length_category": "long"
+  }
+]
