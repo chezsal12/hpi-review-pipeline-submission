@@ -33,3 +33,33 @@
 - Test data includes edge cases: slang, emojis, typos
   
 
+## Day 2 - 2026-08-16
+  
+### Completed
+- ✅ Tested Amazon Translate with French and German reviews
+- ✅ Translation quality verified (good accuracy)
+- ✅ Cost estimate: $1.20 for 100 reviews 
+- ✅ Developed TranslateLambda (translate to English)
+- ✅ Developed SummarizeLambda (Claude-powered summaries)
+- ✅ Developed LocalizeLambda (translate back to source language)
+- ✅ Developed QualityGateLambda (semantic + rule-based checks)
+- ✅ All Lambda functions tested locally
+  
+### Lambda Functions Summary
+- **TranslateLambda**: Source language → English
+- **SummarizeLambda**: English review → 1-2 sentence summary (Claude Sonnet 5)
+- **LocalizeLambda**: English summary → source language
+- **QualityGateLambda**: Validates summary quality (length, sentences, semantics)
+  
+### Next Steps (Day 3)
+- Create CDK infrastructure stack
+- Deploy Lambda functions to AWS
+- Create Step Functions state machine
+- Test end-to-end pipeline with sample reviews
+  
+### Notes
+- Fixed temperature parameter issue with Claude Sonnet 5
+- Model used: us.anthropic.claude-sonnet-5 (inference profile)
+- All functions use pass-through pattern (add fields, return full event)
+  
+
