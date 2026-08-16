@@ -1,42 +1,30 @@
-import boto3
-import json
-  
-translate = boto3.client('translate')
-  
+"""
+TranslateLambda entry point.
+
+Thin adapter: parses the event, delegates to the service layer, and
+returns the enriched event (pass-through pattern).
+"""
+from translate_service import translate_review
+
+
 def handler(event, context):
     """
-    Translate review from source language to English.
-      
-    Input event:
-    {
-        "review_id": "fr_001",
-        "text": "review text in French...",
-        "source_language": "fr",
-        "product_category": "headphones",
-        "true_sentiment": "positive"
-    }
-      
-    Returns: same fields + translated_text
+    Translate a review from its source language to English.
+
+    Input event requires 'text' and 'source_language'.
+    Returns: the full event with a 'translated_text' field added.
     """
     try:
         review_text = event['text']
         source_lang = event['source_language']
-  
-        # Translate to English
-        response = translate.translate_text(
-            Text=review_text,
-            SourceLanguageCode=source_lang,
-            TargetLanguageCode='en'
-        )
-  
-        # Add translation to event
-        result = {
+
+        translated_text = translate_review(review_text, source_lang)
+
+        return {
             **event,
-            'translated_text': response['TranslatedText']
+            'translated_text': translated_text
         }
-  
-        return result
-  
+
     except Exception as e:
         print(f"Translation error: {str(e)}")
         raise

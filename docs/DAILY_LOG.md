@@ -38,7 +38,9 @@
 ### Completed
 - ✅ Tested Amazon Translate with French and German reviews
 - ✅ Translation quality verified (good accuracy)
-- ✅ Cost estimate: $1.20 for 100 reviews 
+- ✅ Cost estimate: ~$1.20 for 100 reviews (rough field measure). Full
+  per-service breakdown, assumptions, trade-offs, and demo/pilot/production
+  scale projections documented in [COST_ANALYSIS.md](COST_ANALYSIS.md).
 - ✅ Developed TranslateLambda (translate to English)
 - ✅ Developed SummarizeLambda (Claude-powered summaries)
 - ✅ Developed LocalizeLambda (translate back to source language)

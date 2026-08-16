@@ -1,12 +1,27 @@
-import boto3
+"""
+LocalizeLambda entry point.
 
-translate = boto3.client('translate')
+Thin adapter: parses the event, delegates to the service layer, and
+returns the enriched event (pass-through pattern).
+"""
+from localize_service import localize_summary
+
 
 def handler(event, context):
-	summary = event['summary_english']
-	target_lang = event['source_language']
-	response = translate.translate_text(Text=summary, SourceLanguageCode='en', TargetLanguageCode=target_lang)
-	result = event.copy()
-	result['summary_localized'] = response['TranslatedText']
-	return result
+    """
+    Localize the English summary back into the review's source language.
 
+    Input requires 'summary_english' and 'source_language'.
+    Returns: the full event with a 'summary_localized' field added.
+    """
+    try:
+        summary = event['summary_english']
+        target_lang = event['source_language']
+
+        result = event.copy()
+        result['summary_localized'] = localize_summary(summary, target_lang)
+        return result
+
+    except Exception as e:
+        print(f"Localization error: {str(e)}")
+        raise

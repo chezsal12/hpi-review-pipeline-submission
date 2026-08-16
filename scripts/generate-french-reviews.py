@@ -1,14 +1,29 @@
-import boto3
-from botocore.config import Config
+"""
+Generate synthetic French product reviews via Amazon Bedrock (Claude) and
+append them to test-data/reviews-french.json. Run from the scripts/ dir.
+
+Shared Bedrock/file-I/O logic lives in script_utils; this file only holds
+the language-specific prompt, paths, and review-ID prefix.
+"""
 import json
-  
-bedrock = boto3.client('bedrock-runtime', region_name='us-east-1',
-                         config=Config(read_timeout=180))
-  
-prompt = """Generate 10 realistic French product reviews for consumer electronics.
-  
+import sys
+
+from script_utils import (
+    extract_content,
+    invoke_model,
+    read_json_file,
+    write_json_file,
+    write_text_file,
+)
+
+REVIEWS_PATH = '../test-data/reviews-french.json'
+DEBUG_CONTENT_PATH = '../test-data/debug-content.txt'
+ID_PREFIX = 'fr'
+
+PROMPT = """Generate 10 realistic French product reviews for consumer electronics.
+
 Products: headphones, laptops, smartphones, tablets, cameras, smartwatches
-  
+
 Requirements:
   - Sentiments: 4 positive, 3 negative, 2 mixed, 1 neutral
   - Lengths: 2 short (50-100 words), 5 medium (100-200 words), 2 long (200-400 words)
@@ -16,7 +31,7 @@ Requirements:
   - Add realistic complaints: battery life, sound quality, screen issues, durability
   - Include typos and colloquialisms
   - Some with emojis or special characters
-  
+
 Format as JSON array:
 [
    {
@@ -28,54 +43,42 @@ Format as JSON array:
       "length_category": "medium"
    }
  ]
-  
+
 Output ONLY valid JSON, no markdown code blocks."""
-  
-print("Generating French reviews...")
-response = bedrock.invoke_model(
-    modelId='us.anthropic.claude-sonnet-5',
-    body=json.dumps({
-        "anthropic_version": "bedrock-2023-05-31",
-        "max_tokens": 10000,
-        "messages": [{"role": "user", "content": prompt}]
-    })
-)
-  
-result = json.loads(response['body'].read())
-print("DEBUG - Full result:", json.dumps(result, indent=2))
-content = None
-for block in result['content']:
-      if block['type'] == 'text':
-          content = block['text']
-          break
 
 
-with open('../test-data/debug-content.txt', 'w', encoding='utf-8') as f:
-    f.write(content)
-print(f"Content length: {len(content)} characters")
-print(f"First 100 chars: {content[:100]}")
-print(f"Last 100 chars: {content[-100:]}")
-  
-reviews = json.loads(content)
-  
-import os
-existing_reviews = []
-if os.path.exists('../test-data/reviews-french.json'):
-    with open('../test-data/reviews-french.json', 'r', encoding='utf-8') as f:
-        existing_reviews = json.load(f)
-    print(f"Found {len(existing_reviews)} existing reviews")
-  
-# Append new reviews with updated IDs
-start_id = len(existing_reviews) + 1
-for i, review in enumerate(reviews):
-    review['review_id'] = f"fr_{start_id + i:03d}"
-  
-all_reviews = existing_reviews + reviews
-  
-# Save combined reviews
-with open('../test-data/reviews-french.json', 'w', encoding='utf-8') as f:
-    json.dump(all_reviews, f, indent=2, ensure_ascii=False)
-  
-print(f"Generated {len(reviews)} new French reviews, total now: {len(all_reviews)}")
-for r in reviews[:3]:
-    print(f"  - {r['review_id']}: {r['text'][:60]}...")
+def main():
+    print("Generating French reviews...")
+    result = invoke_model(PROMPT)
+
+    content = extract_content(result)
+    write_text_file(DEBUG_CONTENT_PATH, content)
+    print(f"Content length: {len(content)} characters")
+    print(f"First 100 chars: {content[:100]}")
+    print(f"Last 100 chars: {content[-100:]}")
+
+    try:
+        reviews = json.loads(content)
+    except json.JSONDecodeError as e:
+        print(f"Model did not return valid JSON reviews: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    existing_reviews = read_json_file(REVIEWS_PATH, default=[])
+    if existing_reviews:
+        print(f"Found {len(existing_reviews)} existing reviews")
+
+    # Append new reviews with updated IDs
+    start_id = len(existing_reviews) + 1
+    for i, review in enumerate(reviews):
+        review['review_id'] = f"{ID_PREFIX}_{start_id + i:03d}"
+
+    all_reviews = existing_reviews + reviews
+    write_json_file(REVIEWS_PATH, all_reviews)
+
+    print(f"Generated {len(reviews)} new French reviews, total now: {len(all_reviews)}")
+    for r in reviews[:3]:
+        print(f"  - {r['review_id']}: {r['text'][:60]}...")
+
+
+if __name__ == '__main__':
+    main()

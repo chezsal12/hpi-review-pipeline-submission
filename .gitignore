@@ -1,7 +1,10 @@
-  node_modules/
-  cdk.out/
-  .env
-  *.pyc
-  __pycache__/
-  .DS_Store
-  *.zip
+node_modules/
+cdk.out/
+.env
+*.pyc
+__pycache__/
+.DS_Store
+*.zip
+.venv/
+.pytest_cache/
+.holmes/
