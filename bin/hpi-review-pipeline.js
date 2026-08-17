@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("source-map-support/register");
+const cdk = require("aws-cdk-lib");
+const hpi_review_pipeline_stack_1 = require("../lib/hpi-review-pipeline-stack");
+const app = new cdk.App();
+new hpi_review_pipeline_stack_1.HpiReviewPipelineStack(app, 'HpiReviewPipelineStack', {
+    env: {
+        // Resolve from the deploying principal's credentials at synth time.
+        // CDK_DEFAULT_ACCOUNT / CDK_DEFAULT_REGION are populated by the CDK CLI;
+        // fall back to standard AWS env vars, defaulting region to us-east-1.
+        account: process.env.CDK_DEFAULT_ACCOUNT,
+        region: process.env.CDK_DEFAULT_REGION || process.env.AWS_REGION || 'us-east-1',
+    },
+    description: 'International Review Translation & Summarization Pipeline'
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaHBpLXJldmlldy1waXBlbGluZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImhwaS1yZXZpZXctcGlwZWxpbmUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQ0EsdUNBQXFDO0FBQ3JDLG1DQUFtQztBQUNuQyxnRkFBMEU7QUFFMUUsTUFBTSxHQUFHLEdBQUcsSUFBSSxHQUFHLENBQUMsR0FBRyxFQUFFLENBQUM7QUFDMUIsSUFBSSxrREFBc0IsQ0FBQyxHQUFHLEVBQUUsd0JBQXdCLEVBQUU7SUFDeEQsR0FBRyxFQUFFO1FBQ0gsb0VBQW9FO1FBQ3BFLHlFQUF5RTtRQUN6RSxzRUFBc0U7UUFDdEUsT0FBTyxFQUFFLE9BQU8sQ0FBQyxHQUFHLENBQUMsbUJBQW1CO1FBQ3hDLE1BQU0sRUFBRSxPQUFPLENBQUMsR0FBRyxDQUFDLGtCQUFrQixJQUFJLE9BQU8sQ0FBQyxHQUFHLENBQUMsVUFBVSxJQUFJLFdBQVc7S0FDaEY7SUFDRCxXQUFXLEVBQUUsMkRBQTJEO0NBQ3pFLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIiMhL3Vzci9iaW4vZW52IG5vZGVcbmltcG9ydCAnc291cmNlLW1hcC1zdXBwb3J0L3JlZ2lzdGVyJztcbmltcG9ydCAqIGFzIGNkayBmcm9tICdhd3MtY2RrLWxpYic7XG5pbXBvcnQgeyBIcGlSZXZpZXdQaXBlbGluZVN0YWNrIH0gZnJvbSAnLi4vbGliL2hwaS1yZXZpZXctcGlwZWxpbmUtc3RhY2snO1xuICBcbmNvbnN0IGFwcCA9IG5ldyBjZGsuQXBwKCk7XG5uZXcgSHBpUmV2aWV3UGlwZWxpbmVTdGFjayhhcHAsICdIcGlSZXZpZXdQaXBlbGluZVN0YWNrJywge1xuICBlbnY6IHtcbiAgICAvLyBSZXNvbHZlIGZyb20gdGhlIGRlcGxveWluZyBwcmluY2lwYWwncyBjcmVkZW50aWFscyBhdCBzeW50aCB0aW1lLlxuICAgIC8vIENES19ERUZBVUxUX0FDQ09VTlQgLyBDREtfREVGQVVMVF9SRUdJT04gYXJlIHBvcHVsYXRlZCBieSB0aGUgQ0RLIENMSTtcbiAgICAvLyBmYWxsIGJhY2sgdG8gc3RhbmRhcmQgQVdTIGVudiB2YXJzLCBkZWZhdWx0aW5nIHJlZ2lvbiB0byB1cy1lYXN0LTEuXG4gICAgYWNjb3VudDogcHJvY2Vzcy5lbnYuQ0RLX0RFRkFVTFRfQUNDT1VOVCxcbiAgICByZWdpb246IHByb2Nlc3MuZW52LkNES19ERUZBVUxUX1JFR0lPTiB8fCBwcm9jZXNzLmVudi5BV1NfUkVHSU9OIHx8ICd1cy1lYXN0LTEnLFxuICB9LFxuICBkZXNjcmlwdGlvbjogJ0ludGVybmF0aW9uYWwgUmV2aWV3IFRyYW5zbGF0aW9uICYgU3VtbWFyaXphdGlvbiBQaXBlbGluZSdcbn0pO1xuXG4iXX0=
