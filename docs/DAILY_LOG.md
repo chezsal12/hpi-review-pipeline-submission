@@ -65,3 +65,39 @@
 - All functions use pass-through pattern (add fields, return full event)
   
 
+## Day 4 - 2026-08-17
+  
+### Completed
+- ✅ Installed AWS CDK v2.1136.0
+- ✅ Created CDK TypeScript project structure
+- ✅ Defined all 4 Lambda functions with proper IAM roles and permissions
+- ✅ Created Step Functions state machine workflow definition
+- ✅ Added S3 data bucket with security hardening (HTTPS-only, block public access, encryption, access logging)
+- ✅ Packaged Lambda deployment artifacts (translate.zip, summarize.zip, localize.zip, quality-gate.zip)
+- ✅ CDK stack compiles and synthesizes successfully
+- ✅ Holmes CDE scan: 0 HIGH findings (gate passed)
+- ✅ Fixed hardcoded account ID (now uses CDK_DEFAULT_ACCOUNT)
+  
+### Deployment Status 
+- **Code Ready:** CDK infrastructure code complete and validated
+- **Blocked:** Cannot deploy to AWS account 248062189474
+- **Root Cause:** PEP cross-account role lacks IAM permissions
+- **Required Permissions:** `iam:CreateRole`, `iam:AttachRolePolicy`, `iam:PassRole`, `iam:GetRole`
+- **Next Steps:** Request PEP role permissions update from AWS account admin
+  
+### Technical Details
+- CDK Stack: `HpiReviewPipelineStack`
+- Account: 248062189474 (resolved from environment)
+- Region: us-east-1
+- Lambda Runtime: Python 3.13
+- State Machine: Sequential pipeline (Translate → Summarize → Localize → QualityGate)
+  
+### Blockers
+- PEP cross-account role cannot create/manage IAM roles needed for Lambda execution
+- Affects all deployment methods: CDK, CloudFormation, Console manual creation
+  
+### Next Steps (Day 5)
+- Request PEP IAM permission updates
+- OR deploy to alternative AWS account with full admin access
+- Once permissions resolved: cdk bootstrap && cdk deploy
+- End-to-end testing with sample reviews
