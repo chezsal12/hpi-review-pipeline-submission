@@ -52,7 +52,7 @@ import * as path from 'path';
       resources: ['*'],
     }));
   
-    // Lambda: Summarize
+    // Lambda: Summarize (shared/ directory copied into function dir for deployment)
     const summarizeFn = new lambda.Function(this, 'SummarizeFn', {
       runtime: lambda.Runtime.PYTHON_3_13,
       handler: 'handler.handler',
@@ -78,7 +78,7 @@ import * as path from 'path';
       resources: ['*'],
     }));
   
-    // Lambda: Quality Gate
+    // Lambda: Quality Gate (shared/ directory copied into function dir for deployment)
     const qualityGateFn = new lambda.Function(this, 'QualityGateFn', {
       runtime: lambda.Runtime.PYTHON_3_13,
       handler: 'handler.handler',

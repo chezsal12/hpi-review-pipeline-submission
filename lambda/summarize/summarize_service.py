@@ -42,12 +42,14 @@ Generate a concise 1-2 sentence summary that captures:
 2. Key product aspects mentioned (e.g., battery, sound quality, build)
 3. Main reason for the rating
 
-Requirements:
-- Exactly {MIN_SENTENCES}-{MAX_SENTENCES} sentences
-- {MIN_WORDS}-{MAX_WORDS} words total
+CRITICAL Requirements:
+- MUST be exactly {MIN_SENTENCES}-{MAX_SENTENCES} sentences
+- MUST be between {MIN_WORDS}-{MAX_WORDS} words total
+- If approaching {MAX_WORDS} words, prioritize brevity over detail
 - Factual and specific
 - No promotional language
 - Clear sentiment indicator
+- Output ONLY the summary text, nothing else
 
 Summary:"""
 

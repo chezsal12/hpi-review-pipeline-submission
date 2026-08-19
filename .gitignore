@@ -8,3 +8,7 @@ __pycache__/
 .venv/
 .pytest_cache/
 .holmes/
+
+# Copied bedrock_utils in Lambda functions (not source, copied from shared/ for deployment)
+lambda/summarize/bedrock_utils.py
+lambda/quality-gate/bedrock_utils.py

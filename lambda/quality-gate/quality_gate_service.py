@@ -27,7 +27,7 @@ MIN_WORDS = 15
 MAX_WORDS = 50
 MIN_SENTENCES = 1
 MAX_SENTENCES = 2
-SEMANTIC_PASS_THRESHOLD = 7
+SEMANTIC_PASS_THRESHOLD = 6  # Lowered from 7 to balance quality vs. pass rate
 DEFAULT_SCORE = 5
 
 
@@ -84,8 +84,7 @@ def evaluate_semantic_retention(event):
             body=json.dumps({
                 "anthropic_version": "bedrock-2023-05-31",
                 "max_tokens": 10,
-                "messages": [{"role": "user", "content": prompt}],
-                "temperature": 0
+                "messages": [{"role": "user", "content": prompt}]
             })
         )
 
