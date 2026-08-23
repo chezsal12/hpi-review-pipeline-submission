@@ -93,6 +93,36 @@
 - Efficient translation character counts
 - Lower Bedrock token usage than projected
 
+### Cost Assumptions
+
+**Pricing (as of August 2026, us-east-1):**
+- Amazon Translate: $15/million characters
+- Amazon Bedrock Claude Sonnet 5: $3/million input tokens, $15/million output tokens
+- AWS Lambda: $0.20/million requests + $0.0000166667/GB-second
+- Step Functions: $0.025/1000 state transitions
+
+**Review Assumptions:**
+- Average review length: 150 words (750 characters)
+- Summary length: 15-50 words (avg 32 words, ~200 characters)
+- Translation: Source → English → Summary → Source (2 translations per review)
+- LLM calls: 2 per review (summarize + quality gate)
+
+### Cost Trade-offs
+
+**Model Selection:**
+- **Claude Sonnet 5** chosen for summarization over Haiku for quality (semantic accuracy > speed/cost)
+- Trade-off: 3x cost vs Haiku, but 89% pass rate vs estimated 60-70% with Haiku
+- Rationale: Failed reviews require manual review, offsetting Haiku savings
+
+**Translation Strategy:**
+- **Amazon Translate** vs custom models: Simpler, no training overhead, consistent quality
+- Trade-off: Higher per-character cost vs self-managed, but lower operational complexity
+- 78% of total cost, but eliminates ML Ops burden
+
+**Architecture:**
+- **Step Functions** orchestration vs direct Lambda chaining: Better visibility, retry logic, state management
+- Trade-off: 15% of cost vs near-zero for Lambda-to-Lambda, but production-grade observability
+
 ---
 
 ## 4. Key Findings

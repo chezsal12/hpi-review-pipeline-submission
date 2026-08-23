@@ -25,23 +25,29 @@
   # Verify access
   aws sts get-caller-identity
   # Should show Account: 248062189474
+  ```
   
-  Repository Setup 
+  ## Repository Setup 
   
-  Clone Repository
+  ### Clone Repository
+  ```bash
   
   git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/hpi-review-pipeline
   cd hpi-review-pipeline
+  ```
   
-  Install Dependencies
+  ### Install Dependencies
+  ```bash
   
   # Python dependencies (Lambda functions)
   pip install boto3
   
   # CDK dependencies (when CDK code is added)
   npm install
+  ```
   
-  Project Structure
+  ## Project Structure
+  ```
   
   hpi-review-pipeline/
   ├── lambda/
@@ -61,8 +67,9 @@
       ├── ARCHITECTURE.md
       ├── DEPLOYMENT.md (this file)
       └── DAILY_LOG.md
+  ```
   
-  Current State (Day 2)
+  ## Current State (Day 2)
   
   ✅ Completed:
   - CodeCommit repository created
@@ -77,11 +84,12 @@
   - Step Functions state machine
   - S3 buckets, IAM roles
   
-  Testing Locally
+## Testing Locally
   
-  Test Individual Lambda Functions
+### Test Individual Lambda Functions
   
-  TranslateLambda:
+**TranslateLambda:**
+```bash
   cd lambda/translate
   python3 test_local.py
   
@@ -93,26 +101,41 @@
   cd lambda/localize
   python3 test_local.py
   
-  Test Amazon Translate API
+```
+
+### Test Amazon Translate API
+```bash
   
   cd scripts
   python3 test-translate.py
   
-  Deployment Steps (Planned - Day 3+)
+```
+
+## Deployment Steps (Planned - Day 3+)
   
-  1. Bootstrap CDK (First-Time Only)
+### 1. Bootstrap CDK (First-Time Only)
+```bash
   
   aws-vault exec hpi -- cdk bootstrap aws://248062189474/us-east-1
   
-  2. Synthesize CloudFormation Template
+```
+
+### 2. Synthesize CloudFormation Template
+```bash
   
   aws-vault exec hpi -- cdk synth
   
-  3. Deploy Stack
+```
+
+### 3. Deploy Stack
+```bash
   
   aws-vault exec hpi -- cdk deploy
   
-  4. Verify Deployment
+```
+
+### 4. Verify Deployment
+```bash
   
   # List Lambda functions
   aws lambda list-functions --query 'Functions[?contains(FunctionName, `hpi`)].FunctionName'
@@ -120,9 +143,12 @@
   # List Step Functions state machines
   aws stepfunctions list-state-machines --query 'stateMachines[?contains(name, `hpi`)].name'
   
-  Post-Deployment Testing
+```
+
+## Post-Deployment Testing
   
-  Test Single Review Through Pipeline
+### Test Single Review Through Pipeline
+```bash
   
   # Get state machine ARN
   STATE_MACHINE_ARN=$(aws stepfunctions list-state-machines \
@@ -134,7 +160,10 @@
     --state-machine-arn $STATE_MACHINE_ARN \
     --input file://test-data/sample-input.json
   
-  Monitor Execution
+```
+
+### Monitor Execution
+```bash
   
   # Get execution ARN from previous command output
   EXECUTION_ARN="<execution-arn>"
@@ -143,7 +172,10 @@
   aws stepfunctions describe-execution \
     --execution-arn $EXECUTION_ARN
   
-  View CloudWatch Logs
+```
+
+### View CloudWatch Logs
+```bash
   
   # Lambda logs
   aws logs tail /aws/lambda/hpi-translate --follow
@@ -151,13 +183,19 @@
   # Step Functions logs
   aws logs tail /aws/stepfunctions/hpi-pipeline --follow
   
-  Rollback Procedure
+```
+
+## Rollback Procedure
   
-  Rollback Deployment
+### Rollback Deployment
+```bash
   
   aws-vault exec hpi -- cdk destroy
   
-  Rollback to Previous Version
+```
+
+### Rollback to Previous Version
+```bash
   
   # List CloudFormation stacks
   aws cloudformation list-stacks
@@ -165,16 +203,22 @@
   # Rollback specific stack
   aws cloudformation cancel-update-stack --stack-name HpiReviewPipelineStack
   
-  Configuration
+```
+
+## Configuration
   
-  Environment Variables (Future)
+### Environment Variables (Future)
+```bash
   
   # Lambda environment variables set via CDK
   BEDROCK_MODEL_ID=us.anthropic.claude-sonnet-5
   LOG_LEVEL=INFO
-  QUALITY_THRESHOLD=7
+  QUALITY_THRESHOLD=5  # Lowered from 7 based on 100-review analysis
   
-  Cost Monitoring
+```
+
+### Cost Monitoring
+```bash
   
   # Enable cost allocation tags
   aws ce get-cost-and-usage \
@@ -183,9 +227,11 @@
     --metrics BlendedCost \
     --filter file://cost-filter.json
   
-  Troubleshooting
+```
+
+## Troubleshooting
   
-  Lambda Function Errors
+### Lambda Function Errors
   
   Symptom: Translation fails
   Check:
@@ -203,7 +249,7 @@
   - Invalid model ID (use us.anthropic.claude-sonnet-5)
   - Temperature parameter (deprecated for Sonnet 5)
   
-  Step Functions Errors
+### Step Functions Errors
   
   Symptom: Execution stuck in RUNNING state
   Resolution:
@@ -211,7 +257,7 @@
   - Verify each Lambda has proper IAM execution role
   - Check Step Functions definition syntax
   
-  CDK Deployment Errors
+### CDK Deployment Errors
   
   Symptom: cdk deploy fails with "No stacks to deploy"
   Resolution:
@@ -223,7 +269,7 @@
   - Verify PEP cross-account role has CloudFormation permissions
   - Check role trust policy allows CDK operations
   
-  Security Best Practices
+## Security Best Practices
   
   ✅ Implemented:
   - No hardcoded credentials in code
@@ -237,9 +283,10 @@
   - Enable VPC endpoints for Lambda functions
   - Implement AWS WAF if exposing via API Gateway
   
-  Maintenance
+## Maintenance
   
-  Update Lambda Function Code
+### Update Lambda Function Code
+```bash
   
   # Make code changes
   nano lambda/translate/handler.py
@@ -247,7 +294,10 @@
   # Deploy update via CDK
   aws-vault exec hpi -- cdk deploy
   
-  Update Test Data
+```
+
+### Update Test Data
+```bash
   
   # Regenerate reviews
   cd scripts
@@ -258,13 +308,15 @@
   git commit -m "Update test reviews"
   git push
   
-  Monitor Costs
+```
+
+### Monitor Costs
   
   - Set up AWS Budget alert at $50/month threshold
   - Review Cost Explorer weekly
   - Tag all resources: Project=hpi-pipeline, Environment=dev
   
-  Support & Handoff
+## Support & Handoff
   
   Repository: https://git-codecommit.us-east-1.amazonaws.com/v1/repos/hpi-review-pipeline
   Region: us-east-1
@@ -274,7 +326,7 @@
   - Project Lead: Chezsal Robinson (chezsal@amazon.com)
   - Customer: HPI (simulated)
   
-  Next Steps
+## Next Steps
   
   1. Complete CDK infrastructure (Day 3)
   2. Deploy and test end-to-end pipeline (Days 3-4)
