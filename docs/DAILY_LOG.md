@@ -262,3 +262,11 @@ Service breakdown:
 - Fixed: S3 bucket versioning, cost documentation (assumptions + trade-offs), markdown formatting
 - Iterations: 7 HIGH → 2 HIGH (indentation) → 1 HIGH (ARCHITECTURE.md costs) → 0 HIGH
 - Remaining: 3 LOW informational findings (account IDs, access logging note) - do not block certification
+
+### Deployment to AWS
+- **Status: ✅ Deployed successfully**
+- Updated CDK stack with S3 versioning in CloudShell
+- Deployment time: 91.4s
+- S3 buckets now have versioning enabled (compliant with CDE requirements)
+- Live infrastructure matches CDE-certified source code
+- State machine: arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline
