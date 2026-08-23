@@ -37,11 +37,12 @@ def build_prompt(translated_text):
 
 Review: {translated_text}
 
+  
 Generate a concise 1-2 sentence summary that captures:
 1. Overall sentiment (positive/negative/mixed)
 2. Key product aspects mentioned (e.g., battery, sound quality, build)
 3. Main reason for the rating
-
+  
 CRITICAL Requirements:
 - MUST be exactly {MIN_SENTENCES}-{MAX_SENTENCES} sentences
 - MUST be between {MIN_WORDS}-{MAX_WORDS} words total
@@ -50,7 +51,7 @@ CRITICAL Requirements:
 - No promotional language
 - Clear sentiment indicator
 - Output ONLY the summary text, nothing else
-
+  
 Summary:"""
 
 

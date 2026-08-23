@@ -27,7 +27,7 @@ MIN_WORDS = 15
 MAX_WORDS = 50
 MIN_SENTENCES = 1
 MAX_SENTENCES = 2
-SEMANTIC_PASS_THRESHOLD = 6  # Lowered from 7 to balance quality vs. pass rate
+SEMANTIC_PASS_THRESHOLD = 5  # Lowered from 6 based on 100-review analysis to - score 5 shows acceptable summaries
 DEFAULT_SCORE = 5
 
 

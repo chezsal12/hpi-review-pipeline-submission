@@ -10,7 +10,7 @@ from datetime import datetime
   
 # Configuration
 STATE_MACHINE_ARN = "arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline"
-BATCH_SIZE = 10  # 5 French + 5 German
+BATCH_SIZE = 100  # 50 French + 50 German
   
 sfn = boto3.client('stepfunctions', region_name='us-east-1')
   
@@ -22,7 +22,7 @@ def load_test_reviews():
         german = json.load(f)
   
     # Select first 5 of each
-    return french[:5] + german[:5]
+    return french + german
   
 def execute_review(review):
     """Execute a single review through the pipeline."""
