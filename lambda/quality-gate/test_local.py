@@ -4,32 +4,21 @@ Automated tests for QualityGateLambda.
 The semantic-retention scoring (Bedrock call) is mocked so the tests run
 offline with no AWS credentials. Rule-based checks are exercised directly.
 """
-import importlib.util
 import os
 import sys
 
 import pytest
+
+from conftest import load_handler_module
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:
     sys.path.insert(0, _HERE)
 
 
-def _load_handler_module():
-    """Load this directory's handler.py under a unique module name."""
-    if _HERE not in sys.path:
-        sys.path.insert(0, _HERE)
-    spec = importlib.util.spec_from_file_location(
-        "quality_gate_handler", os.path.join(_HERE, "handler.py")
-    )
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
-
-
 @pytest.fixture
 def handler_module():
-    return _load_handler_module()
+    return load_handler_module("quality_gate_handler", _HERE)
 
 
 def _sample_event(summary_localized):

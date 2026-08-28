@@ -66,6 +66,26 @@ CDK (recommended) or directly with the AWS CLI. `docs/DEPLOYMENT.md` has
 the full procedure plus rollback and troubleshooting; the self-contained
 steps below let a new engineer deploy end to end without any other file.
 
+### Configuration Reference
+
+Set the following before deploying. None are hardcoded in the CDK app —
+account and region come from your AWS environment, and the model profile
+is referenced by ID in the stack.
+
+| Parameter | Description | Default | Where to set |
+|-----------|-------------|---------|--------------|
+| `CDK_DEFAULT_ACCOUNT` | Target AWS account ID for the deployment | (from AWS credentials) | Environment variable / AWS profile |
+| `CDK_DEFAULT_REGION` | Target AWS region | `us-east-1` | Environment variable / `AWS_DEFAULT_REGION` |
+| `AWS_PROFILE` | Named credentials profile to deploy with | (none) | Environment variable / `aws configure` |
+| Bedrock inference profile ID | Claude model the summarize/quality stages invoke | `us.anthropic.claude-sonnet-5` | `lib/hpi-review-pipeline-stack.ts` (and per-stage `*_service.py` `MODEL_ID`) |
+| `STATE_MACHINE_ARN` | State machine ARN used by `scripts/batch-test-pipeline.py` | (none — required) | Environment variable, resolved at runtime (see Usage) |
+
+CDK resolves account and region from `CDK_DEFAULT_ACCOUNT` /
+`CDK_DEFAULT_REGION` (or your active profile) at synth time — see the
+[AWS CDK context documentation](https://docs.aws.amazon.com/cdk/v2/guide/context.html).
+Enable Bedrock model access for the Claude inference profile in the target
+region before deploying the summarize and quality-gate stages.
+
 ### Option A — AWS CDK (recommended)
 
 ```bash

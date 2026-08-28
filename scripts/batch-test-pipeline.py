@@ -5,13 +5,23 @@ Executes reviews through Step Functions and collects metrics.
 """
 import boto3
 import json
+import os
 import time
 from datetime import datetime
-  
+
 # Configuration
-STATE_MACHINE_ARN = "arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline"
-BATCH_SIZE = 100  # 50 French + 50 German
-  
+# State machine ARN must be supplied via environment so no account-specific
+# identifier is hardcoded in this script. Resolve it at deploy time, e.g.:
+#   export STATE_MACHINE_ARN=$(aws stepfunctions list-state-machines \
+#     --query "stateMachines[?name=='hpi-review-pipeline'].stateMachineArn" \
+#     --output text)
+STATE_MACHINE_ARN = os.environ.get('STATE_MACHINE_ARN')
+if not STATE_MACHINE_ARN:
+    raise SystemExit(
+        'STATE_MACHINE_ARN environment variable is required. '
+        'Set it to the hpi-review-pipeline state machine ARN before running.'
+    )
+
 sfn = boto3.client('stepfunctions', region_name='us-east-1')
   
 def load_test_reviews():

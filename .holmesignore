@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 cdk.out/
 node_modules/
+.protoshield/
+dashboard.json

@@ -1,12 +1,21 @@
 """
 Service layer for the localize stage.
 
-Holds the Amazon Translate client and localization business logic so the
-Lambda entry point (handler.py) stays a thin adapter.
+Holds the localization business logic so the Lambda entry point
+(handler.py) stays a thin adapter. The Amazon Translate client and
+translate_text call are delegated to the shared translate_utils helper so
+that logic lives in exactly one place.
 """
-import boto3
+import os
+import sys
 
-translate = boto3.client('translate', region_name='us-east-1')
+# Make the shared helpers importable both locally and when packaged
+# alongside this function.
+_SHARED = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'shared')
+if _SHARED not in sys.path:
+    sys.path.insert(0, _SHARED)
+
+from translate_utils import translate_text  # noqa: E402
 
 
 def localize_summary(summary, target_language, source_language='en'):
@@ -16,9 +25,4 @@ def localize_summary(summary, target_language, source_language='en'):
     Returns the localized string. Botocore exceptions propagate to the
     caller so the handler can log and surface a typed failure.
     """
-    response = translate.translate_text(
-        Text=summary,
-        SourceLanguageCode=source_language,
-        TargetLanguageCode=target_language
-    )
-    return response['TranslatedText']
+    return translate_text(summary, source_language, target_language)

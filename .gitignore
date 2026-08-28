@@ -13,3 +13,6 @@ __pycache__/
 lambda/summarize/bedrock_utils.py
 lambda/quality-gate/bedrock_utils.py
 .protoshield/
+
+# Generated deployment artifact (produced by scripts/generate-dashboard.py at deploy time)
+dashboard.json
