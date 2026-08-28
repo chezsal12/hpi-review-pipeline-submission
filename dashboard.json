@@ -1,0 +1,61 @@
+{
+  "widgets": [
+    {
+      "type": "metric",
+      "properties": {
+        "metrics": [
+          ["AWS/States", "ExecutionsFailed", "StateMachineArn", "arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline", {"stat": "Sum", "label": "Failed"}],
+          ["AWS/States", "ExecutionsSucceeded", "StateMachineArn", "arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline", {"stat": "Sum", "label": "Succeeded"}],
+          ["AWS/States", "ExecutionsStarted", "StateMachineArn", "arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline", {"stat": "Sum", "label": "Started"}]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "us-east-1",
+        "title": "Pipeline Executions",
+        "period": 300
+      }
+    },
+    {
+      "type": "metric",
+      "properties": {
+        "metrics": [
+          ["AWS/States", "ExecutionTime", "StateMachineArn", "arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline", {"stat": "Average"}]
+        ],
+        "view": "timeSeries",
+        "region": "us-east-1",
+        "title": "Average Execution Time (ms)",
+        "period": 300
+      }
+    },
+    {
+      "type": "metric",
+      "properties": {
+        "metrics": [
+          ["AWS/Lambda", "Errors", "FunctionName", "HpiReviewPipelineStack-TranslateFnA05EFF2F-EpfM7rTu9FR6", {"stat": "Sum", "label": "Translate"}],
+          ["AWS/Lambda", "Errors", "FunctionName", "HpiReviewPipelineStack-SummarizeFn8B7F3FA4-pP6qnv2uFsCY", {"stat": "Sum", "label": "Summarize"}],
+          ["AWS/Lambda", "Errors", "FunctionName", "HpiReviewPipelineStack-LocalizeFnD823EE5E-LrHWPSU9fxga", {"stat": "Sum", "label": "Localize"}],
+          ["AWS/Lambda", "Errors", "FunctionName", "HpiReviewPipelineStack-QualityGateFnD14F6BA3-6tBEnsXcKcyY", {"stat": "Sum", "label": "QualityGate"}]
+        ],
+        "view": "timeSeries",
+        "region": "us-east-1",
+        "title": "Lambda Errors by Function",
+        "period": 300
+      }
+    },
+    {
+      "type": "metric",
+      "properties": {
+        "metrics": [
+          ["AWS/Lambda", "Duration", "FunctionName", "HpiReviewPipelineStack-TranslateFnA05EFF2F-EpfM7rTu9FR6", {"stat": "Average", "label": "Translate"}],
+          ["AWS/Lambda", "Duration", "FunctionName", "HpiReviewPipelineStack-SummarizeFn8B7F3FA4-pP6qnv2uFsCY", {"stat": "Average", "label": "Summarize"}],
+          ["AWS/Lambda", "Duration", "FunctionName", "HpiReviewPipelineStack-LocalizeFnD823EE5E-LrHWPSU9fxga", {"stat": "Average", "label": "Localize"}],
+          ["AWS/Lambda", "Duration", "FunctionName", "HpiReviewPipelineStack-QualityGateFnD14F6BA3-6tBEnsXcKcyY", {"stat": "Average", "label": "QualityGate"}]
+        ],
+        "view": "timeSeries",
+        "region": "us-east-1",
+        "title": "Lambda Duration by Function (ms)",
+        "period": 300
+      }
+    }
+  ]
+}
