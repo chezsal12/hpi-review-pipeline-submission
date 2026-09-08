@@ -54,15 +54,16 @@ export class HpiReviewPipelineStack extends cdk.Stack {
             timeout: cdk.Duration.seconds(30),
             memorySize: 256,
         });
-        // Amazon Translate doesn't support resource-level permissions; uses service-level access control
-        // Scope by adding condition keys for language pairs if needed in production
+        // Amazon Translate doesn't support resource-level permissions (service limitation)
+        // Compensating controls: restrict by language pairs and deployment region
         translateFn.addToRolePolicy(new iam.PolicyStatement({
             actions: ['translate:TranslateText'],
             resources: ['*'],
             conditions: {
                 'StringEquals': {
                     'translate:SourceLanguageCode': ['fr', 'de'],
-                    'translate:TargetLanguageCode': ['en']
+                    'translate:TargetLanguageCode': ['en'],
+                    'aws:RequestedRegion': [this.region]
                 }
             }
         }));
@@ -91,14 +92,16 @@ export class HpiReviewPipelineStack extends cdk.Stack {
             timeout: cdk.Duration.seconds(30),
             memorySize: 256,
         });
-        // Amazon Translate doesn't support resource-level permissions; scope with conditions
+        // Amazon Translate doesn't support resource-level permissions (service limitation)
+        // Compensating controls: restrict by language pairs and deployment region
         localizeFn.addToRolePolicy(new iam.PolicyStatement({
             actions: ['translate:TranslateText'],
             resources: ['*'],
             conditions: {
                 'StringEquals': {
                     'translate:SourceLanguageCode': ['en'],
-                    'translate:TargetLanguageCode': ['fr', 'de']
+                    'translate:TargetLanguageCode': ['fr', 'de'],
+                    'aws:RequestedRegion': [this.region]
                 }
             }
         }));
