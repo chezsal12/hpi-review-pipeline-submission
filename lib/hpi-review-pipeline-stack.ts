@@ -54,19 +54,6 @@ export class HpiReviewPipelineStack extends cdk.Stack {
             timeout: cdk.Duration.seconds(30),
             memorySize: 256,
         });
-        // Amazon Translate doesn't support resource-level permissions (service limitation)
-        // Compensating controls: restrict by language pairs and deployment region
-        translateFn.addToRolePolicy(new iam.PolicyStatement({
-            actions: ['translate:TranslateText'],
-            resources: ['*'],
-            conditions: {
-                'StringEquals': {
-                    'translate:SourceLanguageCode': ['fr', 'de'],
-                    'translate:TargetLanguageCode': ['en'],
-                    'aws:RequestedRegion': [this.region]
-                }
-            }
-        }));
 
         // Lambda: Summarize (shared/ directory copied into function dir for deployment)
         const summarizeFn = new lambda.Function(this, 'SummarizeFn', {
@@ -92,19 +79,6 @@ export class HpiReviewPipelineStack extends cdk.Stack {
             timeout: cdk.Duration.seconds(30),
             memorySize: 256,
         });
-        // Amazon Translate doesn't support resource-level permissions (service limitation)
-        // Compensating controls: restrict by language pairs and deployment region
-        localizeFn.addToRolePolicy(new iam.PolicyStatement({
-            actions: ['translate:TranslateText'],
-            resources: ['*'],
-            conditions: {
-                'StringEquals': {
-                    'translate:SourceLanguageCode': ['en'],
-                    'translate:TargetLanguageCode': ['fr', 'de'],
-                    'aws:RequestedRegion': [this.region]
-                }
-            }
-        }));
 
         // Lambda: Quality Gate (shared/ directory copied into function dir for deployment)
         const qualityGateFn = new lambda.Function(this, 'QualityGateFn', {
@@ -218,6 +192,39 @@ export class HpiReviewPipelineStack extends cdk.Stack {
             definition,
             timeout: cdk.Duration.minutes(5),
         });
+
+        // IAM policies for Translate functions - added after state machine creation to reference ARN
+        // Amazon Translate doesn't support resource-level permissions (service limitation)
+        // Compensating controls: restrict by language pairs, region, and source (Step Functions only)
+        translateFn.addToRolePolicy(new iam.PolicyStatement({
+            actions: ['translate:TranslateText'],
+            resources: ['*'],
+            conditions: {
+                'StringEquals': {
+                    'translate:SourceLanguageCode': ['fr', 'de'],
+                    'translate:TargetLanguageCode': ['en'],
+                    'aws:RequestedRegion': [this.region]
+                },
+                'ArnLike': {
+                    'aws:SourceArn': stateMachine.stateMachineArn
+                }
+            }
+        }));
+
+        localizeFn.addToRolePolicy(new iam.PolicyStatement({
+            actions: ['translate:TranslateText'],
+            resources: ['*'],
+            conditions: {
+                'StringEquals': {
+                    'translate:SourceLanguageCode': ['en'],
+                    'translate:TargetLanguageCode': ['fr', 'de'],
+                    'aws:RequestedRegion': [this.region]
+                },
+                'ArnLike': {
+                    'aws:SourceArn': stateMachine.stateMachineArn
+                }
+            }
+        }));
 
         // Outputs
         new cdk.CfnOutput(this, 'StateMachineArn', {
