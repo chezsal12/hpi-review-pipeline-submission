@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Copyright 2026 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+
 """
 Batch test the HPI Review Pipeline with multiple reviews.
 Executes reviews through Step Functions and collects metrics.

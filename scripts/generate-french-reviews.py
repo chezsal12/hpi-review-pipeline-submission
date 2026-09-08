@@ -1,3 +1,6 @@
+# Copyright 2026 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+
 """
 Generate synthetic French product reviews via Amazon Bedrock (Claude) and
 append them to test-data/reviews-french.json. Run from the scripts/ dir.

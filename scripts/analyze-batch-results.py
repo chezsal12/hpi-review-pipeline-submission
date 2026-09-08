@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Copyright 2026 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+
 """
 Analyze batch test results: costs, quality metrics, performance.
 """

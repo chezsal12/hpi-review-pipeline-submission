@@ -1,3 +1,6 @@
+# Copyright 2026 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+
 """
 Shared pytest configuration for the review pipeline test suite.
 

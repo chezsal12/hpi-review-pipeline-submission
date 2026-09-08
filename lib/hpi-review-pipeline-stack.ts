@@ -1,3 +1,8 @@
+/*
+ * Copyright 2026 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as iam from 'aws-cdk-lib/aws-iam';
@@ -49,9 +54,17 @@ export class HpiReviewPipelineStack extends cdk.Stack {
             timeout: cdk.Duration.seconds(30),
             memorySize: 256,
         });
+        // Amazon Translate doesn't support resource-level permissions; uses service-level access control
+        // Scope by adding condition keys for language pairs if needed in production
         translateFn.addToRolePolicy(new iam.PolicyStatement({
             actions: ['translate:TranslateText'],
             resources: ['*'],
+            conditions: {
+                'StringEquals': {
+                    'translate:SourceLanguageCode': ['fr', 'de'],
+                    'translate:TargetLanguageCode': ['en']
+                }
+            }
         }));
 
         // Lambda: Summarize (shared/ directory copied into function dir for deployment)
@@ -62,9 +75,12 @@ export class HpiReviewPipelineStack extends cdk.Stack {
             timeout: cdk.Duration.seconds(60),
             memorySize: 512,
         });
+        // Scope Bedrock access to specific model ARN
         summarizeFn.addToRolePolicy(new iam.PolicyStatement({
             actions: ['bedrock:InvokeModel'],
-            resources: ['*'],
+            resources: [
+                `arn:aws:bedrock:${this.region}::foundation-model/us.anthropic.claude-sonnet-5`
+            ],
         }));
 
         // Lambda: Localize
@@ -75,9 +91,16 @@ export class HpiReviewPipelineStack extends cdk.Stack {
             timeout: cdk.Duration.seconds(30),
             memorySize: 256,
         });
+        // Amazon Translate doesn't support resource-level permissions; scope with conditions
         localizeFn.addToRolePolicy(new iam.PolicyStatement({
             actions: ['translate:TranslateText'],
             resources: ['*'],
+            conditions: {
+                'StringEquals': {
+                    'translate:SourceLanguageCode': ['en'],
+                    'translate:TargetLanguageCode': ['fr', 'de']
+                }
+            }
         }));
 
         // Lambda: Quality Gate (shared/ directory copied into function dir for deployment)
@@ -88,9 +111,12 @@ export class HpiReviewPipelineStack extends cdk.Stack {
             timeout: cdk.Duration.seconds(60),
             memorySize: 512,
         });
+        // Scope Bedrock access to specific model ARN
         qualityGateFn.addToRolePolicy(new iam.PolicyStatement({
             actions: ['bedrock:InvokeModel'],
-            resources: ['*'],
+            resources: [
+                `arn:aws:bedrock:${this.region}::foundation-model/us.anthropic.claude-sonnet-5`
+            ],
         }));
 
         // Step Functions tasks with error handling

@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+/*
+ * Copyright 2026 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { HpiReviewPipelineStack } from '../lib/hpi-review-pipeline-stack';
