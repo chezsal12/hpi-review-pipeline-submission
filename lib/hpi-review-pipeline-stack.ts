@@ -194,11 +194,23 @@ export class HpiReviewPipelineStack extends cdk.Stack {
         });
 
         // IAM policies for Translate functions - added after state machine creation to reference ARN
-        // Amazon Translate doesn't support resource-level permissions (service limitation)
-        // Compensating controls: restrict by language pairs, region, and source (Step Functions only)
+        //
+        // SECURITY NOTE: Amazon Translate Wildcard Resource
+        // Amazon Translate does not support resource-level permissions (AWS service limitation).
+        // All translate:TranslateText actions require "Resource: *" per AWS documentation.
+        //
+        // COMPENSATING CONTROLS (maximum restrictions possible):
+        // 1. Language pairs: Only fr/de→en translation allowed (SourceLanguageCode, TargetLanguageCode)
+        // 2. Region scope: Only us-east-1 requests allowed (aws:RequestedRegion)
+        // 3. Source restriction: Only callable from Step Functions state machine (aws:SourceArn)
+        // 4. Least privilege action: Only translate:TranslateText granted (not translate:*)
+        //
+        // RISK ASSESSMENT: Accepted risk for prototype. The combination of language-pair, region,
+        // and source ARN restrictions provides defense-in-depth against misuse. Runtime validation
+        // in Lambda code provides additional application-level controls.
         translateFn.addToRolePolicy(new iam.PolicyStatement({
             actions: ['translate:TranslateText'],
-            resources: ['*'],
+            resources: ['*'],  // Required by AWS Translate service - no resource-level permissions supported
             conditions: {
                 'StringEquals': {
                     'translate:SourceLanguageCode': ['fr', 'de'],
@@ -211,9 +223,11 @@ export class HpiReviewPipelineStack extends cdk.Stack {
             }
         }));
 
+        // Amazon Translate Localize function - same service limitation and compensating controls as above
+        // Language pairs reversed: en→fr/de for localization
         localizeFn.addToRolePolicy(new iam.PolicyStatement({
             actions: ['translate:TranslateText'],
-            resources: ['*'],
+            resources: ['*'],  // Required by AWS Translate service - no resource-level permissions supported
             conditions: {
                 'StringEquals': {
                     'translate:SourceLanguageCode': ['en'],
