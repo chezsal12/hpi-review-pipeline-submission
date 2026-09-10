@@ -352,25 +352,23 @@ git remote -v  # Shows GitHub URL
 
 **[Actions: Edit the code live]**
 
-**Step 1: Update translation service**
+**Step 1: Update IAM policies (the actual change needed)**
 
-**[Screen: Add 'es' to supported languages validation]**
+**[Screen: Open lambda/translate/translate_service.py first to show there's no validation]**
 
 ```python
 def translate_review(text, source_language, target_language='en'):
     """
-    Translate review text using Amazon Translate.
-    Supports French (fr), German (de), and Spanish (es) to English.
+    Translate review text into the target language (English by default).
     """
-    if source_language not in ['fr', 'de', 'es']:  # Add 'es'
-        raise ValueError(f"Unsupported source language: {source_language}")
+    return translate_text(text, source_language, target_language)
 ```
 
-> "First, update the validation logic to accept Spanish."
+> "First, notice the translation service has no language validation—it delegates directly to Amazon Translate. So the only change needed is the IAM policy."
 
-**Step 2: Update IAM policy**
+**Step 2: Update IAM policy in CDK stack**
 
-**[Screen: Open lib/hpi-review-pipeline-stack.ts, find Translate IAM policy]**
+**[Screen: Open lib/hpi-review-pipeline-stack.ts, scroll to line 211-224 where the Translate IAM policy is]**
 
 ```typescript
 translateFn.addToRolePolicy(new iam.PolicyStatement({
@@ -389,41 +387,21 @@ translateFn.addToRolePolicy(new iam.PolicyStatement({
 }));
 ```
 
-> "Second, update the IAM policy to allow Spanish source language. Same pattern for the localize function."
+> "Just add 'es' to the SourceLanguageCode array here. Then scroll down to the localize function's policy around line 228 and add 'es' to its TargetLanguageCode array. That's it - Spanish is now supported. The code doesn't need changes because there's no validation layer."
 
-**Step 3: Update tests**
+**Step 3: Add a test (optional but good practice)**
 
-**[Screen: Open tests/test_translate_service.py]**
+**[Screen: Open lambda/translate/test_local.py]**
 
-```python
-def test_translate_spanish():
-    """Test Spanish translation."""
-    result = translate_text(
-        "Este producto es increíble",
-        source_language='es',
-        target_language='en'
-    )
-    assert result is not None
-    assert len(result) > 0
-```
+> "You'd add a test case for Spanish translation here to validate it works. The test would mock the Translate API response for Spanish-to-English translation. But for the demo, I'll skip writing it and move to deployment."
 
-> "Third, add a test case for Spanish. Run the test to validate."
-
-**[Actions: Run pytest on just this test]**
-
-```bash
-pytest tests/test_translate_service.py::test_translate_spanish -v
-```
-
-> "Test passes. Now deploy the change."
-
-**[Actions: Show deployment command]**
+**Step 4: Deploy**
 
 ```bash
 cdk deploy
 ```
 
-> "One command deploys all changes: updated Lambda code, updated IAM policies, no manual configuration. Infrastructure as code makes this reproducible and auditable."
+> "One command deploys the IAM policy changes. No Lambda code changes needed - the translation functions already support any language Amazon Translate supports. Infrastructure as code makes this reproducible and auditable. After deployment, Spanish reviews would work immediately."
 
 ---
 
