@@ -168,14 +168,14 @@ A: "Yes. Comprehend has extractive summarization, but it doesn't support the con
 
 ### Design Rationale: Quality & Reliability (90 seconds)
 
-**[Screen: Open lib/hpi-review-pipeline-stack.ts, scroll to retry logic section]**
+**[Screen: Open lib/hpi-review-pipeline-stack.ts, scroll to around line 100-115 (TranslateTask retry configuration)]**
 
 **Script:**
 > "Reliability was non-negotiable. Every Lambda task has exponential backoff retry logic. Let me show you the code."
 
-**[Screen: Highlight retry configuration in CDK stack, lines 104-114]**
+**[Screen: Highlight the .addRetry() blocks starting at line 104]**
 
-> "Service exceptions like throttling: 3 retries, 2-second initial interval, 2x backoff. Task failures: 2 retries, 1-second interval, 1.5x backoff. This achieved 100% execution success rate in testing with 100 reviews."
+> "Service exceptions like throttling: 3 retries, 2-second initial interval, 2x backoff. Task failures: 2 retries, 1-second interval, 1.5x backoff. This pattern repeats for all four Lambda functions. This achieved 100% execution success rate in testing with 100 reviews."
 
 > "For quality validation, I built a two-tier quality gate: rule-based checks plus LLM semantic scoring. The rule-based checks are fast and cheap—sentence count, word length, no truncation. The LLM scoring uses Claude to rate whether the summary accurately captures the original meaning on a 1-10 scale."
 
