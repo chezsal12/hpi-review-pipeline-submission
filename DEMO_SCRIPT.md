@@ -185,9 +185,9 @@ A: "Yes. Comprehend has extractive summarization, but it doesn't support the con
 
 > "For quality validation, I built a two-tier quality gate: rule-based checks plus LLM semantic scoring. The rule-based checks are fast and cheap—sentence count, word length, no truncation. The LLM scoring uses Claude to rate whether the summary accurately captures the original meaning on a 1-10 scale."
 
-**[Screen: Open lambda/quality-gate/quality_gate_service.py, scroll to check_quality function]**
+**[Screen: Open lambda/quality-gate/quality_gate_service.py, show the two main functions]**
 
-> "Here's the quality gate logic. It runs both checks, and I tuned the semantic threshold based on data. Initially it was 7, but analysis of 100 reviews showed that was too strict—67% pass rate. Lowering to 5 improved it to 89% without sacrificing quality. This is documented in the batch test results."
+> "Here's the quality gate logic. The `run_rule_based_checks` function validates sentence count, word length, and checks for truncation. The `evaluate_semantic_retention` function uses Claude to score how well the summary captures the original meaning on a 1-10 scale. I tuned the threshold based on data—see line 33, SEMANTIC_PASS_THRESHOLD is 5. Initially it was 7, but analysis of 100 reviews showed that was too strict—67% pass rate. Lowering to 5 improved it to 89% without sacrificing quality."
 
 **[Screen: Open docs/BATCH_TEST_RESULTS.md, show threshold tuning section]**
 
