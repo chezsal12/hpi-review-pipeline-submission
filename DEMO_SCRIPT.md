@@ -141,9 +141,9 @@ A: "Yes. Comprehend has extractive summarization, but it doesn't support the con
 
 > "First, why serverless? This workload is event-driven and bursty—you might process 100 reviews one day and 10,000 the next. Lambda scales automatically and you only pay for execution time. No servers to manage, no capacity planning."
 
-> "Second, why Step Functions instead of SQS? Step Functions costs more—15% of the total per-review cost—but it gives you built-in retry logic, error handling, and visual workflow monitoring. For a prototype, this is the right trade-off. If you scale to 100,000+ reviews per week, you'd migrate to SQS to cut costs, but you'd need to build custom retry and monitoring. I document this in the cost analysis—let me show you."
+> "Second, why Step Functions instead of SQS? Step Functions costs more—15% of the total per-review cost—but it gives you built-in retry logic, error handling, and visual workflow monitoring. For a prototype, this is the right trade-off. If you scale to 100,000+ reviews per week, you'd migrate to SQS to cut costs, but you'd need to build custom retry and monitoring. I document this trade-off—let me show you."
 
-**[Screen: Open COST_ANALYSIS.md, scroll to Step Functions vs SQS section]**
+**[Screen: Scroll down in ARCHITECTURE.md to "Architecture Choice: Step Functions vs SQS + Lambda" section, around line 209]**
 
 > "Here's the break-even analysis. Step Functions makes sense up to about 100K reviews per week. Beyond that, SQS becomes cost-effective despite the engineering overhead. This gives you a clear migration path."
 
