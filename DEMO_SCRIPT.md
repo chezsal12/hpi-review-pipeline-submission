@@ -135,9 +135,15 @@ A: "Yes. Comprehend has extractive summarization, but it doesn't support the con
 **[Screen: Open ARCHITECTURE.md, scroll to architecture diagram]**
 
 **Script:**
-> "The core problem: translate international reviews, summarize them using AI, and localize the summaries back. I chose a serverless pipeline architecture with Step Functions orchestrating four Lambda functions. Let me explain why."
+> "The core problem: translate international reviews, summarize them using AI, and localize the summaries back. I chose a serverless pipeline architecture with Step Functions orchestrating four Lambda functions. Let me walk you through the flow."
 
-**[Screen: Scroll through architecture diagram while explaining]**
+**[Screen: Show the architecture diagram - trace the flow with your cursor]**
+
+> "A review comes in—French or German—with the text, language code, and review ID. Step Functions orchestrates four stages: Stage 1, Translate Lambda calls Amazon Translate to convert the review to English. Stage 2, Summarize Lambda uses Bedrock Claude Sonnet 5 to generate a 1-2 sentence summary. Stage 3, Localize Lambda translates that summary back to the original language. Stage 4, Quality Gate Lambda validates the summary with rule-based checks and LLM semantic scoring—89% pass rate. All data flows to S3, logs go to CloudWatch."
+
+> "The key pattern: pass-through. Each Lambda receives the full event from the previous stage and adds its own fields. This means every stage has complete context, which simplifies debugging."
+
+**[Screen: Continue scrolling through ARCHITECTURE.md]**
 
 > "First, why serverless? This workload is event-driven and bursty—you might process 100 reviews one day and 10,000 the next. Lambda scales automatically and you only pay for execution time. No servers to manage, no capacity planning."
 
