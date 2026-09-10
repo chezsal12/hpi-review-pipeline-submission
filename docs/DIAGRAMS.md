@@ -8,7 +8,7 @@
           Review[Product Review<br/>FR/DE]
       end
 
-      subgraph "AWS Account 248062189474"
+      subgraph "AWS Account <AWS-ACCOUNT-ID>"
           SF[Step Functions<br/>hpi-review-pipeline]
 
           subgraph "Lambda Functions"
@@ -129,7 +129,7 @@
             │ cdk deploy
             ▼
   ┌──────────────────────────────────────────────────────────┐
-  │  AWS Account 248062189474                                 │
+  │  AWS Account <AWS-ACCOUNT-ID>                                 │
   │  ┌────────────────────────────────────────────────────┐  │
   │  │  CloudFormation Stack                              │  │
   │  │  HpiReviewPipelineStack                            │  │

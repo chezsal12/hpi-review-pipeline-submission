@@ -18,14 +18,14 @@ missing infrastructure.
 | Resource | Identifier |
 |----------|------------|
 | CloudFormation stack | `HpiReviewPipelineStack` |
-| Step Functions state machine | `arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline` |
-| Data S3 bucket | `hpi-review-pipeline-data-248062189474` |
-| Access-logs S3 bucket | `hpi-review-pipeline-access-logs-248062189474` |
+| Step Functions state machine | `arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline` |
+| Data S3 bucket | `hpi-review-pipeline-data-<AWS-ACCOUNT-ID>` |
+| Access-logs S3 bucket | `hpi-review-pipeline-access-logs-<AWS-ACCOUNT-ID>` |
 | Lambda functions | Translate, Summarize, Localize, QualityGate (Python 3.13) |
 | CloudWatch dashboard | `hpi-review-pipeline` |
 | CloudWatch alarms | `hpi-pipeline-execution-failures`, `hpi-pipeline-lambda-errors`, `hpi-pipeline-slow-execution` |
 | Region | `us-east-1` |
-| Account | `248062189474` (HPI sandbox) |
+| Account | `<AWS-ACCOUNT-ID>` (HPI sandbox) |
 
 Lambda physical function names carry CDK-generated suffixes; retrieve the
 current values from the stack rather than hardcoding them:
@@ -41,7 +41,7 @@ aws cloudformation describe-stack-resources \
 
 ### AWS Account Access
 
-- Account: 248062189474 (HPI customer account)
+- Account: <AWS-ACCOUNT-ID> (HPI customer account)
 - Region: us-east-1
 - Access method: PEP cross-account role via aws-vault
 
@@ -64,7 +64,7 @@ aws-vault exec hpi --duration=12h
 
 # Verify access
 aws sts get-caller-identity
-# Should show Account: 248062189474
+# Should show Account: <AWS-ACCOUNT-ID>
 ```
 
 ## Repository Setup
@@ -127,16 +127,16 @@ aws cloudformation describe-stacks --stack-name HpiReviewPipelineStack \
 
 # 2. Confirm the state machine is present
 aws stepfunctions describe-state-machine \
-  --state-machine-arn arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline \
+  --state-machine-arn arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline \
   --query "{name:name,status:status}" --output json --region us-east-1
 
 # 3. Confirm the data bucket security posture
-aws s3api get-bucket-versioning --bucket hpi-review-pipeline-data-248062189474
-aws s3api get-public-access-block --bucket hpi-review-pipeline-data-248062189474
+aws s3api get-bucket-versioning --bucket hpi-review-pipeline-data-<AWS-ACCOUNT-ID>
+aws s3api get-public-access-block --bucket hpi-review-pipeline-data-<AWS-ACCOUNT-ID>
 
 # 4. Smoke-test a single review end to end
 aws stepfunctions start-execution \
-  --state-machine-arn arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline \
+  --state-machine-arn arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline \
   --input file://test-input.json --name verify-$(date +%s) --region us-east-1
 ```
 
@@ -168,7 +168,7 @@ already been run, so start at step 2.
 ### 1. Bootstrap CDK (first-time per account/region only)
 
 ```bash
-aws-vault exec hpi -- cdk bootstrap aws://248062189474/us-east-1
+aws-vault exec hpi -- cdk bootstrap aws://<AWS-ACCOUNT-ID>/us-east-1
 ```
 
 ### 2. Package Lambda functions
@@ -209,7 +209,7 @@ aws stepfunctions list-state-machines \
 ### Test a Single Review Through the Pipeline
 
 ```bash
-STATE_MACHINE_ARN=arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline
+STATE_MACHINE_ARN=arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline
 
 aws stepfunctions start-execution \
   --state-machine-arn "$STATE_MACHINE_ARN" \
@@ -377,7 +377,7 @@ git push
 
 - Repository: https://git-codecommit.us-east-1.amazonaws.com/v1/repos/hpi-review-pipeline
 - Region: us-east-1
-- Account: 248062189474
+- Account: <AWS-ACCOUNT-ID>
 
 Key contacts:
 

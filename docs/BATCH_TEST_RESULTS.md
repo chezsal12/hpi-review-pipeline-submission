@@ -2,7 +2,7 @@
 
 **Date:** 2026-08-19  
 **Test Size:** 10 reviews (5 French, 5 German)  
-**State Machine:** `arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline`
+**State Machine:** `arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline`
 
 ---
 

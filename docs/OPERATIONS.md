@@ -16,7 +16,7 @@
   - 2 S3 buckets (data, access logs)
   - CloudWatch dashboard and alarms
 
-  **Account:** 248062189474
+  **Account:** <AWS-ACCOUNT-ID>
   **Region:** us-east-1
 
   ---
@@ -67,7 +67,7 @@
   1. **Find the failed execution:**
      ```bash
      aws stepfunctions list-executions \
-       --state-machine-arn arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline \
+       --state-machine-arn arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline \
        --status-filter FAILED \
        --max-results 10
 
@@ -137,7 +137,7 @@
   cd ~/hpi-review-pipeline
   python3 scripts/batch_test_runner.py --reviews test-data/reviews.json --count 20
   2. Check quality scores distribution:
-  aws s3 cp s3://hpi-review-pipeline-data-248062189474/ . --recursive --exclude "*" --include "*quality*"
+  aws s3 cp s3://hpi-review-pipeline-data-<AWS-ACCOUNT-ID>/ . --recursive --exclude "*" --include "*quality*"
   # Analyze quality_score field distribution
   3. Review summary examples:
     - Look at summaries with scores 4-6 (borderline)
@@ -217,7 +217,7 @@
     --query 'Configuration.[LastModified,CodeSize,Runtime]'
   4. Test with sample execution:
   aws stepfunctions start-execution \
-    --state-machine-arn arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline \
+    --state-machine-arn arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline \
     --input file://test-input.json
 
   Adjusting Quality Gate Threshold
@@ -280,7 +280,7 @@
 
   Single execution test:
   aws stepfunctions start-execution \
-    --state-machine-arn arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline \
+    --state-machine-arn arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline \
     --input file://test-input.json \
     --name test-$(date +%s)
 
@@ -308,9 +308,9 @@
   - Access logging: Enabled
 
   Audit bucket security:
-  aws s3api get-bucket-encryption --bucket hpi-review-pipeline-data-248062189474
-  aws s3api get-bucket-versioning --bucket hpi-review-pipeline-data-248062189474
-  aws s3api get-public-access-block --bucket hpi-review-pipeline-data-248062189474
+  aws s3api get-bucket-encryption --bucket hpi-review-pipeline-data-<AWS-ACCOUNT-ID>
+  aws s3api get-bucket-versioning --bucket hpi-review-pipeline-data-<AWS-ACCOUNT-ID>
+  aws s3api get-public-access-block --bucket hpi-review-pipeline-data-<AWS-ACCOUNT-ID>
 
   IAM Permissions
 
@@ -355,9 +355,9 @@
     --function-version <VERSION_NUMBER>
 
   Restore S3 object:
-  aws s3api list-object-versions --bucket hpi-review-pipeline-data-248062189474 --prefix <KEY>
+  aws s3api list-object-versions --bucket hpi-review-pipeline-data-<AWS-ACCOUNT-ID> --prefix <KEY>
   aws s3api get-object \
-    --bucket hpi-review-pipeline-data-248062189474 \
+    --bucket hpi-review-pipeline-data-<AWS-ACCOUNT-ID> \
     --key <KEY> \
     --version-id <VERSION_ID> \
     <OUTPUT_FILE>
@@ -370,7 +370,7 @@
   Contacts & Escalation
 
   Primary Contact: Chezsal Robinson
-  AWS Account: 248062189474 (HPI sandbox)
+  AWS Account: <AWS-ACCOUNT-ID> (HPI sandbox)
   Region: us-east-1
 
   Service Support:
@@ -391,7 +391,7 @@
 
   # List recent executions
   aws stepfunctions list-executions \
-    --state-machine-arn arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline \
+    --state-machine-arn arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline \
     --max-results 10
 
   # Tail Lambda logs
@@ -402,7 +402,7 @@
 
   # Manual execution
   aws stepfunctions start-execution \
-    --state-machine-arn arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline \
+    --state-machine-arn arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline \
     --input '{"review_text":"Test review","language":"fr","review_id":"test-001"}'
 
   # Check Lambda metrics
@@ -417,9 +417,9 @@
 
   Resource ARNs
 
-  - State Machine: arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline
-  - Data Bucket: hpi-review-pipeline-data-248062189474
-  - Access Logs Bucket: hpi-review-pipeline-access-logs-248062189474
+  - State Machine: arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline
+  - Data Bucket: hpi-review-pipeline-data-<AWS-ACCOUNT-ID>
+  - Access Logs Bucket: hpi-review-pipeline-access-logs-<AWS-ACCOUNT-ID>
   - Lambda Functions: See stack-resources.json for current PhysicalResourceIds
 
   Related Documentation

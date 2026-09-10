@@ -267,7 +267,7 @@ Output: Original + English Translation + Localized Summary + Quality Score
 
 ### Code Repository
 - **Location:** AWS CodeCommit - `hpi-review-pipeline`
-- **Account:** 248062189474 (HPI sandbox)
+- **Account:** <AWS-ACCOUNT-ID> (HPI sandbox)
 - **Region:** us-east-1
 - **Branch:** main
 
@@ -308,7 +308,7 @@ The pipeline is ready for production deployment and can scale from hundreds to h
 
 ---
 
-**Project Contact:** Chezsal Robinson  
+**Project Contact:** Chezsal Kamaray  
 **Timeline:** 9 days (Aug 15-28, 2026) - Builder Project completed  
 **Certification:** ✅ Holmes CDE - 0 HIGH findings (maintained through Day 9)  
 **Status:** ✅ Production Ready - Deployed, Monitored, Documented, CDE Certified

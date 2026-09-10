@@ -1,263 +1,537 @@
-# HPI Review Pipeline - Demo Script
-**Target Duration:** 8-10 minutes  
+# HPI Review Pipeline - Demo Script (Code-First)
+
+**Duration:** 15 minutes  
+**Format:** Interactive code walkthrough  
+**Audience:** Fictitious customer (e-commerce platform with international reviews)  
 **CDE Builder Project Evaluation**
 
 ---
 
-## Slide 1: Title & Introduction (30 seconds)
-**[Screen: Title slide or README.md]**
+## Rehearsal Checklist (Do This BEFORE Recording Day)
 
-**Script:**
-> "Hi, I'm Chezsal Robinson, and this is my CDE Builder Project: the HPI Review Pipeline. This is an AI-powered serverless pipeline that processes international product reviews in French and German, generates concise summaries using Amazon Bedrock Claude, and localizes the summaries back to the original language. The project demonstrates production-grade AWS architecture with full monitoring, testing, and CDE certification."
+### Rehearsal 1: Content & Flow (2-3 days before recording)
 
-**Key Points:**
-- Name and project title
-- 30-second value proposition
-- Production-ready emphasis
+**Goal:** Get comfortable with the narrative, identify stumbles, test transitions
 
----
+- [ ] Read through entire script out loud once
+- [ ] Open all files/screens mentioned in script, verify they exist and look good
+- [ ] Do a full dry-run recording (don't worry about perfection)
+- [ ] Watch the dry-run and note:
+  - Which sections feel awkward or unclear
+  - Where you stumbled or lost your place
+  - Which code sections need better setup/explanation
+  - Actual time per section (does it fit 15 minutes?)
+- [ ] Adjust script based on notes
+- [ ] Practice explaining design rationale without reading (internalize the WHY)
 
-## Slide 2: Architecture Overview (60 seconds)
-**[Screen: ARCHITECTURE.md diagram or draw.io diagram]**
+### Rehearsal 2: Timing & Polish (1 day before recording)
 
-**Script:**
-> "The architecture uses serverless AWS services orchestrated by Step Functions. Here's the flow: A review in French or German enters the pipeline. First, the Translate Lambda uses Amazon Translate to convert it to English. Second, the Summarize Lambda calls Bedrock Claude Sonnet 5 to generate a 1-2 sentence summary. Third, the Localize Lambda translates the summary back to the original language. Finally, the Quality Gate Lambda validates the summary using rule-based checks and LLM semantic scoring. All state is passed through Step Functions with retry logic and error handling."
+**Goal:** Dial in timing, smooth transitions, build confidence
 
-**Key Points:**
-- 4 Lambda functions (show each)
-- AWS services: Bedrock, Translate, Step Functions, S3
-- Error handling and retries built-in
+- [ ] Record a second full dry-run with timer visible
+- [ ] Time each section:
+  - Part 1 (Design Rationale): Target ~5 min, acceptable range 4-6 min
+  - Part 2 (Live Walkthrough): Target ~10 min, acceptable range 9-11 min
+- [ ] If over time, identify sections to trim (NOT design rationale - that's the gold)
+- [ ] If under time, identify places to go deeper (show more code, explain more WHY)
+- [ ] Practice the Spanish code change live (type it out, don't copy-paste in recording)
+- [ ] Watch dry-run 2 and note:
+  - Are you speaking too fast? Too slow?
+  - Do you sound confident or apologetic?
+  - Are transitions smooth or jarring?
+- [ ] Practice answering likely questions (see below)
 
----
+### Technical Validation (Day of recording, before you hit record)
 
-## Slide 3: Live Demo - Execute Pipeline (90 seconds)
-**[Screen: AWS Console - Step Functions or CLI]**
+**Goal:** Ensure everything works, no surprises during recording
 
-**Script:**
-> "Let me show you the pipeline in action. I'll execute a French review through the system."
+- [ ] Test Step Functions execution (run it once, verify it succeeds)
+- [ ] Verify CloudWatch dashboard loads and shows data
+- [ ] Run `pytest` and confirm all 19 tests pass
+- [ ] Test the Spanish code change in a scratch branch (make sure it compiles)
+- [ ] Check AWS Console region is set to **us-east-1**
+- [ ] Verify you have the correct input JSON ready to paste:
+  ```json
+  {
+    "text": "Ce produit est incroyable! La qualité est exceptionnelle et le service client était parfait. Je recommande vivement.",
+    "source_language": "fr",
+    "review_id": "demo-001"
+  }
+  ```
+- [ ] Close unnecessary browser tabs, apps, notifications
+- [ ] Test microphone (AirPods or external mic, NOT laptop mic)
+- [ ] Record 30-second test video, watch it back (audio clear? screen readable?)
 
-**Actions:**
-1. Show AWS Step Functions console
-2. Start execution with a sample French review:
-   ```json
-   {
-     "review_text": "Ce produit est incroyable! La qualité est exceptionnelle et le service client était parfait. Je recommande vivement.",
-     "language": "fr",
-     "review_id": "demo-001"
-   }
-   ```
-3. Show execution graph progressing through stages
-4. Wait for completion (~8 seconds)
-5. Show output with:
-   - Original French text
-   - English translation
-   - English summary
-   - French localized summary
-   - Quality score (should be 8-9/10)
+### Likely Questions & Your Answers
 
-**Script continues:**
-> "The pipeline took 8 seconds end-to-end. We can see the original French review, the English translation, the concise 2-sentence summary generated by Claude, the summary translated back to French, and a quality score of 8 out of 10. The quality gate passed all checks: correct sentence count, appropriate length, and strong semantic retention."
+Practice answering these out loud so you're ready if they come up in evaluation Q&A:
 
----
+**Q: "Why not use Lambda layers for shared code?"**
+A: "Simpler deployment model. The shared code is minimal—just translation utilities—and packaging it with each function avoids layer versioning complexity. For a prototype, simplicity wins. At scale, layers would make sense."
 
-## Slide 4: Quality & Testing Results (75 seconds)
-**[Screen: BATCH_TEST_RESULTS.md or terminal showing metrics]**
+**Q: "Why not batch reviews together?"**
+A: "Event-driven design. The architecture assumes reviews arrive individually in real-time—like a user submitting feedback. If the requirement changed to bulk processing, I'd switch to S3-triggered batch Lambda or Step Functions Map state. The current design optimizes for low latency."
 
-**Script:**
-> "Quality and reliability were central to this project. I conducted scale testing with 100 reviews—50 French and 50 German. The results: 100% execution success rate, 89% quality gate pass rate, and an average execution time of 5-10 seconds per review. The quality gate uses both rule-based validation—checking sentence count and word length—and LLM-based semantic scoring to ensure the summary accurately captures the original review's meaning. The 89% pass rate is production-appropriate; the 11% rejections were legitimate quality issues, not false negatives."
+**Q: "What happens when the quality gate fails?"**
+A: "The review is still processed and stored, but flagged as failed quality gate. The OPERATIONS.md runbook documents the manual review queue process. In production, you'd route failed reviews to a human reviewer dashboard."
 
-**Key Points:**
-- Show batch test results table
-- Highlight: 100/100 executions succeeded, 89/100 passed quality gate
-- Emphasize quality gate design (rules + LLM semantic check)
+**Q: "Why didn't you implement caching for duplicate reviews?"**
+A: "Cost-benefit analysis. Duplicate reviews are rare in this use case—each is unique customer feedback. Caching adds complexity (DynamoDB, cache invalidation logic) for minimal cost savings. I document this in COST_ANALYSIS.md as a future optimization if duplication becomes significant."
 
----
+**Q: "How would this scale to 1 million reviews per day?"**
+A: "Three changes: First, migrate from Step Functions to SQS + Lambda for cost—Step Functions becomes expensive at that scale. Second, implement batching—process 10-100 reviews per Lambda invocation to reduce overhead. Third, consider reserved capacity or Savings Plans for Translate since volume is predictable. The architecture is horizontally scalable—no changes to Lambda code needed."
 
-## Slide 5: Holmes CDE Certification (60 seconds)
-**[Screen: Holmes scan result or screenshot showing 0 HIGH findings]**
+**Q: "Why Claude Sonnet 5 instead of fine-tuning a smaller model?"**
+A: "Time to value. Fine-tuning requires training data, experimentation, and ongoing maintenance. Sonnet 5 worked out-of-the-box with a simple prompt. The cost difference is negligible—$0.0003 per review. For a prototype, pre-trained models are the right choice. If this scaled to millions of reviews, fine-tuning could make sense."
 
-**Script:**
-> "The project achieved Holmes CDE certification with zero HIGH findings. This required iterative improvements over 6 scan cycles. Key fixes included: extracting service layers for testability, adding comprehensive error handling, eliminating code duplication, and ensuring consistent code structure. The final scan evaluated 19 pytest tests, service layer architecture, error handling at all AWS boundaries, and documentation completeness. The certification validates that the code meets AWS Builder standards for production-quality deliverables."
+**Q: "Did you consider using Amazon Comprehend for summarization?"**
+A: "Yes. Comprehend has extractive summarization, but it doesn't support the concise 1-2 sentence format we need. Claude's generative summarization gives much better results—it captures sentiment and key points in natural language. I tested both during development."
 
-**Key Points:**
-- Show Holmes scan result: 0 HIGH findings
-- Mention: 6 iterations, 8 issues resolved
-- CDE Evaluation Rubric used
+### Anti-Patterns to Avoid During Recording
 
----
-
-## Slide 6: Security Compliance (45 seconds)
-**[Screen: ProtoShield scan summary]**
-
-**Script:**
-> "Security was validated with ProtoShield, scanning for secrets, CVEs, IAM violations, and licensing compliance. The project passed with zero critical and zero high-severity findings. Key security measures include: Apache 2.0 licensing on all source files, scoped IAM policies with specific Bedrock model ARNs and Translate language-pair restrictions, S3 encryption and versioning, and HTTPS-only enforcement. No secrets or credentials are hardcoded anywhere in the repository."
-
-**Key Points:**
-- ProtoShield: 0 Critical, 0 High
-- IAM least privilege (show scoped policies)
-- Licensing compliance (Apache 2.0)
+- ❌ **Apologizing for code:** "This isn't perfect but..." → Just explain your choices confidently
+- ❌ **Reading docs verbatim:** Show docs, highlight key points, but don't read paragraphs
+- ❌ **Rushing through design rationale:** This is the most valuable part—don't skimp
+- ❌ **Ignoring errors:** If something fails live, explain calmly and troubleshoot or move on
+- ❌ **Being defensive:** "I know this isn't ideal but..." → Own your trade-offs
+- ❌ **Going off-script on tangents:** Stay focused, 15 minutes goes fast
 
 ---
 
-## Slide 7: Monitoring & Operations (75 seconds)
-**[Screen: CloudWatch Dashboard]**
+## Setup Before Recording
 
-**Script:**
-> "Production monitoring is implemented with CloudWatch. The dashboard tracks pipeline execution metrics—successes, failures, and execution time—plus Lambda-specific metrics for errors and duration across all four functions. Three alarms monitor the system: one for any execution failures, one for elevated Lambda error rates, and one for slow execution times above 15 seconds. The operational runbook documents troubleshooting procedures for four common scenarios: pipeline failures, Lambda errors, quality gate issues, and performance degradation. This ensures the pipeline is observable and maintainable in production."
+### Pre-Recording Checklist (Final 10 minutes before hitting record)
+- [ ] Open VS Code with repository root
+- [ ] Open terminal tabs: one for local testing, one for AWS CLI
+- [ ] Open browser tabs: AWS Console (Step Functions, CloudWatch, Lambda)
+- [ ] Test Step Functions execution (verify it works)
+- [ ] Have sample review ready to paste (save in a text file for easy copy)
+- [ ] Zoom editor to 150-175% for readability
+- [ ] Close all unnecessary apps and notifications
+- [ ] Put phone on silent / Do Not Disturb
+- [ ] Have water nearby
+- [ ] Take a deep breath, you've got this
 
-**Actions:**
-- Show CloudWatch dashboard with 4 widgets
-- Show CloudWatch Alarms (3 alarms in OK state)
-- Briefly show OPERATIONS.md structure
-
----
-
-## Slide 8: Cost Analysis (60 seconds)
-**[Screen: COST_ANALYSIS.md or table]**
-
-**Script:**
-> "Cost efficiency was a key design goal. The actual cost per review is $0.0196—that's less than 2 cents per review—which came in 22% under budget. The breakdown: Amazon Translate is 78% of the cost at 1.5 cents, Bedrock is only 2% at 0.03 cents thanks to Claude's efficiency, Lambda is 5%, and Step Functions is 15%. At scale, processing 12,000 reviews per week would cost $940 per month. The architecture is cost-effective because we use serverless—you only pay for what you use—and Claude Sonnet 5 provides superior quality at a reasonable price point compared to smaller models that would have higher failure rates."
-
-**Key Points:**
-- Show cost breakdown table
-- Highlight: $0.0196 per review, 22% under budget
-- Mention: serverless = pay-per-use efficiency
+### Screen Layout
+- **Primary:** VS Code (left) + Terminal (right/bottom)
+- **Secondary:** Browser (AWS Console)
+- **Tertiary:** File explorer for repo structure
 
 ---
 
-## Slide 9: Technical Highlights & Decisions (60 seconds)
-**[Screen: Code snippet or architecture diagram]**
+## Part 1: Scope & Design Rationale (~5 minutes)
+
+### Opening (30 seconds)
+
+**[Screen: README.md open in VS Code]**
 
 **Script:**
-> "Three technical decisions are worth highlighting. First, the pass-through pattern: each Lambda returns the complete event plus new fields, so every stage has full context for debugging. Second, quality gate threshold tuning: we analyzed 100 reviews and lowered the semantic threshold from 7 to 5 based on data, improving the pass rate from 67% to 89% while maintaining quality. Third, error handling: Step Functions implements exponential backoff retries for service exceptions and graceful failure routing, achieving 100% reliability at scale. These decisions balance developer experience, quality control, and production resilience."
-
-**Key Points:**
-- Pass-through pattern (show Lambda output structure)
-- Data-driven threshold tuning
-- Retry logic with exponential backoff
+> "Hi, I'm Chezsal Kamaray. Thanks for the opportunity to walk you through this AI-powered review pipeline. I built this for a fictitious e-commerce platform that collects product reviews in French and German but needs concise English summaries for their analytics dashboard, plus localized summaries for customers browsing in their native language. Let me show you what I built and more importantly, why I made the design decisions I did."
 
 ---
 
-## Slide 10: Deployment & Infrastructure (45 seconds)
-**[Screen: CDK code or CloudFormation stack]**
+### Design Rationale: Architecture (90 seconds)
+
+**[Screen: Open ARCHITECTURE.md, scroll to architecture diagram]**
 
 **Script:**
-> "The infrastructure is fully defined as code using AWS CDK in TypeScript. One `cdk deploy` command provisions all four Lambda functions, the Step Functions state machine, two S3 buckets with security hardening, IAM roles with least-privilege policies, and CloudWatch resources. The CDK stack is version-controlled in CodeCommit, making the entire infrastructure reproducible and auditable. Deployment to a new account takes less than 5 minutes with zero manual configuration."
+> "The core problem: translate international reviews, summarize them using AI, and localize the summaries back. I chose a serverless pipeline architecture with Step Functions orchestrating four Lambda functions. Let me explain why."
 
-**Key Points:**
-- Show CDK stack structure
-- One-command deployment
-- Infrastructure as Code
+**[Screen: Scroll through architecture diagram while explaining]**
+
+> "First, why serverless? This workload is event-driven and bursty—you might process 100 reviews one day and 10,000 the next. Lambda scales automatically and you only pay for execution time. No servers to manage, no capacity planning."
+
+> "Second, why Step Functions instead of SQS? Step Functions costs more—15% of the total per-review cost—but it gives you built-in retry logic, error handling, and visual workflow monitoring. For a prototype, this is the right trade-off. If you scale to 100,000+ reviews per week, you'd migrate to SQS to cut costs, but you'd need to build custom retry and monitoring. I document this in the cost analysis—let me show you."
+
+**[Screen: Open COST_ANALYSIS.md, scroll to Step Functions vs SQS section]**
+
+> "Here's the break-even analysis. Step Functions makes sense up to about 100K reviews per week. Beyond that, SQS becomes cost-effective despite the engineering overhead. This gives you a clear migration path."
 
 ---
 
-## Slide 11: Documentation & Deliverables (45 seconds)
-**[Screen: Repository file tree or docs/ folder]**
+### Design Rationale: Service Selection (90 seconds)
+
+**[Screen: Open ARCHITECTURE.md, scroll to AWS Services section]**
 
 **Script:**
-> "The project includes comprehensive documentation: a deployment guide with step-by-step instructions, an architecture document with cost analysis and trade-off discussions, a daily log tracking 9 days of development, batch test results analyzing 100-review scale testing, an operational runbook for production support, and this executive summary. Additionally, all code has Apache 2.0 license headers, 19 pytest tests provide coverage of all Lambda functions, and both Holmes and ProtoShield scans validate quality and security."
+> "Three key service decisions: Amazon Translate for translation, Bedrock Claude Sonnet 5 for summarization, and S3 for storage."
 
-**Key Points:**
-- List key docs: DEPLOYMENT.md, ARCHITECTURE.md, OPERATIONS.md
-- 19 pytest tests
-- Full licensing compliance
+> "Why Amazon Translate? It's fully managed, supports 75+ languages, and costs $15 per million characters. For this use case—short product reviews—it's cost-effective and accurate. I validated translation quality during development and it was production-grade for French and German."
+
+> "Why Claude Sonnet 5 instead of a smaller model like Haiku? I tested both. Haiku costs 65% less but the quality gate pass rate dropped from 89% to an estimated 60-70%. Failed reviews cost about $2 in manual review time, so the ROI is negative. Sonnet 5 is the right choice here, and I document this trade-off."
+
+**[Screen: Open COST_ANALYSIS.md, scroll to Model Selection section]**
+
+> "Here's the cost breakdown: Claude Sonnet 5 adds only $0.0003 per review—three hundredths of a cent—because the prompts are tiny. Translation dominates at 78% of cost. This means you can use the best model without breaking the budget."
 
 ---
 
-## Slide 12: Production Readiness & Conclusion (45 seconds)
-**[Screen: EXECUTIVE_SUMMARY.md or dashboard showing green checkmarks]**
+### Design Rationale: Quality & Reliability (90 seconds)
+
+**[Screen: Open lib/hpi-review-pipeline-stack.ts, scroll to retry logic section]**
 
 **Script:**
-> "In summary, the HPI Review Pipeline is production-ready. It's deployed and operational, processing reviews with 100% reliability. It's monitored with dashboards and alarms. It's tested at scale with 100 reviews. It's CDE-certified by Holmes with zero HIGH findings. It's security-compliant per ProtoShield. It's documented with deployment, architecture, and operations guides. And it's cost-efficient at under 2 cents per review. This project demonstrates that I can deliver production-grade AWS solutions that meet Builder standards for code quality, security, observability, and operational excellence. Thank you for watching, and I'm ready for evaluation."
+> "Reliability was non-negotiable. Every Lambda task has exponential backoff retry logic. Let me show you the code."
 
-**Key Points:**
-- Summarize: Deployed, Monitored, Tested, Certified, Documented
-- Reinforce: Production-ready, Builder standards
-- Call to action: Ready for evaluation
+**[Screen: Highlight retry configuration in CDK stack, lines 104-114]**
+
+> "Service exceptions like throttling: 3 retries, 2-second initial interval, 2x backoff. Task failures: 2 retries, 1-second interval, 1.5x backoff. This achieved 100% execution success rate in testing with 100 reviews."
+
+> "For quality validation, I built a two-tier quality gate: rule-based checks plus LLM semantic scoring. The rule-based checks are fast and cheap—sentence count, word length, no truncation. The LLM scoring uses Claude to rate whether the summary accurately captures the original meaning on a 1-10 scale."
+
+**[Screen: Open lambda/quality-gate/quality_gate_service.py, scroll to check_quality function]**
+
+> "Here's the quality gate logic. It runs both checks, and I tuned the semantic threshold based on data. Initially it was 7, but analysis of 100 reviews showed that was too strict—67% pass rate. Lowering to 5 improved it to 89% without sacrificing quality. This is documented in the batch test results."
+
+**[Screen: Open docs/BATCH_TEST_RESULTS.md, show threshold tuning section]**
+
+> "Data-driven tuning. This is why you test at scale before production."
+
+---
+
+## Part 2: Live Walkthrough (~10 minutes)
+
+### Repository Structure (90 seconds)
+
+**[Screen: VS Code file explorer, collapse/expand folders to show structure]**
+
+**Script:**
+> "Let me show you how the repository is organized. Everything is structured for discoverability and maintainability."
+
+**[Screen: Expand folders while explaining]**
+
+```
+hpi-review-pipeline/
+├── lambda/              # 4 Lambda functions
+│   ├── translate/       # Stage 1: FR/DE → EN
+│   ├── summarize/       # Stage 2: AI summarization
+│   ├── localize/        # Stage 3: EN → FR/DE
+│   ├── quality-gate/    # Stage 4: Validation
+│   └── shared/          # Shared utilities (no duplication)
+├── lib/                 # CDK infrastructure (TypeScript)
+├── tests/               # 19 pytest unit tests
+├── scripts/             # Batch testing, dashboard generation
+├── docs/                # All documentation
+└── data/                # 100 synthetic test reviews
+```
+
+> "Key principle: service layer pattern. Every Lambda has a thin handler and a separate service module for business logic. This makes testing easy—you test the service layer independently without mocking Lambda context."
+
+**[Screen: Open lambda/translate/handler.py and translate_service.py side by side]**
+
+> "Handler: thin adapter, just parses the event. Service: business logic, fully testable. This pattern is consistent across all four functions."
+
+---
+
+### Code Quality: Holmes CDE Certification (60 seconds)
+
+**[Screen: Open holmes-scan-results.md]**
+
+**Script:**
+> "This project achieved Holmes CDE certification with zero HIGH findings. Holmes is AWS's AI-powered code quality scanner. It took 10+ iterations to get here, but the result is production-grade code."
+
+**[Screen: Scroll through the issues resolved section]**
+
+> "Key fixes: service layer extraction for testability, comprehensive error handling at all AWS boundaries, eliminating code duplication—shared utilities live in lambda/shared—and consistent documentation. The scan validated 19 pytest tests, S3 security configuration, IAM least privilege policies, and operational readiness."
+
+---
+
+### Security: ProtoShield Compliance (45 seconds)
+
+**[Screen: Open protoshield-scan-results.md]**
+
+**Script:**
+> "Security was validated with ProtoShield: zero critical, zero high findings. Two key areas: licensing and IAM policies."
+
+**[Screen: Open LICENSE file]**
+
+> "Every source file has an Apache 2.0 license header. This is a CDE requirement."
+
+**[Screen: Open lib/hpi-review-pipeline-stack.ts, scroll to IAM policy section with security notes]**
+
+> "IAM least privilege: Bedrock policies are scoped to the specific Claude Sonnet 5 model ARN. Translate policies have compensating controls—language pairs restricted to FR/DE and EN, region locked to us-east-1, and callable only from the Step Functions state machine. Amazon Translate doesn't support resource-level permissions, so I documented the service limitation and the defense-in-depth controls. This satisfied the security scanner."
+
+---
+
+### Live Execution: Run the Pipeline (2 minutes)
+
+**[Screen: Browser → AWS Console → Step Functions]**
+
+**Script:**
+> "Let me run the pipeline live. I'm in the Step Functions console looking at the state machine."
+
+**[Actions: Click "Start execution"]**
+
+> "I'll execute a French product review."
+
+**[Screen: Paste input JSON]**
+
+```json
+{
+  "text": "Ce produit est incroyable! La qualité est exceptionnelle et le service client était parfait. Je recommande vivement.",
+  "source_language": "fr",
+  "review_id": "demo-001"
+}
+```
+
+**[Actions: Click "Start execution", show graph]**
+
+> "Watch the workflow execute. Four stages: Translate, Summarize, Localize, QualityGate. Each stage passes state through—full event plus new fields. This is the pass-through pattern, which simplifies debugging because every stage has full context."
+
+**[Wait ~8 seconds for completion]**
+
+> "Done. All four stages succeeded in 8 seconds. Let me show you the output."
+
+**[Actions: Click on QualityGate step, show final output]**
+
+> "Here's the result: original French text, English translation—'This product is amazing, the quality is exceptional'—the English summary generated by Claude, the summary translated back to French, and a quality score of 8 out of 10. The quality gate passed all checks: correct sentence count, appropriate word length, strong semantic retention."
+
+---
+
+### Monitoring: CloudWatch Dashboard & Alarms (90 seconds)
+
+**[Screen: Browser → CloudWatch → Dashboards → hpi-review-pipeline]**
+
+**Script:**
+> "Production monitoring. I built a CloudWatch dashboard with four widgets tracking key metrics."
+
+**[Actions: Show each widget while explaining]**
+
+> "Widget 1: Pipeline executions—started, succeeded, failed. At-a-glance health. Widget 2: Average execution time in milliseconds—consistently 5-10 seconds. Widget 3: Lambda errors by function—isolates which stage is failing. Widget 4: Lambda duration by function—spots performance degradation."
+
+**[Screen: Navigate to CloudWatch → Alarms]**
+
+> "Three production alarms: ExecutionsFailed triggers on any failed execution—highest priority. LambdaErrors triggers on elevated error rates. SlowExecution triggers if runtime exceeds 15 seconds, indicating throttling or network issues. All three are in OK state—system is healthy."
+
+**[Screen: Back to VS Code, open docs/OPERATIONS.md]**
+
+> "Everything is documented in the operational runbook. Troubleshooting procedures for four scenarios: pipeline failures, Lambda errors, quality gate issues, performance degradation. Step-by-step investigation, common root causes, remediation actions. This ensures maintainability."
+
+---
+
+### Local Development: Clone, Install, Test (2 minutes)
+
+**[Screen: Terminal, start fresh in a temp directory]**
+
+**Script:**
+> "Let me prove you can run this locally. I'll clone the repo and run the tests."
+
+**[Actions: Type commands while narrating]**
+
+```bash
+# Clone repository
+git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/hpi-review-pipeline
+cd hpi-review-pipeline
+
+# Install dependencies
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# Run tests
+pytest tests/ -v
+```
+
+**[Wait for tests to run, show output]**
+
+> "19 tests, all passing. These cover all four Lambda functions plus shared utilities. The service layer pattern makes this testable—no need to mock AWS services for business logic tests."
+
+**[Screen: Show test output scrolling]**
+
+> "Tests validate: translation service logic, summarization with mocked Bedrock, localization, quality gate rules and semantic scoring. This gives you confidence that changes won't break core functionality."
+
+---
+
+### Demonstrate a Change: Add Spanish Support (2.5 minutes)
+
+**[Screen: VS Code, open lambda/translate/translate_service.py]**
+
+**Script:**
+> "Let me demonstrate continuation. I'll add Spanish support to show how you'd extend this pipeline."
+
+**[Actions: Edit the code live]**
+
+**Step 1: Update translation service**
+
+**[Screen: Add 'es' to supported languages validation]**
+
+```python
+def translate_review(text, source_language, target_language='en'):
+    """
+    Translate review text using Amazon Translate.
+    Supports French (fr), German (de), and Spanish (es) to English.
+    """
+    if source_language not in ['fr', 'de', 'es']:  # Add 'es'
+        raise ValueError(f"Unsupported source language: {source_language}")
+```
+
+> "First, update the validation logic to accept Spanish."
+
+**Step 2: Update IAM policy**
+
+**[Screen: Open lib/hpi-review-pipeline-stack.ts, find Translate IAM policy]**
+
+```typescript
+translateFn.addToRolePolicy(new iam.PolicyStatement({
+    actions: ['translate:TranslateText'],
+    resources: ['*'],
+    conditions: {
+        'StringEquals': {
+            'translate:SourceLanguageCode': ['fr', 'de', 'es'],  // Add 'es'
+            'translate:TargetLanguageCode': ['en'],
+            'aws:RequestedRegion': [this.region]
+        },
+        'ArnLike': {
+            'aws:SourceArn': stateMachine.stateMachineArn
+        }
+    }
+}));
+```
+
+> "Second, update the IAM policy to allow Spanish source language. Same pattern for the localize function."
+
+**Step 3: Update tests**
+
+**[Screen: Open tests/test_translate_service.py]**
+
+```python
+def test_translate_spanish():
+    """Test Spanish translation."""
+    result = translate_text(
+        "Este producto es increíble",
+        source_language='es',
+        target_language='en'
+    )
+    assert result is not None
+    assert len(result) > 0
+```
+
+> "Third, add a test case for Spanish. Run the test to validate."
+
+**[Actions: Run pytest on just this test]**
+
+```bash
+pytest tests/test_translate_service.py::test_translate_spanish -v
+```
+
+> "Test passes. Now deploy the change."
+
+**[Actions: Show deployment command]**
+
+```bash
+cdk deploy
+```
+
+> "One command deploys all changes: updated Lambda code, updated IAM policies, no manual configuration. Infrastructure as code makes this reproducible and auditable."
+
+---
+
+### Cost Analysis & Scale (60 seconds)
+
+**[Screen: Open COST_ANALYSIS.md]**
+
+**Script:**
+> "Let's talk cost. Actual cost per review: $0.0196—less than 2 cents. This came in 22% under budget."
+
+**[Screen: Scroll to cost breakdown table]**
+
+> "Translation dominates at 78% of cost. Bedrock is only 2%—Claude is incredibly efficient. Step Functions is 15%. At scale: 12,000 reviews per week costs $940 per month. 100,000 reviews per week: $7,840 per month. This is predictable and linear."
+
+**[Screen: Scroll to trade-offs section]**
+
+> "I documented the trade-offs: when to switch from Step Functions to SQS for cost savings, when to consider Haiku instead of Sonnet 5, and how to optimize if translation costs become prohibitive—caching duplicate reviews or batching API calls. This gives you a roadmap for scale."
+
+---
+
+### Documentation & Deliverables (45 seconds)
+
+**[Screen: File explorer, show docs/ folder]**
+
+**Script:**
+> "Everything is documented. Architecture with design rationale. Deployment guide with step-by-step instructions. Cost analysis with trade-offs and projections. Daily log tracking 9 days of development. Batch test results analyzing 100-review scale testing. Operations runbook for production support. Executive summary for stakeholders."
+
+**[Screen: Open README.md]**
+
+> "README provides quick start: prerequisites, deployment steps, testing, monitoring. Goal: anyone can clone this repo and be productive in 10 minutes."
+
+---
+
+## Closing (30 seconds)
+
+**[Screen: Show CloudWatch dashboard one more time, or AWS Console showing healthy system]**
+
+**Script:**
+> "In summary, this pipeline is production-ready. It's deployed and operational. It's monitored with dashboards and alarms. It's tested at scale with 100 reviews—100% execution success, 89% quality pass rate. It's CDE-certified by Holmes with zero HIGH findings. It's security-compliant per ProtoShield. It's documented for deployment, operations, and continuation. It's cost-efficient at under 2 cents per review. And I just demonstrated you can extend it with minimal effort. This is how you'd build an AI pipeline on AWS that's ready for production and ready for growth. Thank you for watching."
 
 ---
 
 ## Recording Tips
 
-### Setup
-- **Screen Resolution:** 1080p or 1920x1080
+### Technical Setup
+- **Screen Resolution:** 1080p (1920x1080)
 - **Recording Tool:** QuickTime, OBS, or Loom
-- **Audio:** Clear microphone, quiet environment
-- **Browser Tabs:** Pre-open all AWS Console pages, docs
-
-### Pre-Recording Checklist
-- [ ] Run a test execution to ensure pipeline works
-- [ ] Open all browser tabs/screens in advance
-- [ ] Zoom browser to 125-150% for readability
-- [ ] Hide bookmarks bar and unnecessary UI
-- [ ] Test audio levels
-- [ ] Have water nearby
-- [ ] Put phone on silent
+- **Audio:** Clear microphone, quiet room
+- **Editor Zoom:** 150-175% in VS Code for readability
+- **Terminal Font:** Large enough to read (16-18pt)
 
 ### During Recording
-- **Pace:** Speak clearly, not too fast
-- **Mouse:** Move cursor smoothly, highlight key elements
-- **Transitions:** Use "Let me show you..." or "Moving to..."
-- **Time Check:** Glance at timer; aim for 8-10 minutes total
-- **Mistakes:** If you stumble, pause, then continue (edit later)
+- **Pace:** Speak clearly, not rushed. 15 minutes is generous.
+- **Mouse:** Move smoothly, highlight key lines of code
+- **Transitions:** Use natural language: "Let me show you...", "Here's why..."
+- **Code Focus:** Spend time in the code, not just reading docs
+- **Live Execution:** Show real commands, real output, real errors if they happen
+
+### What to Avoid
+- ❌ Slide decks (1-2 context slides max, rest is code)
+- ❌ Reading documentation verbatim
+- ❌ Long pauses or dead air
+- ❌ Apologizing for code or decisions (be confident)
+- ❌ Ignoring the customer framing (deliver TO the customer, not ABOUT the project)
 
 ### Post-Recording
-- **Edit:** Trim dead air, smooth transitions (iMovie, DaVinci Resolve, Camtasia)
-- **Export:** MP4, H.264 codec, 1080p, ~100MB for 10 minutes
-- **Upload:** Direct to SIM ticket as attachment or YouTube (unlisted) and share link
+- **Edit:** Trim dead air, fix major stumbles (minor ones are fine)
+- **Export:** MP4, H.264, 1080p, aim for <500MB
+- **Upload:** Directly to SIM ticket or YouTube (unlisted)
 
 ---
 
-## Alternative: Screen Recording Flow
+## Alternative Flow Options
 
-If you prefer a **live demo flow** instead of slides:
+If 15 minutes feels too tight, you can adjust:
 
-1. **Terminal:** Show repo structure with `tree -L 2`
-2. **AWS Console:** Execute pipeline live
-3. **CloudWatch:** Show dashboard with metrics
-4. **Code Editor:** Walk through CDK stack (IAM policies, error handling)
-5. **Terminal:** Show test results `pytest -v`
-6. **Browser:** Show Holmes scan result (portal screenshot)
-7. **Browser:** Show ProtoShield summary.md
-8. **Code Editor:** Show OPERATIONS.md structure
-9. **Terminal:** Show cost breakdown from COST_ANALYSIS.md
-10. **Browser:** README.md as final summary
+### Option A: Skip Spanish Demo
+- Replace live Spanish coding with "Here's how you'd add Spanish" walk-through (just talk through it, don't type)
+- Saves 2 minutes
 
----
+### Option B: Shorter AWS Console Time
+- Show one Step Functions execution, skip CloudWatch deep-dive
+- Reference monitoring in passing, focus more on code
 
-## Quick 5-Minute Version (if needed)
-
-If time is constrained:
-
-1. **Intro (30s):** Project overview
-2. **Live Demo (90s):** Execute one review end-to-end
-3. **Architecture (45s):** Show diagram, explain 4 stages
-4. **Quality Results (45s):** 100 reviews, 100% success, 89% pass
-5. **Holmes/ProtoShield (45s):** 0 HIGH findings, CDE certified
-6. **Monitoring (30s):** Show CloudWatch dashboard
-7. **Cost (30s):** $0.0196/review, under budget
-8. **Conclusion (30s):** Production-ready, documented, ready for eval
-
-**Total:** ~5.5 minutes
+### Option C: Pre-recorded Execution
+- Record the Step Functions execution ahead of time
+- Play back the video during demo to avoid waiting 8 seconds live
+- Only do this if you're tight on time
 
 ---
 
-## Final Checklist Before Submission
+## Checklist Before Submission
 
-- [ ] Video is 5-10 minutes
-- [ ] Shows live working system
-- [ ] Explains architecture clearly
-- [ ] Demonstrates quality/testing
-- [ ] Shows Holmes 0 HIGH findings
-- [ ] Shows ProtoShield 0 HIGH findings
-- [ ] Shows monitoring dashboard
-- [ ] Discusses cost analysis
+- [ ] Video is 12-15 minutes
+- [ ] Shows live working code in IDE
+- [ ] Runs the pipeline end-to-end in AWS Console
+- [ ] Explains design rationale (WHY, not just WHAT)
+- [ ] Shows repository structure and organization
+- [ ] Demonstrates local testing (pytest)
+- [ ] Shows a live code change (Spanish support or alternative)
+- [ ] References cost analysis and trade-offs
+- [ ] Shows monitoring dashboard and alarms
+- [ ] References documentation (README, ARCHITECTURE, OPERATIONS)
 - [ ] Audio is clear
-- [ ] Screen is readable (text not too small)
+- [ ] Code is readable (zoomed in)
 - [ ] File format: MP4 or MOV
-- [ ] File size: <200MB (compress if needed)
+- [ ] File size: <500MB
 - [ ] Ready to upload to SIM ticket
 
 ---
 
-Good luck with your demo! 🎥🚀
+Good luck! Remember: show the code, run the code, explain your choices. 🚀

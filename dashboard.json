@@ -4,9 +4,9 @@
       "type": "metric",
       "properties": {
         "metrics": [
-          ["AWS/States", "ExecutionsFailed", "StateMachineArn", "arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline", {"stat": "Sum", "label": "Failed"}],
-          ["AWS/States", "ExecutionsSucceeded", "StateMachineArn", "arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline", {"stat": "Sum", "label": "Succeeded"}],
-          ["AWS/States", "ExecutionsStarted", "StateMachineArn", "arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline", {"stat": "Sum", "label": "Started"}]
+          ["AWS/States", "ExecutionsFailed", "StateMachineArn", "arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline", {"stat": "Sum", "label": "Failed"}],
+          ["AWS/States", "ExecutionsSucceeded", "StateMachineArn", "arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline", {"stat": "Sum", "label": "Succeeded"}],
+          ["AWS/States", "ExecutionsStarted", "StateMachineArn", "arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline", {"stat": "Sum", "label": "Started"}]
         ],
         "view": "timeSeries",
         "stacked": false,
@@ -19,7 +19,7 @@
       "type": "metric",
       "properties": {
         "metrics": [
-          ["AWS/States", "ExecutionTime", "StateMachineArn", "arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline", {"stat": "Average"}]
+          ["AWS/States", "ExecutionTime", "StateMachineArn", "arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline", {"stat": "Average"}]
         ],
         "view": "timeSeries",
         "region": "us-east-1",

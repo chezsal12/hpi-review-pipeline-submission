@@ -27,7 +27,7 @@
 - None
   
 ### Notes
-- Working from CloudShell in account 248062189474
+- Working from CloudShell in account <AWS-ACCOUNT-ID>
 - Model used: us.anthropic.claude-sonnet-5 (inference profile)
 - Region: us-east-1
 - Test data includes edge cases: slang, emojis, typos
@@ -124,11 +124,11 @@
 ### Deployment Resolution
 - Fixed PEP cross-account role permissions by attaching IAMFullAccess
 - Fixed Lambda shared utilities import error by copying bedrock_utils.py to each function
-- State Machine ARN: arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline
+- State Machine ARN: arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline
   
 ### Technical Details
 - CDK Stack: `HpiReviewPipelineStack`
-- Account: 248062189474 (resolved from environment)
+- Account: <AWS-ACCOUNT-ID> (resolved from environment)
 - Region: us-east-1
 - Lambda Runtime: Python 3.13
 - State Machine: Sequential pipeline (Translate → Summarize → Localize → QualityGate)
@@ -269,7 +269,7 @@ Service breakdown:
 - Deployment time: 91.4s
 - S3 buckets now have versioning enabled (compliant with CDE requirements)
 - Live infrastructure matches CDE-certified source code
-- State machine: arn:aws:states:us-east-1:248062189474:stateMachine:hpi-review-pipeline
+- State machine: arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:hpi-review-pipeline
 
 
   ## Day 9 - 2026-08-28

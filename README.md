@@ -90,7 +90,7 @@ region before deploying the summarize and quality-gate stages.
 
 ```bash
 # One-time per account/region
-aws-vault exec hpi -- cdk bootstrap aws://248062189474/us-east-1
+aws-vault exec hpi -- cdk bootstrap aws://<AWS-ACCOUNT-ID>/us-east-1
 
 # Review the synthesized template, then deploy
 aws-vault exec hpi -- cdk synth
@@ -101,7 +101,7 @@ aws-vault exec hpi -- cdk deploy   # creates Lambdas, Step Functions, S3, IAM, l
 
 ```bash
 REGION=us-east-1
-ACCOUNT=248062189474
+ACCOUNT=<AWS-ACCOUNT-ID>
 
 # 1. Create the Lambda execution role with a trust policy
 cat > trust.json <<'JSON'
@@ -179,7 +179,7 @@ Once the Lambda functions and state machine are deployed (see
 
 ```bash
 aws stepfunctions start-execution \
-  --state-machine-arn arn:aws:states:us-east-1:248062189474:stateMachine:ReviewPipeline \
+  --state-machine-arn arn:aws:states:us-east-1:<AWS-ACCOUNT-ID>:stateMachine:ReviewPipeline \
   --input '{
     "review_id": "fr_001",
     "text": "Franchement top ce casque !",
@@ -311,6 +311,6 @@ pilot, and production scale.
 ## Contact
 
 - **Simulated Customer**: HPI
-- **AWS Account**: 248062189474
+- **AWS Account**: <AWS-ACCOUNT-ID>
 - **Region**: us-east-1
 - **Duration**: 3 weeks (Aug 2026)
