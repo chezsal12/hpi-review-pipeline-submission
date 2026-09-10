@@ -323,7 +323,7 @@ pwd  # Shows /Users/chezsal/projects/hpi-review-pipeline
 git remote -v  # Shows GitHub URL
 ```
 
-> "Here's the GitHub repo URL. Now let me run the tests."
+> "This is the repository, available on GitHub at github.com/chezsal12/hpi-review-pipeline-submission. You can see the remote URL here. Anyone can clone it. Now let me run the tests."
 
 **[Actions: Run the test script]**
 
