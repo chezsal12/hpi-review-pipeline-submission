@@ -309,36 +309,37 @@ hpi-review-pipeline/
 
 ---
 
-### Local Development: Clone, Install, Test (2 minutes)
+### Local Development: Run Tests Locally (30 seconds)
 
-**[Screen: Terminal, start fresh in a temp directory]**
+**[Screen: Terminal in repository root]**
 
 **Script:**
-> "Let me prove you can run this locally. I'll clone the repo and run the tests."
+> "Let me prove you can run this locally. The repository is on GitHub, and I have a test script that handles setup and execution."
 
-**[Actions: Type commands while narrating]**
+**[Screen: Show you're in the repo]**
 
 ```bash
-# Clone repository
-git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/hpi-review-pipeline
-cd hpi-review-pipeline
-
-# Install dependencies
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-# Run tests
-pytest tests/ -v
+pwd  # Shows /Users/chezsal/projects/hpi-review-pipeline
+git remote -v  # Shows GitHub URL
 ```
 
-**[Wait for tests to run, show output]**
+> "Here's the GitHub repo URL. Now let me run the tests."
 
-> "19 tests, all passing. These cover all four Lambda functions plus shared utilities. The service layer pattern makes this testable—no need to mock AWS services for business logic tests."
+**[Actions: Run the test script]**
 
-**[Screen: Show test output scrolling]**
+```bash
+./run-tests.sh
+```
 
-> "Tests validate: translation service logic, summarization with mocked Bedrock, localization, quality gate rules and semantic scoring. This gives you confidence that changes won't break core functionality."
+**[Wait ~10-15 seconds while script runs - it installs dependencies and runs tests]**
+
+**[Screen: Show output - pip installing, then pytest running]**
+
+> "The script handles dependency installation and runs all tests. Tests cover all four Lambda functions: translation service, summarization with mocked Bedrock, localization, and quality gate validation. All passing. The service layer pattern makes this testable—no AWS credentials needed for tests."
+
+**[Screen: Show final output - "✅ All tests passed!"]**
+
+> "Anyone can clone this repo from GitHub and run this same script. It's reproducible and ready to extend."
 
 ---
 
