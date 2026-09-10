@@ -151,18 +151,18 @@ A: "Yes. Comprehend has extractive summarization, but it doesn't support the con
 
 ### Design Rationale: Service Selection (90 seconds)
 
-**[Screen: Open ARCHITECTURE.md, scroll to AWS Services section]**
+**[Screen: Open ARCHITECTURE.md, scroll to the table around line 29 showing AWS Services]**
 
 **Script:**
 > "Three key service decisions: Amazon Translate for translation, Bedrock Claude Sonnet 5 for summarization, and S3 for storage."
 
-> "Why Amazon Translate? It's fully managed, supports 75+ languages, and costs $15 per million characters. For this use case—short product reviews—it's cost-effective and accurate. I validated translation quality during development and it was production-grade for French and German."
+**[Screen: Scroll down to line 222 - "Translation: Amazon Translate vs Custom Models" section]**
 
-> "Why Claude Sonnet 5 instead of a smaller model like Haiku? I tested both. Haiku costs 65% less but the quality gate pass rate dropped from 89% to an estimated 60-70%. Failed reviews cost about $2 in manual review time, so the ROI is negative. Sonnet 5 is the right choice here, and I document this trade-off."
+> "Why Amazon Translate? It's fully managed, supports 75+ languages, and costs $15 per million characters. For this use case—short product reviews—it's cost-effective and accurate. I validated translation quality during development and it was production-grade for French and German. The alternative would be custom models, which have lower per-unit cost but require training data, versioning, and ML Ops overhead. Translation is 78% of the total cost, but operational simplicity is worth the premium at current scale."
 
-**[Screen: Open COST_ANALYSIS.md, scroll to Model Selection section]**
+**[Screen: Scroll up to line 215 - "Model Selection: Claude Sonnet 5 vs Haiku" section]**
 
-> "Here's the cost breakdown: Claude Sonnet 5 adds only $0.0003 per review—three hundredths of a cent—because the prompts are tiny. Translation dominates at 78% of cost. This means you can use the best model without breaking the budget."
+> "Why Claude Sonnet 5 instead of a smaller model like Haiku? I tested both. Haiku costs 65% less but the quality gate pass rate dropped from 89% to an estimated 60-70%. Failed reviews cost about $2 in manual review time, so the ROI is negative. Sonnet 5 is the right choice here. And here's the cost breakdown: Claude Sonnet 5 adds only $0.0003 per review—three hundredths of a cent—because the prompts are tiny. Translation dominates at 78% of cost. This means you can use the best model without breaking the budget."
 
 ---
 
