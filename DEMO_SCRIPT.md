@@ -401,13 +401,27 @@ translateFn.addToRolePolicy(new iam.PolicyStatement({
 
 > "You'd add a test case for Spanish translation here to validate it works. The test would mock the Translate API response for Spanish-to-English translation. But for the demo, I'll skip writing it and move to deployment."
 
-**Step 4: Deploy**
+**Step 4: Deploy and Test**
+
+**[Screen: Show the deployment command but don't run it]**
 
 ```bash
-cdk deploy
+cdk deploy  # Takes ~2-3 minutes to update IAM policies
 ```
 
-> "One command deploys the IAM policy changes. No Lambda code changes needed - the translation functions already support any language Amazon Translate supports. Infrastructure as code makes this reproducible and auditable. After deployment, Spanish reviews would work immediately."
+> "One command deploys the IAM policy changes. No Lambda code changes needed—the translation functions already support any language Amazon Translate supports. After deployment completes, Spanish would work immediately. Let me show you what the test input would look like."
+
+**[Screen: Show Spanish test input ready to paste]**
+
+```json
+{
+  "text": "Este producto es increíble! La calidad es excepcional y el servicio al cliente fue perfecto. Lo recomiendo totalmente.",
+  "source_language": "es",
+  "review_id": "spanish-demo"
+}
+```
+
+> "You'd paste this Spanish review into Step Functions, execute it, and see the same four-stage flow—translate Spanish to English, summarize with Claude, localize back to Spanish, validate quality. The architecture makes language expansion this simple: two-line IAM change, deploy, done. This demonstrates the system is designed for continuation."
 
 ---
 
